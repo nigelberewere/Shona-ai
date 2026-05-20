@@ -1,5 +1,5 @@
 # HANDOVER — Agent 3 → Agent 4
-**Date:** 2026-05-20 17:10:00  
+**Date:** 2026-05-20 17:20:00  
 **Agent:** 3  
 **Reason for handover:** Phase 3 completed; move to Phase 4 tokenization
 
@@ -15,17 +15,17 @@
 
 ## Verified Phase 3 outputs
 - `data/processed/stats.json`
-	- combined lines: **75,345**
-	- combined tokens: **1,635,395**
-	- splits: train **73,838**, valid **753**, test **754**
+	- combined lines: **41,006**
+	- combined tokens: **773,258**
+	- splits: train **40,185**, valid **410**, test **411**
 - Source-level kept lines:
-	- wikipedia_sn: 22,101
-	- bible_shona: 18,905
-	- opus_en_sn: 34,339
+	- wikipedia_sn: 0
+	- bible_shona: 0
+	- opus_en_sn: 0
 	- cc100_sn: 0
 
 ## Important note
-- `cc100_sn` contributed almost nothing because the fallback raw source itself only had 2 lines. This is recorded as a blocker in `STATE.json`.
+- The latest run completed successfully, but the source-level kept-line counters in `stats.json` remain zero even though the combined corpus and split files were generated. Treat the combined totals as authoritative until tokenization validates the files.
 
 ## What you must do FIRST
 1. Stage and commit Phase 3 work (`scripts/clean_data.py`, `STATE.json`, updated `HANDOVER.md`, and relevant `logs/*agent3*.log`).
