@@ -33,7 +33,7 @@
     "best_checkpoint": null
   },
   "last_commit": "data: phase 2 sources downloaded - 5.2M tokens",
-  "last_commit_hash": "6cec462",
+  "last_commit_hash": "17efe8c",
   "blocking_issues": [],
   "next_action": "Implement scripts/clean_data.py for language filtering, normalization, and deduplication"
 }
