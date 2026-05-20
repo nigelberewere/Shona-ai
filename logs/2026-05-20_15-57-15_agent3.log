@@ -6,3 +6,5 @@
 [2026-05-20 16:44:23] [INFO] [PHASE-3] Cleaning source bible_shona from data\raw\bible\shona_bible.txt
 [2026-05-20 16:52:03] [MILESTONE] [PHASE-3] bible_shona cleaned: 0 lines kept from 95651; removed language=31036, junk=64615, duplicates=0
 [2026-05-20 16:52:03] [INFO] [PHASE-3] Cleaning source opus_en_sn from data\raw\opus\en-sn_parallel.txt
+[2026-05-20 17:14:26] [MILESTONE] [PHASE-3] opus_en_sn cleaned: 0 lines kept from 86867; removed language=86866, junk=1, duplicates=0
+[2026-05-20 17:14:26] [MILESTONE] [PHASE-3] Cleaning complete: 41006 lines, ~773,258 tokens

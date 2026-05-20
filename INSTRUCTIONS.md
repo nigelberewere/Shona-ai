@@ -404,7 +404,7 @@ Use these to sanity-check model output at every phase:
 | English | Shona |
 |---------|-------|
 | Hello, how are you? | Mhoro, makadii? |
-| I am fine | Ndiri bhoo |
+| I am fine | Ndiri well / Ndiripo |
 | What is your name? | Zita rako ndiani? |
 | My name is John | Zita rangu ndiJohn |
 | I love Zimbabwe | Ndinoda Zimbabwe |
@@ -412,7 +412,7 @@ Use these to sanity-check model output at every phase:
 | God | Mwari |
 | Mother | Amai |
 | Child | Mwana |
-| We are going home | Tirikuenda kumba |
+| We are going home | Tinoenda kumba |
 
 ### 9.5 Key Linguistic Challenges for the Model
 1. **Code-switching**: Many Shona speakers mix Shona and English. Model should handle this.
@@ -488,3 +488,84 @@ Before marking any phase complete, the agent must pass these checks:
 
 *This document is law. When in doubt, re-read it.*  
 *Version: 1.0 | Project: Shona AI | Language: ChiShona*
+
+---
+
+## 13. RATE LIMIT & CRASH RECOVERY PROTOCOL
+
+This section exists because agents can be cut off mid-task with no warning. The system below ensures the next agent can always recover cleanly.
+
+### 13.1 The Three-Layer Safety System
+
+**Layer 1 — Auto-commit watcher (human operator runs this)**  
+Before starting ANY agent session, the human operator opens a separate terminal and runs:
+```bash
+bash scripts/watch_commit.sh /path/to/shona-ai
+```
+This commits ALL changes to GitHub every 5 minutes automatically. Even if the agent writes nothing to HANDOVER.md, the code files are safe.
+
+**Layer 2 — WORKING.md (agent updates this constantly)**  
+The agent must update `WORKING.md` before and after EVERY task. Not at the end of the session — after every single file written. This file always shows what the agent was doing at the moment it died.
+
+**Layer 3 — Progressive HANDOVER.md (agent updates this as it goes)**  
+The agent writes HANDOVER.md at the START of the session with the planned task list, then updates it as tasks complete. HANDOVER.md is never written only at the end.
+
+### 13.2 Agent behavior — required changes
+
+**At session start (first 5 actions):**
+1. Read orientation files
+2. Write `WORKING.md` with full task queue for this session
+3. Set "RIGHT NOW" in WORKING.md to first task
+4. Write initial HANDOVER.md with planned work
+5. Commit: `chore: agent N started — working state initialized`
+
+**Before starting each task:**
+```
+Update WORKING.md → "RIGHT NOW" section with current task name and file
+```
+
+**After completing each task:**
+```
+1. Check off task in WORKING.md task queue
+2. Add row to WORKING.md "Completed this session" table
+3. git add <completed file> && git commit -m "feat: <file> implemented"
+4. Update STATE.json
+5. Update HANDOVER.md "What I completed" section
+```
+
+**The order is non-negotiable:**  
+`WORKING.md → write code → commit → WORKING.md → next task`
+
+### 13.3 How the next agent recovers from a crashed session
+
+If HANDOVER.md was not written (agent died early):
+
+1. Read `WORKING.md` → "RIGHT NOW" tells you what was in progress
+2. Read `WORKING.md` → task queue tells you what was planned
+3. Check the file listed in "FILE BEING WRITTEN" — it may be incomplete
+4. Run `git log --oneline -10` to see what was committed
+5. Fix any incomplete file, then continue from the next unchecked task
+
+### 13.4 Human operator checklist before every session
+
+```
+[ ] Terminal 1: cd shona-ai && bash scripts/watch_commit.sh .
+[ ] Terminal 2: open agent session
+[ ] Paste handover prompt to agent
+[ ] Watch Terminal 1 — confirms commits every 5 mins
+[ ] When agent stops: Ctrl+C in Terminal 1
+```
+
+### 13.5 Commit frequency rules
+
+| Action | Commit? |
+|--------|---------|
+| Finish writing one complete file | YES — immediately |
+| Finish one function inside a file | YES if function > 50 lines |
+| Update STATE.json | YES — always commit with it |
+| Update WORKING.md | YES — every update |
+| Update HANDOVER.md | YES — every update |
+| Write a log entry | No — log files committed by watcher |
+
+**The rule: if you wrote something useful, commit it before moving on.**
+

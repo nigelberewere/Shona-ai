@@ -27,4 +27,5 @@ Example of usage:
 [2026-05-20 14:47:37] [MILESTONE] [PHASE-2] Manifest updated for opus_en_sn
 [2026-05-20 14:47:37] [MILESTONE] [PHASE-2] Source opus_en_sn downloaded - ~2,743,756 tokens
 [2026-05-20 14:47:37] [MILESTONE] [PHASE-2] All scraping complete. Total tokens: ~5,193,376
+[2026-05-20 14:48:45] [MILESTONE] [PHASE-2] Rewrote HANDOVER.md to match the required handoff template and current Phase 3 start point
 [2026-05-20 14:48:30] [MILESTONE] [PHASE-2] Git commit 17efe8c: data: phase 2 sources downloaded - 5.2M tokens
