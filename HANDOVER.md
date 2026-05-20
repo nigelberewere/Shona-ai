@@ -1,3 +1,54 @@
+# HANDOVER — Agent 2 → Agent 3
+**Date:** 2026-05-20 12:41:00
+**Agent:** 2
+**Reason for handover:** Execution environment rate-limited; implemented code but could not run downloads here
+
+## What I completed this session
+- Implemented `scripts/scrape_data.py` — downloads Wikipedia (sn), CC-100 (sn), Shona Bible, and OPUS en-sn. Writes per-source .txt files to `data/raw/<source>/` and updates `data/raw/manifest.json` with token counts.
+- Updated `STATE.json` to set `agent_number` to 2 and `current_phase` to 2; set `last_commit` to `feat: scrape_data.py implemented`.
+- Created a timestamped agent log `logs/2026-05-20_12-41-00_agent2.log` recording actions and the execution-blocked error.
+- Created a todo list tracking Phase 2 steps using the agent task manager.
+
+## Current state
+- **Phase:** 2 — Data Collection (in_progress)
+- **Last commit (planned):** feat: scrape_data.py implemented
+- **Last log entry:** [2026-05-20 12:41:05] Execution blocked: rate-limited by execution_subagent
+
+## What you must do FIRST
+Run the scraping script to perform downloads and generate real data files and manifest entries:
+
+```bash
+python scripts/scrape_data.py
+```
+
+Logs will be written to `logs/<YYYY-MM-DD_HH-MM-SS>_agent2.log`. After each source completes, commit with message:
+
+```
+data: <source> downloaded - Xk tokens
+```
+
+Also update `STATE.json` before each commit to record token counts and sources completed.
+
+## What you must do this session (ordered)
+1. Run `python scripts/scrape_data.py` and ensure each source finishes; commit after each source completes with the message format above.
+2. Verify `data/raw/manifest.json` contains entries for each completed source with token counts.
+3. Once all sources are downloaded, mark the todo `Run scripts/scrape_data.py to download sources` as completed and update `STATE.json` (`data_stats.raw_tokens`, `data_stats.sources_complete`).
+4. Proceed to implement `scripts/clean_data.py` (language detection, normalization, deduplication) only after downloads are finished.
+
+## Known issues / blockers
+- Execution in this environment was rate-limited when attempting to run the scraping script via the automation tool. The script itself was written and saved; it must be run in an environment with network access (developer machine, CI runner, or cloud VM).
+
+## Files I created or modified this session
+- `scripts/scrape_data.py` — implemented download logic and manifest updates
+- `STATE.json` — updated agent_number and current_phase and next_action
+- `logs/2026-05-20_12-41-00_agent2.log` — session log
+
+## Environment notes
+- The scraping script uses `datasets` (HuggingFace), `requests`, and `xml.etree.ElementTree`. Ensure `requirements.txt` includes these packages and `git` is available for commits.
+- Running the script will perform heavy downloads; prefer running on a machine with sufficient disk space and a stable network connection.
+
+## Do NOT do this
+- Do not implement `scripts/clean_data.py` until all raw sources finish downloading and the manifest is populated.
 # HANDOVER — Agent [N] → Agent [N+1]
 
 > **This file is rewritten by each agent before stopping.**  

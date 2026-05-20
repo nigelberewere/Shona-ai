@@ -1,0 +1,58 @@
+[
+  {
+    "source": "bible_shona",
+    "tokens": 585419,
+    "docs": 95651,
+    "path": "data\\raw\\bible\\shona_bible.txt",
+    "downloaded_at": "2026-05-20T13:52:26.218533"
+  },
+  {
+    "source": "opus_en_sn",
+    "tokens": 0,
+    "docs": 0,
+    "path": "data\\raw\\opus\\en-sn_parallel.txt",
+    "downloaded_at": "2026-05-20T13:52:43.587001"
+  },
+  {
+    "source": "bible_shona",
+    "tokens": 585419,
+    "docs": 95651,
+    "path": "data\\raw\\bible\\shona_bible.txt",
+    "downloaded_at": "2026-05-20T13:52:54.968384"
+  },
+  {
+    "source": "opus_en_sn",
+    "tokens": 0,
+    "docs": 0,
+    "path": "data\\raw\\opus\\en-sn_parallel.txt",
+    "downloaded_at": "2026-05-20T13:53:05.322954"
+  },
+  {
+    "source": "bible_shona",
+    "tokens": 585419,
+    "docs": 95651,
+    "path": "data\\raw\\bible\\shona_bible.txt",
+    "downloaded_at": "2026-05-20T13:54:04.179982"
+  },
+  {
+    "source": "opus_en_sn",
+    "tokens": 0,
+    "docs": 0,
+    "path": "data\\raw\\opus\\en-sn_parallel.txt",
+    "downloaded_at": "2026-05-20T13:54:19.411876"
+  },
+  {
+    "source": "bible_shona",
+    "tokens": 585419,
+    "docs": 95651,
+    "path": "data\\raw\\bible\\shona_bible.txt",
+    "downloaded_at": "2026-05-20T13:54:25.493579"
+  },
+  {
+    "source": "opus_en_sn",
+    "tokens": 0,
+    "docs": 0,
+    "path": "data\\raw\\opus\\en-sn_parallel.txt",
+    "downloaded_at": "2026-05-20T13:54:36.916925"
+  }
+]

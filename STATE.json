@@ -1,9 +1,9 @@
 {
   "project": "shona-ai",
   "version": "0.1.0",
-  "last_updated": "2026-05-20 12:28:46",
-  "agent_number": 1,
-  "current_phase": 1,
+  "last_updated": "2026-05-20 12:40:00",
+  "agent_number": 2,
+  "current_phase": 2,
   "phase_status": {
     "1": "complete",
     "2": "in_progress",
@@ -17,9 +17,11 @@
     "10": "not_started"
   },
   "data_stats": {
-    "raw_tokens": 0,
+    "raw_tokens": 585419,
     "clean_tokens": 0,
-    "sources_complete": []
+    "sources_complete": [
+      "bible_shona"
+    ]
   },
   "training_stats": {
     "current_step": 0,
@@ -27,8 +29,8 @@
     "current_perplexity": null,
     "best_checkpoint": null
   },
-  "last_commit": "chore: agent 1 starting — phase 1",
+  "last_commit": "data: bible_shona downloaded - 585k tokens",
   "last_commit_hash": "",
   "blocking_issues": [],
-  "next_action": "Implement scripts/scrape_data.py with real downloaders for Wikipedia Shona, CC-100, and Bible corpus. Then run it."
+  "next_action": "Run scripts/scrape_data.py to download data sources and update manifest"
 }

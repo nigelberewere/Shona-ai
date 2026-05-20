@@ -1,0 +1,22 @@
+[2026-05-20 13:52:06] [INFO] [PHASE-2] Agent 2: scrape_data.py started
+[2026-05-20 13:52:06] [INFO] [PHASE-2] Starting Wikipedia Shona download via datasets
+[2026-05-20 13:52:16] [ERROR] [PHASE-2] Wikipedia download failed: Dataset scripts are no longer supported, but found wikipedia.py
+[2026-05-20 13:52:16] [ERROR] [PHASE-2] Source wikipedia_sn failed: Dataset scripts are no longer supported, but found wikipedia.py
+[2026-05-20 13:52:16] [INFO] [PHASE-2] Starting CC-100 Shona download (streaming)
+[2026-05-20 13:52:18] [ERROR] [PHASE-2] CC-100 download failed: Dataset scripts are no longer supported, but found cc100.py
+[2026-05-20 13:52:18] [ERROR] [PHASE-2] Source cc100_sn failed: Dataset scripts are no longer supported, but found cc100.py
+[2026-05-20 13:52:18] [INFO] [PHASE-2] Starting Shona Bible download from GitHub raw
+[2026-05-20 13:52:26] [MILESTONE] [PHASE-2] Bible download complete: ~585,419 tokens, 95651 lines
+[2026-05-20 13:52:26] [MILESTONE] [PHASE-2] Manifest updated for bible_shona
+[2026-05-20 13:52:26] [MILESTONE] [PHASE-2] Source bible_shona downloaded - ~585,419 tokens
+[2026-05-20 13:52:26] [INFO] [PHASE-2] Starting OPUS parallel (en-sn) download via datasets
+[2026-05-20 13:52:34] [WARN] [PHASE-2] OPUS candidate Helsinki-NLP/opus-100 failed: BuilderConfig 'en-sn' not found. Available: ['af-en', 'am-en', 'an-en', 'ar-de', 'ar-en', 'ar-fr', 'ar-nl', 'ar-ru', 'ar-zh', 'as-en', 'az-en', 'be-en', 'bg-en', 'bn-en', 'br-en', 'bs-en', 'ca-en', 'cs-en', 'cy-en', 'da-en', 'de-en', 'de-fr', 'de-nl', 'de-ru', 'de-zh', 'dz-en', 'el-en', 'en-eo', 'en-es', 'en-et', 'en-eu', 'en-fa', 'en-fi', 'en-fr', 'en-fy', 'en-ga', 'en-gd', 'en-gl', 'en-gu', 'en-ha', 'en-he', 'en-hi', 'en-hr', 'en-hu', 'en-hy', 'en-id', 'en-ig', 'en-is', 'en-it', 'en-ja', 'en-ka', 'en-kk', 'en-km', 'en-kn', 'en-ko', 'en-ku', 'en-ky', 'en-li', 'en-lt', 'en-lv', 'en-mg', 'en-mk', 'en-ml', 'en-mn', 'en-mr', 'en-ms', 'en-mt', 'en-my', 'en-nb', 'en-ne', 'en-nl', 'en-nn', 'en-no', 'en-oc', 'en-or', 'en-pa', 'en-pl', 'en-ps', 'en-pt', 'en-ro', 'en-ru', 'en-rw', 'en-se', 'en-sh', 'en-si', 'en-sk', 'en-sl', 'en-sq', 'en-sr', 'en-sv', 'en-ta', 'en-te', 'en-tg', 'en-th', 'en-tk', 'en-tr', 'en-tt', 'en-ug', 'en-uk', 'en-ur', 'en-uz', 'en-vi', 'en-wa', 'en-xh', 'en-yi', 'en-yo', 'en-zh', 'en-zu', 'fr-nl', 'fr-ru', 'fr-zh', 'nl-ru', 'nl-zh', 'ru-zh']
+[2026-05-20 13:52:43] [WARN] [PHASE-2] OPUS candidate opus_books failed: Config name is missing.
+Please pick one among the available configs: ['ca-de', 'ca-en', 'ca-hu', 'ca-nl', 'de-en', 'de-eo', 'de-es', 'de-fr', 'de-hu', 'de-it', 'de-nl', 'de-pt', 'de-ru', 'el-en', 'el-es', 'el-fr', 'el-hu', 'en-eo', 'en-es', 'en-fi', 'en-fr', 'en-hu', 'en-it', 'en-nl', 'en-no', 'en-pl', 'en-pt', 'en-ru', 'en-sv', 'eo-es', 'eo-fr', 'eo-hu', 'eo-it', 'eo-pt', 'es-fi', 'es-fr', 'es-hu', 'es-it', 'es-nl', 'es-no', 'es-pt', 'es-ru', 'fi-fr', 'fi-hu', 'fi-no', 'fi-pl', 'fr-hu', 'fr-it', 'fr-nl', 'fr-no', 'fr-pl', 'fr-pt', 'fr-ru', 'fr-sv', 'hu-it', 'hu-nl', 'hu-no', 'hu-pl', 'hu-pt', 'hu-ru', 'it-nl', 'it-pt', 'it-ru', 'it-sv']
+Example of usage:
+	`load_dataset('opus_books', 'ca-de')`
+[2026-05-20 13:52:43] [WARN] [PHASE-2] OPUS candidate Helsinki-NLP/ccaligned_v1 failed: Dataset 'Helsinki-NLP/ccaligned_v1' doesn't exist on the Hub or cannot be accessed.
+[2026-05-20 13:52:43] [MILESTONE] [PHASE-2] OPUS complete: 0 pairs, ~0 tokens
+[2026-05-20 13:52:43] [MILESTONE] [PHASE-2] Manifest updated for opus_en_sn
+[2026-05-20 13:52:43] [MILESTONE] [PHASE-2] Source opus_en_sn downloaded - ~0 tokens
+[2026-05-20 13:52:43] [MILESTONE] [PHASE-2] All scraping complete. Total tokens: ~585,419
