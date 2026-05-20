@@ -1,0 +1,8 @@
+project: shona-ai
+model_variant: v0.1-small
+trainer:
+  precision: fp16
+  max_steps: 100000
+  gradient_accumulation_steps: 1
+  checkpoint_every: 1000
+  eval_every: 500
