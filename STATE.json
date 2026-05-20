@@ -2,16 +2,13 @@
   "project": "shona-ai",
   "version": "0.0.1",
   "description": "Most fluent Shona (ChiShona) language model",
-  "github_repo": "https://github.com/YOUR_ORG/shona-ai",
+  "github_repo": "https://github.com/nigelberewere/Shona-ai",
   "huggingface_org": "shona-ai",
-
   "last_updated": "YYYY-MM-DD HH:MM:SS",
   "agent_number": 0,
   "total_agents_run": 0,
-
   "current_phase": 1,
   "current_phase_name": "Project Bootstrap",
-
   "phase_status": {
     "1": "not_started",
     "2": "not_started",
@@ -24,7 +21,6 @@
     "9": "not_started",
     "10": "not_started"
   },
-
   "phase_completion_timestamps": {
     "1": null,
     "2": null,
@@ -37,7 +33,6 @@
     "9": null,
     "10": null
   },
-
   "data_stats": {
     "raw_tokens": 0,
     "clean_tokens": 0,
@@ -48,14 +43,12 @@
     "sources_complete": [],
     "sources_failed": []
   },
-
   "tokenizer_stats": {
     "vocab_size": null,
     "fertility_score": null,
     "coverage_percent": null,
     "trained": false
   },
-
   "model_config": {
     "architecture": "decoder-only transformer",
     "variant": "v0.1-small",
@@ -68,7 +61,6 @@
     "parameters_approx": "25M",
     "implemented": false
   },
-
   "training_stats": {
     "started": false,
     "current_step": 0,
@@ -81,7 +73,6 @@
     "learning_rate": null,
     "diverged": false
   },
-
   "evaluation_results": {
     "shona_bench_gen": null,
     "shona_bench_cloze": null,
@@ -90,7 +81,6 @@
     "vs_gpt4o": null,
     "vs_xglm_564m": null
   },
-
   "git": {
     "last_commit_hash": "",
     "last_commit_message": "",
@@ -98,8 +88,9 @@
     "branch": "main",
     "total_commits": 0
   },
-
   "blocking_issues": [],
-
-  "next_action": "Agent 1: Read INSTRUCTIONS.md, then initialize project structure per Phase 1 checklist in INSTRUCTIONS.md Section 4."
+  "next_action": "Agent 1: Read AGENT_START.md, INSTRUCTIONS.md, HANDOVER.md, STATE.json \u2014 then begin Phase 1 bootstrap.",
+  "agent_model": "unknown",
+  "agent_model_provider": "unknown",
+  "agent_history": []
 }

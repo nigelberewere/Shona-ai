@@ -404,7 +404,7 @@ Use these to sanity-check model output at every phase:
 | English | Shona |
 |---------|-------|
 | Hello, how are you? | Mhoro, makadii? |
-| I am fine | Ndiri well / Ndiripo |
+| I am fine | Ndiri bhoo |
 | What is your name? | Zita rako ndiani? |
 | My name is John | Zita rangu ndiJohn |
 | I love Zimbabwe | Ndinoda Zimbabwe |
@@ -412,7 +412,7 @@ Use these to sanity-check model output at every phase:
 | God | Mwari |
 | Mother | Amai |
 | Child | Mwana |
-| We are going home | Tinoenda kumba |
+| We are going home | Tirikuenda kumba |
 
 ### 9.5 Key Linguistic Challenges for the Model
 1. **Code-switching**: Many Shona speakers mix Shona and English. Model should handle this.
