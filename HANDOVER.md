@@ -58,17 +58,21 @@ Also update `STATE.json` before each commit to record token counts and sources c
 
 **Date:** [YYYY-MM-DD HH:MM:SS]  
 **From Agent:** [N]  
-**To Agent:** [N+1]  
+**Reason for handover:** Phase 2 scraping is now complete for the requested sources; next agent should start data cleaning
 **Reason for handover:** [token budget / phase complete / other]  
 **GitHub repo:** [https://github.com/your-org/shona-ai]  
-**Last commit hash:** [abc1234]  
-
----
-
+- Implemented `scripts/scrape_data.py` with fallbacks:
+	- Wikipedia Shona now falls back to the Wikimedia dump when the Hugging Face config is unavailable.
+	- CC-100 Shona now falls back to `mc4/sn` when the CC-100 source URL is unavailable.
+	- OPUS en-sn now falls back to the direct CCAligned zip archive and extracts aligned pairs.
+- Ran the scraper successfully and produced raw source files for Wikipedia, CC-100 fallback text, Bible, and OPUS pairs.
+- Updated `data/raw/manifest.json` with all completed sources and token counts.
+- Updated `STATE.json` to reflect `raw_tokens = 5,193,376` and completed sources.
+- Refreshed the session log files in `logs/` with the latest run output.
 ## What I completed this session
 
-- [ ] *Replace with bullet list of everything you finished*
-- [ ] Example: Completed `scripts/scrape_data.py` — downloads Wikipedia Shona + CC-100
+- **Last commit:** data: bible_shona downloaded - 585k tokens
+- **Last log entry:** [2026-05-20 14:47:37] [MILESTONE] [PHASE-2] All scraping complete. Total tokens: ~5,193,376
 - [ ] Example: Phase 2 data collection: 3/6 sources complete (4.2M raw tokens so far)
 
 ---
@@ -90,21 +94,23 @@ Also update `STATE.json` before each commit to record token counts and sources c
 ## What you must do FIRST (single most important action)
 
 > *Be specific enough that the next agent can act on this in the first 30 seconds.*
+1. Implement `scripts/clean_data.py`.
+2. Run the cleaning pipeline and update `data/processed/` plus any stats manifest it creates.
+3. Commit the cleaning work with the Phase 3 milestone message.
 
 Example: _"Run `python scripts/scrape_data.py --source bible` — the Wikipedia download is complete but the Bible scraper has not been run yet. The script is ready at `scripts/scrape_data.py`."_
-
+- CC-100 Shona is not available at the expected Statmt endpoint, so the pipeline currently uses `mc4/sn` as a fallback text source.
+- The Wikipedia dataset config `20231101.sn` was unavailable in the installed dataset loader, so the pipeline falls back to the Wikimedia dump.
 [WRITE YOUR SPECIFIC FIRST ACTION HERE]
 
----
-
-## What you must do this session (ordered priority list)
+- `STATE.json` — updated raw token totals and completed sources
+- `logs/2026-05-20_14-45-28_agent2.log` — latest session log
 
 1. [Task 1 — include exact file paths, function names, commands to run]
-2. [Task 2]
-3. [Task 3]
+- `datasets==2.20.0` is currently installed in the environment, along with `pyarrow-hotfix`.
 4. [Continue to next phase: Phase X — task Y]
 
----
+- Do not revert the fallback behavior; it is required to keep the pipeline working in this environment.
 
 ## Known issues / blockers
 

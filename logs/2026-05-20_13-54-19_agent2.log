@@ -20,3 +20,4 @@ Example of usage:
 [2026-05-20 13:54:36] [MILESTONE] [PHASE-2] Manifest updated for opus_en_sn
 [2026-05-20 13:54:36] [MILESTONE] [PHASE-2] Source opus_en_sn downloaded - ~0 tokens
 [2026-05-20 13:54:36] [MILESTONE] [PHASE-2] All scraping complete. Total tokens: ~585,419
+[2026-05-20 13:55:00] [MILESTONE] [PHASE-2] Git commit 6cec462: data: bible_shona downloaded - 585k tokens

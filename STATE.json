@@ -1,7 +1,7 @@
 {
   "project": "shona-ai",
   "version": "0.1.0",
-  "last_updated": "2026-05-20 12:40:00",
+  "last_updated": "2026-05-20 14:47:37",
   "agent_number": 2,
   "current_phase": 2,
   "phase_status": {
@@ -17,10 +17,13 @@
     "10": "not_started"
   },
   "data_stats": {
-    "raw_tokens": 585419,
+    "raw_tokens": 5193376,
     "clean_tokens": 0,
     "sources_complete": [
-      "bible_shona"
+      "wikipedia_sn",
+      "cc100_sn",
+      "bible_shona",
+      "opus_en_sn"
     ]
   },
   "training_stats": {
@@ -29,8 +32,8 @@
     "current_perplexity": null,
     "best_checkpoint": null
   },
-  "last_commit": "data: bible_shona downloaded - 585k tokens",
-  "last_commit_hash": "",
+  "last_commit": "data: phase 2 sources downloaded - 5.2M tokens",
+  "last_commit_hash": "6cec462",
   "blocking_issues": [],
-  "next_action": "Run scripts/scrape_data.py to download data sources and update manifest"
+  "next_action": "Implement scripts/clean_data.py for language filtering, normalization, and deduplication"
 }

@@ -54,5 +54,143 @@
     "docs": 0,
     "path": "data\\raw\\opus\\en-sn_parallel.txt",
     "downloaded_at": "2026-05-20T13:54:36.916925"
+  },
+  {
+    "source": "wikipedia_sn",
+    "tokens": 1864199,
+    "docs": 19280,
+    "path": "data\\raw\\wikipedia\\shona_wiki.txt",
+    "fallback": "wikimedia_dump",
+    "downloaded_at": "2026-05-20T14:16:11.774938"
+  },
+  {
+    "source": "bible_shona",
+    "tokens": 585419,
+    "docs": 95651,
+    "path": "data\\raw\\bible\\shona_bible.txt",
+    "downloaded_at": "2026-05-20T14:16:28.167274"
+  },
+  {
+    "source": "opus_en_sn",
+    "tokens": 0,
+    "docs": 0,
+    "path": "data\\raw\\opus\\en-sn_parallel.txt",
+    "downloaded_at": "2026-05-20T14:17:11.362469"
+  },
+  {
+    "source": "bible_shona",
+    "tokens": 585419,
+    "docs": 95651,
+    "path": "data\\raw\\bible\\shona_bible.txt",
+    "downloaded_at": "2026-05-20T14:17:30.605567"
+  },
+  {
+    "source": "opus_en_sn",
+    "tokens": 0,
+    "docs": 0,
+    "path": "data\\raw\\opus\\en-sn_parallel.txt",
+    "downloaded_at": "2026-05-20T14:17:55.318088"
+  },
+  {
+    "source": "wikipedia_sn",
+    "tokens": 1864199,
+    "docs": 19280,
+    "path": "data\\raw\\wikipedia\\shona_wiki.txt",
+    "fallback": "wikimedia_dump",
+    "downloaded_at": "2026-05-20T14:22:56.032771"
+  },
+  {
+    "source": "bible_shona",
+    "tokens": 585419,
+    "docs": 95651,
+    "path": "data\\raw\\bible\\shona_bible.txt",
+    "downloaded_at": "2026-05-20T14:23:20.050254"
+  },
+  {
+    "source": "opus_en_sn",
+    "tokens": 2743756,
+    "docs": 86867,
+    "path": "data\\raw\\opus\\en-sn_parallel.txt",
+    "downloaded_at": "2026-05-20T14:25:55.706170"
+  },
+  {
+    "source": "bible_shona",
+    "tokens": 585419,
+    "docs": 95651,
+    "path": "data\\raw\\bible\\shona_bible.txt",
+    "downloaded_at": "2026-05-20T14:26:09.497556"
+  },
+  {
+    "source": "opus_en_sn",
+    "tokens": 0,
+    "docs": 0,
+    "path": "data\\raw\\opus\\en-sn_parallel.txt",
+    "downloaded_at": "2026-05-20T14:26:33.796399"
+  },
+  {
+    "source": "cc100_sn",
+    "tokens": 2,
+    "docs": 2,
+    "path": "data\\raw\\cc100\\shona_cc100.txt",
+    "fallback": "mc4/sn",
+    "downloaded_at": "2026-05-20T14:37:51.997992"
+  },
+  {
+    "source": "bible_shona",
+    "tokens": 585419,
+    "docs": 95651,
+    "path": "data\\raw\\bible\\shona_bible.txt",
+    "downloaded_at": "2026-05-20T14:38:02.511539"
+  },
+  {
+    "source": "opus_en_sn",
+    "tokens": 2743756,
+    "docs": 86867,
+    "path": "data\\raw\\opus\\en-sn_parallel.txt",
+    "downloaded_at": "2026-05-20T14:38:48.900351"
+  },
+  {
+    "source": "bible_shona",
+    "tokens": 585419,
+    "docs": 95651,
+    "path": "data\\raw\\bible\\shona_bible.txt",
+    "downloaded_at": "2026-05-20T14:39:13.584125"
+  },
+  {
+    "source": "opus_en_sn",
+    "tokens": 0,
+    "docs": 0,
+    "path": "data\\raw\\opus\\en-sn_parallel.txt",
+    "downloaded_at": "2026-05-20T14:39:41.461985"
+  },
+  {
+    "source": "wikipedia_sn",
+    "tokens": 1864199,
+    "docs": 19280,
+    "path": "data\\raw\\wikipedia\\shona_wiki.txt",
+    "fallback": "wikimedia_dump",
+    "downloaded_at": "2026-05-20T14:45:50.601323"
+  },
+  {
+    "source": "cc100_sn",
+    "tokens": 2,
+    "docs": 2,
+    "path": "data\\raw\\cc100\\shona_cc100.txt",
+    "fallback": "mc4/sn",
+    "downloaded_at": "2026-05-20T14:46:23.227678"
+  },
+  {
+    "source": "bible_shona",
+    "tokens": 585419,
+    "docs": 95651,
+    "path": "data\\raw\\bible\\shona_bible.txt",
+    "downloaded_at": "2026-05-20T14:46:25.582268"
+  },
+  {
+    "source": "opus_en_sn",
+    "tokens": 2743756,
+    "docs": 86867,
+    "path": "data\\raw\\opus\\en-sn_parallel.txt",
+    "downloaded_at": "2026-05-20T14:47:37.217502"
   }
 ]
