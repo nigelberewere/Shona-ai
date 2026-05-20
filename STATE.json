@@ -5,8 +5,8 @@
   "agent_number": 1,
   "current_phase": 1,
   "phase_status": {
-    "1": "in_progress",
-    "2": "not_started",
+    "1": "complete",
+    "2": "in_progress",
     "3": "not_started",
     "4": "not_started",
     "5": "not_started",
@@ -30,5 +30,5 @@
   "last_commit": "chore: agent 1 starting — phase 1",
   "last_commit_hash": "",
   "blocking_issues": [],
-  "next_action": "Complete Phase 1 bootstrap tasks: create folder structure and baseline files."
+  "next_action": "Implement scripts/scrape_data.py with real downloaders for Wikipedia Shona, CC-100, and Bible corpus. Then run it."
 }
