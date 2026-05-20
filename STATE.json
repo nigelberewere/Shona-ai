@@ -1,16 +1,11 @@
 {
   "project": "shona-ai",
-  "version": "0.0.1",
-  "description": "Most fluent Shona (ChiShona) language model",
-  "github_repo": "https://github.com/nigelberewere/Shona-ai",
-  "huggingface_org": "shona-ai",
-  "last_updated": "YYYY-MM-DD HH:MM:SS",
-  "agent_number": 0,
-  "total_agents_run": 0,
+  "version": "0.1.0",
+  "last_updated": "2026-05-20 12:28:46",
+  "agent_number": 1,
   "current_phase": 1,
-  "current_phase_name": "Project Bootstrap",
   "phase_status": {
-    "1": "not_started",
+    "1": "in_progress",
     "2": "not_started",
     "3": "not_started",
     "4": "not_started",
@@ -21,76 +16,19 @@
     "9": "not_started",
     "10": "not_started"
   },
-  "phase_completion_timestamps": {
-    "1": null,
-    "2": null,
-    "3": null,
-    "4": null,
-    "5": null,
-    "6": null,
-    "7": null,
-    "8": null,
-    "9": null,
-    "10": null
-  },
   "data_stats": {
     "raw_tokens": 0,
     "clean_tokens": 0,
-    "train_tokens": 0,
-    "valid_tokens": 0,
-    "test_tokens": 0,
-    "sources_attempted": [],
-    "sources_complete": [],
-    "sources_failed": []
-  },
-  "tokenizer_stats": {
-    "vocab_size": null,
-    "fertility_score": null,
-    "coverage_percent": null,
-    "trained": false
-  },
-  "model_config": {
-    "architecture": "decoder-only transformer",
-    "variant": "v0.1-small",
-    "hidden_size": 512,
-    "num_layers": 8,
-    "num_heads": 8,
-    "intermediate_size": 2048,
-    "max_position_embeddings": 1024,
-    "vocab_size": 32000,
-    "parameters_approx": "25M",
-    "implemented": false
+    "sources_complete": []
   },
   "training_stats": {
-    "started": false,
     "current_step": 0,
-    "total_steps_planned": 100000,
     "current_loss": null,
     "current_perplexity": null,
-    "best_perplexity": null,
-    "best_checkpoint": null,
-    "last_checkpoint": null,
-    "learning_rate": null,
-    "diverged": false
+    "best_checkpoint": null
   },
-  "evaluation_results": {
-    "shona_bench_gen": null,
-    "shona_bench_cloze": null,
-    "shona_bench_nli": null,
-    "shona_bench_translation_bleu": null,
-    "vs_gpt4o": null,
-    "vs_xglm_564m": null
-  },
-  "git": {
-    "last_commit_hash": "",
-    "last_commit_message": "",
-    "last_commit_timestamp": "",
-    "branch": "main",
-    "total_commits": 0
-  },
+  "last_commit": "chore: agent 1 starting — phase 1",
+  "last_commit_hash": "",
   "blocking_issues": [],
-  "next_action": "Agent 1: Read AGENT_START.md, INSTRUCTIONS.md, HANDOVER.md, STATE.json \u2014 then begin Phase 1 bootstrap.",
-  "agent_model": "unknown",
-  "agent_model_provider": "unknown",
-  "agent_history": []
+  "next_action": "Complete Phase 1 bootstrap tasks: create folder structure and baseline files."
 }
