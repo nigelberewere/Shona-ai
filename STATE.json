@@ -1,7 +1,7 @@
 {
   "project": "shona-ai",
   "version": "0.1.0",
-  "last_updated": "2026-05-21 08:46:00",
+  "last_updated": "2026-05-21 10:40:46",
   "agent_number": 4,
   "current_phase": 5,
   "phase_status": {
@@ -18,7 +18,7 @@
   },
   "data_stats": {
     "raw_tokens": 5193376,
-    "clean_tokens": 2133503,
+    "clean_tokens": 3006023,
     "sources_complete": [
       "wikipedia_sn",
       "cc100_sn",
@@ -41,8 +41,6 @@
   },
   "last_commit": "feat: shona BPE tokenizer trained — fertility 1.154",
   "last_commit_hash": "",
-  "blocking_issues": [
-    "cc100_sn fallback produced only 2 raw lines and 0 cleaned lines"
-  ],
+  "blocking_issues": [],
   "next_action": "Implement model/config.py, model/embeddings.py, model/attention.py, model/model.py — full decoder architecture"
 }

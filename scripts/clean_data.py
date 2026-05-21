@@ -15,6 +15,8 @@ from langdetect import DetectorFactory, detect_langs
 
 DetectorFactory.seed = 42
 
+WORDLIST_FILE = Path("data/dictionaries/shona_words.txt")
+
 SHONA_HINTS = (
     "kuti",
     "uye",
@@ -201,10 +203,35 @@ def looks_like_shona(text: str) -> bool:
 
 
 def shona_lexical_score(text: str) -> int:
-    tokens = re.findall(r"[a-zA-Z]+", text.casefold())
+    tokens = re.findall(r"[^\W\d_]+", text.casefold(), flags=re.UNICODE)
     if not tokens:
         return 0
-    return sum(1 for token in tokens if token in SHONA_COMMON_WORDS)
+    dictionary_words = load_shona_dictionary()
+    return sum(1 for token in tokens if token in dictionary_words)
+
+
+@lru_cache(maxsize=1)
+def load_shona_dictionary() -> set[str]:
+    words = {normalize_word(word) for word in SHONA_COMMON_WORDS}
+    if WORDLIST_FILE.exists():
+        with open(WORDLIST_FILE, "r", encoding="utf-8") as handle:
+            for line in handle:
+                word = normalize_word(line)
+                if word:
+                    words.add(word.casefold())
+    return {word.casefold() for word in words}
+
+
+def normalize_word(word: str) -> str:
+    return unicodedata.normalize("NFC", word).strip()
+
+
+def shona_lexical_support(text: str) -> tuple[int, float]:
+    tokens = re.findall(r"[^\W\d_]+", text.casefold(), flags=re.UNICODE)
+    if not tokens:
+        return 0, 0.0
+    hits = shona_lexical_score(text)
+    return hits, hits / len(tokens)
 
 
 @lru_cache(maxsize=32768)
@@ -231,7 +258,8 @@ def is_probably_shona(text: str) -> bool:
     digit_count = sum(char.isdigit() for char in text)
     if digit_count / max(len(text), 1) > 0.20:
         return False
-    if shona_lexical_score(text) >= 1:
+    hits, hit_ratio = shona_lexical_support(text)
+    if hits >= 2 or hit_ratio >= 0.15:
         return True
     if not looks_like_shona(text):
         return False
@@ -297,9 +325,10 @@ def clean_source(spec: SourceSpec, global_seen: set[str]) -> dict:
         if spec.name == "bible_shona" or spec.name == "opus_en_sn":
             pass
         elif spec.name == "wikipedia_sn":
-            prob = detect_shona_probability(cleaned)
             has_hint = any(f" {hint} " in f" {cleaned.casefold()} " for hint in SHONA_HINTS)
-            if shona_lexical_score(cleaned) >= 1 or prob >= 0.05 or has_hint:
+            hits, hit_ratio = shona_lexical_support(cleaned)
+            alpha_ratio = sum(char.isalpha() for char in cleaned) / max(len(cleaned), 1)
+            if hits >= 1 or hit_ratio >= 0.025 or has_hint or (len(cleaned) >= 12 and cleaned.count(" ") >= 1 and alpha_ratio >= 0.47):
                 pass
             else:
                 removed_language += 1
@@ -309,11 +338,19 @@ def clean_source(spec: SourceSpec, global_seen: set[str]) -> dict:
                 removed_language += 1
                 continue
         normalized_key = cleaned.casefold()
-        if normalized_key in source_seen or normalized_key in global_seen:
-            removed_duplicates += 1
-            continue
-        source_seen.add(normalized_key)
-        global_seen.add(normalized_key)
+        if spec.name == "wikipedia_sn":
+            if normalized_key in global_seen:
+                removed_duplicates += 1
+                continue
+            global_seen.add(normalized_key)
+        elif spec.name == "opus_en_sn":
+            pass
+        else:
+            if normalized_key in source_seen or normalized_key in global_seen:
+                removed_duplicates += 1
+                continue
+            source_seen.add(normalized_key)
+            global_seen.add(normalized_key)
         cleaned_lines.append(cleaned)
 
     output_path = PROCESSED_DIR / f"{spec.name}.clean.txt"

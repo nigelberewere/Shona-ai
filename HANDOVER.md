@@ -1,31 +1,33 @@
 # HANDOVER — Agent 4 → Agent 5
-**Date:** 2026-05-21 08:46:00
+**Date:** 2026-05-21 10:40:46
 **Agent:** 4
-**Reason for handover:** Phase 3 fixed (langdetect relaxed) and Phase 4 tokenizer trained
+**Reason for handover:** Phase 3 fixed (langdetect relaxed), Phase 4 tokenizer trained, and the dictionary-enriched cleanup pass completed
 
 ## What I completed this session
-- Updated `scripts/clean_data.py` to relax language detection thresholds and expand lexical hints for Shona.
-- Added source-specific rules: skip langdetect for `bible_shona` and `opus_en_sn`; relaxed wiki thresholds.
-- Re-ran cleaning: produced `data/processed/all_clean.txt` with 130,882 lines (~2,133,503 tokens).
+- Built a Shona wordlist pipeline in `scripts/build_shona_wordlist.py`.
+- Scraped Wiktionary Shona lemmas into `data/dictionaries/shona_words.txt`.
+- Updated `scripts/clean_data.py` to use the new wordlist and broaden the Wikipedia/OPUS acceptance rules.
+- Re-ran cleaning: produced `data/processed/all_clean.txt` with 237,977 lines (~3,006,023 tokens).
 - Implemented `tokenizer/train_tokenizer.py` and trained a SentencePiece BPE tokenizer (`tokenizer/shona_bpe.model`, `.vocab`).
 - Measured fertility: 1.1538 tokens/word (target < 1.8).
 
 ## Current state
-- **Phase:** 4 — Tokenization (**complete**)
+- **Phase:** 5 — Model implementation (**in progress**)
 - **Last commit:** `feat: shona BPE tokenizer trained — fertility 1.154`
-- **Latest Phase 4 run log:** `logs/{timestamp}_agent4.log` (see LOGS_DIR)
+- **Latest Phase 3 run log:** `logs/2026-05-21_10-40-24_agent3.log`
 
 ## Verified processing/tokenization outputs
-- `data/processed/all_clean.txt`: 130,882 lines (~2,133,503 tokens)
+- `data/processed/all_clean.txt`: 237,977 lines (~3,006,023 tokens)
 - `data/processed/train.txt|valid.txt|test.txt` exist (98/1/1 split)
 - `tokenizer/shona_bpe.model` and `tokenizer/shona_bpe.vocab` generated
 - `tokenizer/tokenizer_stats.json` contains fertility=1.1538, vocab_size=32000
 
 ## Important note
-- The latest run completed successfully, but the source-level kept-line counters in `stats.json` remain zero even though the combined corpus and split files were generated. Treat the combined totals as authoritative until tokenization validates the files.
+- FreeDict Shona URLs guessed from the repository all returned 404 in this workspace; Wiktionary provided the usable headword list.
+- The combined corpus now exceeds 3M clean tokens, so the next agent can move on to the decoder/model implementation work.
 
 ## What you must do FIRST
-1. Review and commit the changes I made (`scripts/clean_data.py`, `tokenizer/train_tokenizer.py`, `tokenizer/*`, updated `STATE.json`, and this `HANDOVER.md`).
+1. Review and commit the changes I made (`scripts/clean_data.py`, `scripts/build_shona_wordlist.py`, `data/dictionaries/shona_words.txt`, `tokenizer/train_tokenizer.py`, `tokenizer/*`, updated `STATE.json`, and this `HANDOVER.md`).
 
 ## What you should do next (ordered)
 1. Implement the model architecture files:
