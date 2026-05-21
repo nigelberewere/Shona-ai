@@ -1,79 +1,22 @@
-# WORKING — Agent 5
+# WORKING — Agent 7
 
-**RIGHT NOW:** Starting 10,000-step pilot training using `training/pilot_run.py` with checkpointing and periodic evals.
-
-## Task queue for this session
-
-- [x] Read `AGENT_START.md`, `INSTRUCTIONS.md`, `HANDOVER.md`, `STATE.json`
-- [x] Create agent log and initialize `STATE.json` for Agent 5
-- [x] Implement minimal model architecture (`model/*.py`)
-- [x] Add unit test `tests/test_model.py` and run forward-pass smoke
-- [x] Run 100-step smoke training run and verify loss decreases
-- [x] Commit smoke training results and checkpoint
-- [x] Update `HANDOVER.md` and `PROGRESS.md` before stopping
-- [x] Run 1,000-step pilot training (completed)
-- [ ] Run 10,000-step pilot training (in progress)
-
-## Completed this session
-
-- 2026-05-21 11:30 Agent 5 started; implemented model files and tests; unit test passed.
-# SHONA AI — WORKING STATE
-## This file is updated by the agent BEFORE and AFTER every single task.
-## It is the crash-recovery file. If an agent dies, this shows exactly what it was doing.
-
----
-
-**Agent:** 4  
-**Model:** local (development)  
-**Session started:** 2026-05-21 08:30:00  
-**Last updated:** 2026-05-21 11:06:00  
-**Phase:** 5  
-
----
+**RIGHT NOW:** Diagnosing data loading and sequence shifting issue in training loop.
 
 ## Task queue for this session
-> Agent fills this in AT THE START of the session, then checks off as it goes.
-> If the agent dies, the next agent sees exactly what was done and what wasn't.
 
-- [x] Task 1 — Build Shona wordlist and write `data/dictionaries/shona_words.txt`
-- [x] Task 2 — Update `scripts/clean_data.py` to use dictionary and re-run cleaning
-- [x] Task 3 — Train SentencePiece tokenizer and write `tokenizer/shona_bpe.*`
-- [x] Task 4 — Run tests (`pytest`) and finalize handover
-
----
-
-## RIGHT NOW — what I am currently doing
-> Agent updates this line BEFORE starting each task.
-> This is the most important line in the file.
-> If I die mid-task, the next agent knows exactly what was in progress.
-
-```
-CURRENT TASK: idle — handover complete
-FILE BEING WRITTEN: none
-STARTED AT: 2026-05-21 11:00:00
-STATUS: complete
-```
-
----
+- [x] Initialize session, create log file, and initialize `WORKING.md`
+- [x] Step 1: Check what data the trainer is using (`data/processed/train.txt` and `valid.txt` lines and samples)
+- [/] Step 2: Run a clean 500-step training with honest eval (using `batch_size=4`, `seq_len=256`, `lr=3e-4`)
+- [ ] Step 3: Interpret results and fix training loop if needed
+- [ ] Step 4: Fix `STATE.json` (remove duplicate `training_stats` key, update with real metrics)
+- [ ] Finalize session and update `HANDOVER.md` and `PROGRESS.md`
 
 ## Completed this session
-> Agent appends here immediately after finishing each task. Never waits until the end.
 
 | Time | Task | File | Commit hash |
 |------|------|------|-------------|
-| 10:40 | Build Shona wordlist (Wiktionary fallback) | scripts/build_shona_wordlist.py | 9b253ec |
-| 10:45 | Update cleaner and re-run cleaning; produced processed corpus | scripts/clean_data.py, data/processed/* | 9b253ec |
-| 10:50 | Train SentencePiece tokenizer (32k) | tokenizer/shona_bpe.* | 9b253ec |
-| 11:05 | Finalize handover and record test results | HANDOVER.md | 3b3b4cc |
-
----
-
-## If I was interrupted mid-task
-> For the next agent — check the "RIGHT NOW" section above.
-> The file listed there may be incomplete. Open it and check for:
-> - Missing closing brackets/functions
-> - TODO comments left mid-implementation  
-> - Functions that raise NotImplementedError that should have been replaced
+| 00:46 | Initialize session and log file | logs/2026-05-22_00-45-16_agent7.log, WORKING.md | |
+| 00:48 | Run Step 1 data analysis script | N/A | |
 
 ---
 
