@@ -1,6 +1,6 @@
 """Training utilities for Phase 6 training loop diagnosis and fix.
 
-Trains a causal language model with correct next-token prediction targets.
+Trains a causal language model with correct next-token prediction targets and honest perplexity tracking.
 """
 
 import os
@@ -16,9 +16,8 @@ from model.model import GPTModel
 
 def evaluate(model, val_tensor, cfg, device, batch_size=8):
     model.eval()
-    criterion = nn.CrossEntropyLoss()
     total_loss = 0.0
-    num_samples = 0
+    total_non_pad_tokens = 0
     with torch.no_grad():
         for i in range(0, val_tensor.size(0), batch_size):
             batch = val_tensor[i:i+batch_size].to(device)
@@ -27,16 +26,22 @@ def evaluate(model, val_tensor, cfg, device, batch_size=8):
             x = batch[:, :-1].contiguous()
             y = batch[:, 1:].contiguous()
             logits = model(x)
-            loss = criterion(logits.view(-1, cfg.vocab_size), y.view(-1))
-            total_loss += loss.item() * batch.size(0)
-            num_samples += batch.size(0)
+            
+            # Sum up loss over non-padded tokens for exact mathematical average
+            sum_criterion = nn.CrossEntropyLoss(ignore_index=0, reduction='sum')
+            loss_sum = sum_criterion(logits.view(-1, cfg.vocab_size), y.view(-1))
+            non_pad_tokens = (y != 0).sum().item()
+            
+            total_loss += loss_sum.item()
+            total_non_pad_tokens += non_pad_tokens
+            
     model.train()
-    avg_loss = total_loss / num_samples if num_samples > 0 else 0.0
+    avg_loss = total_loss / total_non_pad_tokens if total_non_pad_tokens > 0 else 0.0
     perplexity = math.exp(avg_loss) if avg_loss < 20 else float('inf')
     return avg_loss, perplexity
 
 
-def train_real_smoke(steps: int = 500, log_interval: int = 100):
+def train_real_smoke(steps: int = 300, log_interval: int = 100):
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
     train_path = 'data/processed/train.txt'
@@ -76,11 +81,13 @@ def train_real_smoke(steps: int = 500, log_interval: int = 100):
     model = GPTModel(cfg).to(device)
     model.train()
 
-    # Hyperparameters requested by step 2
+    # Hyperparameters requested by step 2 / Task 2
     batch_size = 4
     lr = 3e-4
     optimizer = optim.AdamW(model.parameters(), lr=lr)
-    criterion = nn.CrossEntropyLoss()
+    
+    # Ignore padding index 0 for honest loss and perplexity tracking
+    criterion = nn.CrossEntropyLoss(ignore_index=0)
 
     losses = []
     start = time.time()
@@ -107,10 +114,10 @@ def train_real_smoke(steps: int = 500, log_interval: int = 100):
             train_loss_avg = sum(losses[-log_interval:]) / log_interval
             print(f"  step {step} | train_loss={train_loss_avg:.2f} | val_loss={val_loss:.2f} | val_ppl={val_ppl:.1f}")
 
-    # Save checkpoint to training/checkpoints/step_500.pt
+    # Save checkpoint to training/checkpoints/step_300.pt
     ckpt_dir = 'training/checkpoints'
     os.makedirs(ckpt_dir, exist_ok=True)
-    ckpt_path = os.path.join(ckpt_dir, 'step_500.pt')
+    ckpt_path = os.path.join(ckpt_dir, 'step_300.pt')
     torch.save({
         'step': steps,
         'model_state_dict': model.state_dict(),
