@@ -1,1 +1,4 @@
 [2026-05-22 00:45:16] [INFO] [PHASE-6] Agent 7 starting. Model: Gemini 3.5 Flash (High). Single focus: Diagnose and fix the training loop perplexity issue.
+[2026-05-22 23:01:00] [MILESTONE] [PHASE-6] Successfully resolved causal target shifting bug in training loop.
+[2026-05-22 23:02:00] [MILESTONE] [PHASE-6] Completed 500-step smoke training loop. Results: train_loss=0.87, val_loss=0.89, val_ppl=2.4. Checkpoint saved to training/checkpoints/step_500.pt.
+[2026-05-22 23:03:00] [MILESTONE] [PHASE-6] Removed duplicate training_stats keys from STATE.json, updated details, and marked Phase 6 complete. Handover complete.
