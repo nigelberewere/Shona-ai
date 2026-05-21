@@ -1,8 +1,8 @@
 {
   "project": "shona-ai",
   "version": "0.1.0",
-  "last_updated": "2026-05-20 17:14:26",
-  "agent_number": 3,
+  "last_updated": "2026-05-21 08:25:00",
+  "agent_number": 4,
   "current_phase": 3,
   "phase_status": {
     "1": "complete",
@@ -32,10 +32,10 @@
     "current_perplexity": null,
     "best_checkpoint": null
   },
-  "last_commit": "data: phase 2 sources downloaded - 5.2M tokens",
-  "last_commit_hash": "17efe8c",
+  "last_commit": "data: phase 3 re-run — 773,258 clean tokens",
+  "last_commit_hash": "",
   "blocking_issues": [
     "cc100_sn fallback produced only 2 raw lines and 0 cleaned lines"
   ],
-  "next_action": "Start Phase 4 tokenization using data/processed/all_clean.txt and tokenizer/train_tokenizer.py"
+  "next_action": "Decide whether to further relax langdetect (wiki/cc100) or proceed to tokenizer training when clean_tokens >= 3,000,000"
 }

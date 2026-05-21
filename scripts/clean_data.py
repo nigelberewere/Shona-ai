@@ -33,6 +33,7 @@ SHONA_HINTS = (
 
 SHONA_COMMON_WORDS = {
     "mwari",
+    "vana",
     "akati",
     "kuti",
     "uye",
@@ -63,6 +64,53 @@ SHONA_COMMON_WORDS = {
     "akaita",
     "akanga",
 }
+
+# Additional common Shona/Bible/wiki words to improve lexical matching
+SHONA_COMMON_WORDS.update({
+    "mwana",
+    "musha",
+    "shoko",
+    "rudo",
+    "kurarama",
+    "kufamba",
+    "kudya",
+    "ndiri",
+    "uri",
+    "tiri",
+    "saka",
+    "zita",
+    "ndiani",
+    "kumba",
+    "chikoro",
+    "munamato",
+    "vakanga",
+    "zvapera",
+    "ndatenda",
+    "mambo",
+    "vapambi",
+    "shiri",
+    "rima",
+    "mazuva",
+    # Additional Bible / wiki common words
+    "jesu",
+    "kirisitu",
+    "mweya",
+    "mutumwa",
+    "apostora",
+    "mariya",
+    "moses",
+    "isaya",
+    "rufu",
+    "nyasha",
+    "chechi",
+    "baba",
+    "mai",
+    "hama",
+    "mhuri",
+    "zvakanaka",
+    "tsananguro",
+    "shanduro",
+})
 
 NOW = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 LOGS_DIR = Path("logs")
@@ -187,7 +235,7 @@ def is_probably_shona(text: str) -> bool:
         return True
     if not looks_like_shona(text):
         return False
-    return detect_shona_probability(text) >= 0.20
+    return detect_shona_probability(text) >= 0.05
 
 
 def extract_candidates(source: SourceSpec, raw_text: str) -> Iterable[str]:
@@ -242,9 +290,24 @@ def clean_source(spec: SourceSpec, global_seen: set[str]) -> dict:
         if not cleaned:
             removed_junk += 1
             continue
-        if not is_probably_shona(cleaned):
-            removed_language += 1
-            continue
+        # Source-specific language filtering rules:
+        # - bible_shona: trusted source — skip langdetect and keep cleaned lines
+        # - opus_en_sn: parallel file — we already extracted the Shona column, skip langdetect
+        # - wikipedia_sn: relax langdetect threshold to 0.05 OR accept if any Shona hint/lexical match
+        if spec.name == "bible_shona" or spec.name == "opus_en_sn":
+            pass
+        elif spec.name == "wikipedia_sn":
+            prob = detect_shona_probability(cleaned)
+            has_hint = any(f" {hint} " in f" {cleaned.casefold()} " for hint in SHONA_HINTS)
+            if shona_lexical_score(cleaned) >= 1 or prob >= 0.05 or has_hint:
+                pass
+            else:
+                removed_language += 1
+                continue
+        else:
+            if not is_probably_shona(cleaned):
+                removed_language += 1
+                continue
         normalized_key = cleaned.casefold()
         if normalized_key in source_seen or normalized_key in global_seen:
             removed_duplicates += 1
