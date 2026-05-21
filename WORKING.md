@@ -1,27 +1,22 @@
-# WORKING — Agent 7
+# WORKING — Agent 7 (Operator Briefing Tasks)
 
 **RIGHT NOW:** STOPPED — session ended
 
 ## Task queue for this session
 
-- [x] Initialize session, create log file, and initialize `WORKING.md`
-- [x] Step 1: Check what data the trainer is using (`data/processed/train.txt` and `valid.txt` lines and samples)
-- [x] Step 2: Run a clean 500-step training with honest eval (using `batch_size=4`, `seq_len=256`, `lr=3e-4`)
-- [x] Step 3: Interpret results and fix training loop if needed
-- [x] Step 4: Fix `STATE.json` (remove duplicate `training_stats` key, update with real metrics)
-- [x] Finalize session and update `HANDOVER.md` and `PROGRESS.md`
+- [x] Task 1: Audit training data quality using the provided Python audit script.
+- [x] Task 2: Ensure `trainer.py` evaluates on `valid.txt` and trains on `train.txt`. Run exactly 300 steps of training with honest sequence target shifting, ignoring padding token index 0. Save checkpoint to `step_300.pt`.
+- [x] Task 3: Update `STATE.json` and write `HANDOVER.md` with contamination, perplexity, and clear next steps.
+- [x] Finalize session and update `PROGRESS.md` and `walkthrough.md`.
 
 ## Completed this session
 
 | Time | Task | File | Commit hash |
 |------|------|------|-------------|
-| 00:46 | Initialize session and log file | logs/2026-05-22_00-45-16_agent7.log, WORKING.md | 2050ba2 |
-| 00:48 | Run Step 1 data analysis script | N/A | |
-| 00:50 | Rewrite training/trainer.py with shifting | training/trainer.py | f55c85b |
-| 00:51 | Fix view-on-slice RuntimeError in PyTorch | training/trainer.py | ca3bb90 |
-| 22:58 | Run 500-step training loop on CPU | N/A | |
-| 22:59 | Fix STATE.json and mark Phase 6 complete | STATE.json | 8a4058c |
-| 23:00 | Document walkthrough and finalize session | N/A | |
+| 23:07 | Task 1: Run data audit script | scripts/audit_data.py | bd0c57a |
+| 23:12 | Task 2: Run 300-step training loop | training/trainer.py | task-234 |
+| 23:15 | Task 3: Update STATE.json | STATE.json | ebbd293 |
+| 23:18 | Finalize session and documentation | WORKING.md, PROGRESS.md, walkthrough.md | |
 
 ---
 
