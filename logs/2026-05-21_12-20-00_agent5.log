@@ -1,0 +1,2 @@
+[2026-05-21 12:20:00] [INFO] [PHASE-6] Starting real-data 100-step smoke training run (training/trainer.py)
+[2026-05-21 12:34:12] [MILESTONE] [PHASE-6] Real-data smoke training complete: checkpoint written to training/checkpoint_real_smoke.pt
