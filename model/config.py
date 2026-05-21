@@ -10,4 +10,3 @@ class ModelConfig:
     intermediate_size: int = 2048
     max_position_embeddings: int = 1024
     dropout: float = 0.1
-"""Model configuration placeholders for Shona AI."""

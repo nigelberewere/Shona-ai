@@ -1,0 +1,58 @@
+QUICK SWEEP START Thu May 21 20:39:05 2026
+=== PARAMS temp=1.2 top_k=50 rep_pen=1.3 freq_pen=0.6 ===
+PROMPT: mhoro SAMPLE 1 SCORE 0.7213
+mhoro mp mp mp Ana Anaitititititititititit Kihehe uti akawanda akawanda akawanda kudzora kudzora kudzora Sh Shrrrrraa Nou Nou Nou Mazwi Mazwi Mazwi Mazwi USwowowo re re re re re
+---
+PROMPT: mhoro SAMPLE 2 SCORE 0.5410
+mhoro Pasinei Pasinei Pasinei Pasinei Pasinei Pasinei Pasinei local local local local nokukurumidza nokukurumidza nokukurumidzasimudzirasimudzira Mwari Mwari Mwari Mwari Mwari 8 Chin Chin Kw titptp mudenmbamwe inzvimbo inzvimbo inzvimboenterenterenter Coinfallsppppp n Nga Ngalatelatelatevenga Mvura Mvura vuye Haku Haku hand hand sinelel uchinzwa
+---
+PROMPT: maswera sei SAMPLE 1 SCORE 0.4762
+maswera sei sei sei sei dzrashikarashika Pamusoro Vanhu Vanhu Vanhu Vanhu Vanhu Vanhu Vanhuzz Kuva Shandisa Shandisa vanama ndi ndi ndi ndikurirakurirakurira Team indi indi Kudzingwa imi imiguaariariariari ndimukun ndipoç Ch Ch Ch Pakutanga 3. zvakaitwa Nyamavhuvhu paku yandaipuwa yandaipuwa umu umu custo custo custo custostonston
+---
+PROMPT: maswera sei SAMPLE 2 SCORE 0.6667
+maswera sei sei sei sei sei seikurirakurirakurirakurirakurirakurira Akati Akati Akati Akati Uye takapapapapa,,,,,,,,,, ... ... ... ...ark “ “ “ asinasetset Mazwi Mazwi Mazwi Mazwi Vanopfuura Vanopfuuranednedongoongoongoongoongoighighgragra -->
+---
+PROMPT: zita unonzi ani SAMPLE 1 SCORE 0.5238
+zita unonzi ani Ms Ms Ms Ms Ms Ms Muranda Murandaphphph Mutoro Mutoro-90zu ndichi ndichishambira kukurukura kukurukura kukurukura kukurukuraldldldld Chipiri Chipiriherhermimimimiɛgweregwere mupe mupe Ku Ku Ku Ku Ku akawana ini ini ininini neruvara Executive Executive Executive yevanhushanyire ano anoandaka we
+---
+PROMPT: zita unonzi ani SAMPLE 2 SCORE 0.4444
+zita unonzi anitambudzikatambudzikatambudzika akapfeka akapfeka akapfekaNyaNyaeswaeswaeswaeswa mutsetse rakakosha kushandisa kushandisa (1. mutauro zvinoyerera zvinoyereraousnelnelchekachekachekachekacheka dhakaangho nayouruuruuruEEE havasi havasiGIGI Kutamba kuputira Metatrader TNT TNTunuununed good compression compressionbatiAAsosombumbumbu
+---
+=== PARAMS temp=1.4 top_k=50 rep_pen=1.3 freq_pen=0.6 ===
+PROMPT: mhoro SAMPLE 1 SCORE 0.5410
+mhoro Paul Paul Paul Paul Paul Paul yedu yedu yedu yedu yedu yedu yedu – – – –ghgh== chinjika Mukuru '' '' '' '' '' '' '' dzenyikaangaangarwadziwaphiphiphi 3-4 Pa Pa Z Z kwasvika Mazwi Somu mba mba ac//// Lubwisi zvauri Ltd Ltd giveinsinsyokayoka
+---
+PROMPT: mhoro SAMPLE 2 SCORE 0.5410
+mhoroanoanoanoanoano zviende zviende che che che che che che che che kwemazuva kwemazuvafetyfety inofungidzirwa cel arege pri Mukati Mukati Mukati arege aregeriri inclu inclu Chinaws Jesu Jesugalgal kweG vose vose vose vose vosedidi ve ve ve ve importanttrywowowowo kusu 2019 29 For
+---
+PROMPT: maswera sei SAMPLE 1 SCORE 0.5079
+maswera sei sei sei sei sei sei saka saka saka sakaservaservaservaservaserva Cha Cha Cha richavapen zvaka state state state statetambudziko nowa kuEnglish kuEnglish kuEnglish or or or paD paD vavengi mumwe mumwe mumwe facevaivai rakamukamuka Mu MureyreyHààà chikwereti sey common uno unotende!!
+---
+PROMPT: maswera sei SAMPLE 2 SCORE 0.5397
+maswera sei sei sei sei sei team team team teamwidawida____????? inoti inotiEhoro an an an an kundomu kundomu kundomu kundomu kurege zvinokosha Horizonanaanamimimi SSL awanikwa awanikwa fun fun nevakadzi vachaententententent Homaoma-4--4--4-gwere munwo
+---
+PROMPT: zita unonzi ani SAMPLE 1 SCORE 0.4603
+zita unonzi aniththththththththcolor renyu renyu renyuenen nokuti nokuti nokuti nokuti Officerraramalistlistlist kwake kwakebala55 ukama ukamakwirakwira fre exNNNatattuka rikavaGB Star chichavaIspisaremaukukrururujectject kuita kuita kuita kuita well well muimbiyore
+---
+PROMPT: zita unonzi ani SAMPLE 2 SCORE 0.4286
+zita unonzi anizazazazazazazazazazaissan yenyu yenyu yenyu Chaodhekaiunga Laser nekugadzirisaTi zvako zvako zvako Ngoni yemu yemu Ndiramhepo yaMwari kushanyiraNe kufungarovarovarova taka takack Ch Ch Ch Uye Uye Uye poku ruoko ruoko ruokoBeBe Teamkisrura che che che chegezils 5-
+---
+=== PARAMS temp=1.6 top_k=50 rep_pen=1.3 freq_pen=0.6 ===
+PROMPT: mhoro SAMPLE 1 SCORE 0.4262
+mhoro Luxury Luxury LuxuryshongedzashongedzaSheShegalgalgalgalgalgal chiri Simoni Simoni Municipainokun shi zvinoyerera zvinoyerera zvipirisodana pamusoro pamusoro pamusoro inoshanda Mamwereyrey nguva chando chando ⁇  ⁇  ⁇  18 kuSouth kubva kubvapi VaLu VaLu chika San Sanaaa JthonBBBB kureva kurevakabhora
+---
+PROMPT: mhoro SAMPLE 2 SCORE 0.3934
+mhoro - - - - - - - zita zita zita zita zita zita zitachinyakare kushandiswa Kurwisanagbehora tinogonaende Regai sey vanokudzwapfuwo BSdzbasi izvozvo wevanhu mashokoad mazana Thanks ex exvurwivurwivurwi emitan zvi zvi know knowcococo article Optical Vaka Vakarongwarongwa 'ipaipaipa che che
+---
+PROMPT: maswera sei SAMPLE 1 SCORE 0.4762
+maswera sei sei sei zvakasiyana zvakasiyana zvakasiyana zvakasiyana Ki sh shchichichichichi).).).rerererere Shiri In In In guvajpg kudana shelldzdzdz matangijeje ukuru havasi havasimimimimi dicate animals Chirungumbozhadition zvipiriso zvipiriso zvipiriso zvipirisosesiyasiyaguguendadon
+---
+PROMPT: maswera sei SAMPLE 2 SCORE 0.4603
+maswera sei sei sei sei sei sei sei Luganda Luganda Lugandaedzaedzaedza patafura patafuraonlele ino ino inostst pako l Ti vaIsiraeri chinhu chinhupu/dzidzisa tru tru tru Tattoos Tattoos kutenga kutenga Makaforzuluzuluzuluee ichi ichi vatengi vatengi vatengi zvako ndi ndi pano asi asi asi2therther kuzorwa
+---
+PROMPT: zita unonzi ani SAMPLE 1 SCORE 0.3175
+zita unonzi ani1010 naA naA isu ar ar ar ar wokwa wokwahonahona zhinji bedzi bedzi bedzi vi vi mumutauro inorambadanairasiirasicheka Nzira asina glinedembo nayo yega ex ex” bvunzoedza dzenyikaride Maka yakasimbiswa (5fetyfetyfety mhando mhando Zvipo che cheyl kutambudzika Tenerife Tenerife Tenerife state voltage mvura mvura mvura
+---
+PROMPT: zita unonzi ani SAMPLE 2 SCORE 0.3810
+zita unonzi anihurahurahuraX va va va va va va va va Sin SinErigresshishi Up Thanks Thanks akabvuma akabvuma akabvuma value value kuwa pano hwavoshanya KaziziziRR cherosemasema tangi matanhatu apedzaakiraakira muchi muchi muchior AK pambiru grain Wil Mute nenyika nenyikaö gather gather bwusingaperi Carbon
+---

@@ -114,6 +114,156 @@ SHONA_COMMON_WORDS.update({
     "shanduro",
 })
 
+# Ultra-strict whitelist mode: allow only letters, spaces and basic punctuation
+ULTRA_STRICT = True
+ALLOWED_PUNCT = set(".,;:!?\'\-\"()")
+
+STRUCTURAL_REJECT_PATTERNS = [
+    re.compile(pattern, re.IGNORECASE)
+    for pattern in (
+        r"\bclass\s*=", r"\bstyle\s*=", r"\bid\s*=", r"\bdata-\w+\s*=",
+        r"\bbackground(?:-color)?\s*=", r"\bbgcolor\s*=", r"\bfg(?:color)?\s*=",
+        r"\bwidth\s*=", r"\bheight\s*=", r"\bpadding\s*=", r"\bmargin\s*=",
+        r"\bdisplay\s*=", r"\bbuttonlabel\s*=", r"\bvalign\s*=", r"\balign\s*=",
+        r"\bcolspan\s*=", r"\browspan\s*=", r"\bfont-size\s*=", r"\bfont-weight\s*=",
+        r"\bfont-family\s*=", r"\btext-align\s*=", r"\bvertical-align\s*=", r"\bborder\s*=",
+        r"\bshadow\s*=", r"\bframeless\b", r"\bwikitable\b", r"\bmw-[\w-]+\b",
+        r"\bwiki-?template\b", r"\bcategory\s*:", r"\bimage\s*:", r"\bfile\s*:",
+        r"\bindirection\s*:", r"\bpx\b", r"\b(?:\d{1,4}x\d{1,4})px?\b",
+        r"\b(?:right|left|center)\s+frameless\b", r"\bfree\s+ssr\s+peji\b",
+        r"\bthis page has been nominated for speedy deletion\b", r"\brelated zvinogadzirwa\b",
+        r"\bspeedy deletion\b", r"\bnominated for deletion\b", r"\brfc\d+\b", r"\bafd\b",
+        r"\bmediawiki\b", r"\btemplate\b", r"\bbot log\b", r"\btranslation table\b",
+        r"\bmetadata\b", r"\blog(?:ging|page)?\b", r"\b(?:edit|view)\s+history\b",
+        r"\bbutton\s*label\b", r"\bnoinclude\b", r"\bincludeonly\b", r"\bonlyinclude\b",
+        r"\b(?:interwiki|interlanguage)\s*link\b", r"^\s*\|.*\|\s*$", r"^\s*!.*!\s*$",
+        r"'''.+?'''", r"\(\s*(?:v|n|adj|adv)\.\s+[^)]{1,30}\)", r"\(\s*(?:noun|verb|adjective|adverb)\s*\)",
+        r"vanoti\s+[^\s]+\s+kureva\b", r"\b[a-z]{2,40}\s+vanoti\s+[a-z']+\s*\([^)]*\)\s*kureva\b",
+            r"vanoti\s+\w+\s*\([^)]*\)\s*kureva\b",
+        r"\w+-(?:sulfonyl|methyl|phenyl|hydroxyl)\b", r"\d+x\d+x\d+\s+(?:mm|cm|m|km)\b",
+        r"\(\s*[a-z]{1,10}\s*:\s*[a-z]{1,10}\s*\)", r"iso\s+639|unicode\s+block", r"\bcharacteris\b",
+    )
+]
+
+SYSTEM_LOG_PATTERNS = [
+    re.compile(pattern, re.IGNORECASE)
+    for pattern in (
+        r"^la(?:,\s*[a-z]{1,3}){2,}\b", r"^lb(?:,\s*[a-z]{1,3}){2,}\b", r"^li(?:,\s*[a-z]{1,3}){2,}\b",
+        r"\bthis page has been nominated for speedy deletion\b", r"\bfree ssr peji\b", r"\brelated zvinogadzirwa\b",
+        r"\bdownload\b.*\btemplate\b", r"\bvisit\b.*\bwiki\b", r"\b(?:bot|timestamp|edit|revision)\s+(?:log|record|entry)\b",
+        r"\bby user:\b", r"\bat \d{2}:\d{2}", r"{{.{0,60}}}", r"\[\[.*?\|.*?\]\]", r"^\s*\[\[Category:",
+        r"^\s*category\s*:", r"https?://\S+", r"\bwikipedia\b.*\blink\b", r"^\s*(?:row|col|cell|td|th|table)\s*\d+\b",
+        r"latn|zyyy|zinh|zzzz", r"arameic|coptic\s+block", r"\bhebraic\b|\barabic\b.*block", r"\b--\s+and\s+",
+        r"\(by force|compulsorily\)", r"hydrochloride|amine\s+hydrochloride", r"silicones\s+kuratidza",
+    )
+]
+
+DICTIONARY_ENTRY_PATTERNS = [
+    re.compile(pattern, re.IGNORECASE)
+    for pattern in (
+        r"^\s*[a-zàáâãäāăąǎǻ]{2,80}\s*\([^\)]{1,80}\)\s*;\s*(?:to|for|meaning|denotes|means|synonym)",
+        r"^\s*[a-zàáâãäāăąǎǻ]{2,80}\s*:\s*(?:n\.|v\.|adj\.|adv\.|noun|verb|adjective|adverb)\b",
+        r"^\s*[a-zàáâãäāăąǎǻ]{2,80}\s*=\s*[a-zàáâãäāăąǎǻ\s]{2,80}$", r"\b(?:dictionary|gloss|lemma|entry|headword|sense)\b",
+        r"\b(?:translation|equivalent|means?|synonyms?|antonyms?)\s+to\b", r"^\s*[a-zàáâãäāăąǎǻ]{1,40}\s*;\s*[a-z]{1,40}\s*;\s*[a-z]{1,40}\s*$",
+        r"^\s*(?:sn|en|fr|pt|es|sw|zu|xh|ny)\s*[,/]\s*(?:sn|en|fr|pt|es|sw|zu|xh|ny)",
+    )
+]
+
+
+def is_structural_contamination(text: str) -> bool:
+    if not text or len(text.strip()) < 10:
+        return True
+    lower_text = text.casefold()
+    if any(pattern.search(lower_text) for pattern in STRUCTURAL_REJECT_PATTERNS):
+        return True
+    if any(pattern.search(lower_text) for pattern in SYSTEM_LOG_PATTERNS):
+        return True
+    # Reject bare layout fragments or high token repetition
+    token_count = len(text.split())
+    if token_count <= 3 and any(marker in lower_text for marker in ["px", "frameless", "right", "left", "|", "="]):
+        return True
+    # Reject lines mostly non-alphabetic (URLs, hex codes, etc.)
+    alpha_ratio = sum(c.isalpha() for c in text) / max(len(text), 1)
+    if alpha_ratio < 0.45:
+        return True
+    # Ultra-strict whitelist: allow only alphabetic, spaces and a small set of punctuation
+    if ULTRA_STRICT:
+        for c in text:
+            if not (c.isalpha() or c.isspace() or c in ALLOWED_PUNCT):
+                return True
+        # Require higher alphabetic density in ultra-strict mode
+        if alpha_ratio < 0.70:
+            return True
+    # Reject repetitive patterns (sign of junk data)
+    if token_count >= 4:
+        tokens = text.split()
+        most_common = max(set(tokens), key=tokens.count)
+        if tokens.count(most_common) >= token_count * 0.5:
+            return True
+    return False
+
+
+def is_dictionary_entry_like(text: str) -> bool:
+    """Identify lines that are dictionary entries, lemmas, or glosses rather than natural prose."""
+    lower_text = text.casefold().strip()
+    if len(lower_text) < 12:
+        return True
+    token_count = len(lower_text.split())
+    sentence_marks = sum(lower_text.count(mark) for mark in ".?!")
+    # Check dictionary patterns; longer natural text may mention glosses
+    if any(pattern.search(lower_text) for pattern in DICTIONARY_ENTRY_PATTERNS):
+        if token_count < 20 or sentence_marks == 0:
+            return True
+    # Reject structured gloss patterns
+    if "; to " in lower_text or "; for " in lower_text or "; meaning " in lower_text:
+        if token_count < 25 and lower_text.count(";") >= 1:
+            return True
+    # Reject short lines with colon gloss patterns (POS markers)
+    if ":" in lower_text and token_count <= 10:
+        if any(pos in lower_text for pos in [" n. ", " v. ", " adj. ", " adv. ", "(noun)", "(verb)", "(adj)"]):
+            return True
+    # Reject glosses with POS markers in parentheses anywhere in the line
+    gloss_patterns = [
+        r"\(\s*v\.\s+[^)]{1,30}\)", r"\(\s*n\.\s+[^)]{1,30}\)",
+        r"\(\s*adj\.\s+[^)]{1,30}\)", r"\(\s*adv\.\s+[^)]{1,30}\)",
+    ]
+    if any(re.search(pat, lower_text, re.IGNORECASE) for pat in gloss_patterns):
+        if token_count < 25:
+            return True
+
+    # Reject parentheses containing semicolons or English gloss tokens
+    paren_matches = re.findall(r"\(([^)]{1,120})\)", text)
+    for inner in paren_matches:
+        inner_l = inner.lower()
+        if ";" in inner_l:
+            if token_count < 40:
+                return True
+        # common English/function words inside parentheses (sign of gloss/translation)
+        if re.search(r"\b(one|ones|the|and|or|to|of|in|bees|bee|noun|verb|means|meaning|details|detail)\b", inner_l):
+            if token_count < 40:
+                return True
+
+    # Reject lines with "vanoti ... kureva" dictionary pattern (more aggressive)
+    if "vanoti" in lower_text and "kureva" in lower_text:
+        if token_count < 40:
+            return True
+    return False
+
+
+def has_sentence_shape(text: str) -> bool:
+    token_count = len(text.split())
+    if token_count < 5:
+        return False
+    alpha_ratio = sum(char.isalpha() for char in text) / max(len(text), 1)
+    # Text with terminal punctuation and decent alphabetic content
+    if any(mark in text for mark in (".", "?", "!")):
+        return alpha_ratio >= 0.60
+    # Colons and semicolons OK if they structure clauses (sufficient alphabetic content)
+    if any(mark in text for mark in (";", ":")):
+        return token_count >= 8 and alpha_ratio >= 0.62
+    # Prose without punctuation but long and lexically dense
+    return token_count >= 12 and alpha_ratio >= 0.68
+
 NOW = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 LOGS_DIR = Path("logs")
 LOGS_DIR.mkdir(parents=True, exist_ok=True)
@@ -281,6 +431,10 @@ def clean_candidate(text: str) -> str:
     text = normalize_text(text)
     text = strip_html_artifacts(text)
     text = re.sub(r"\s+", " ", text).strip()
+    if is_structural_contamination(text):
+        return ""
+    if is_dictionary_entry_like(text):
+        return ""
     return text
 
 
@@ -316,6 +470,9 @@ def clean_source(spec: SourceSpec, global_seen: set[str]) -> dict:
         candidate_count += 1
         cleaned = clean_candidate(candidate)
         if not cleaned:
+            removed_junk += 1
+            continue
+        if not has_sentence_shape(cleaned):
             removed_junk += 1
             continue
         # Source-specific language filtering rules:
@@ -403,7 +560,7 @@ def write_splits(lines: list[str]) -> dict[str, int]:
     for split_name, split_lines in split_map.items():
         with open(PROCESSED_DIR / f"{split_name}.txt", "w", encoding="utf-8") as handle:
             for line in split_lines:
-                handle.write(line + "\n")
+                handle.write(f"{line} </s>\n")
     return {name: len(lines) for name, lines in split_map.items()}
 
 
@@ -424,7 +581,7 @@ def main() -> None:
     combined_lines = build_combined_corpus(results)
     with open(PROCESSED_DIR / "all_clean.txt", "w", encoding="utf-8") as handle:
         for line in combined_lines:
-            handle.write(line + "\n")
+            handle.write(f"{line} </s>\n")
     split_counts = write_splits(combined_lines.copy())
 
     clean_tokens = sum(len(line.split()) for line in combined_lines)

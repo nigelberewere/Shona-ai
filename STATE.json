@@ -44,5 +44,17 @@
   "last_commit": "train: integrate dataset + trainer; run real-data 100-step smoke",
   "last_commit_hash": "f5ea92e",
   "blocking_issues": [],
-  "next_action": "Run 10k-step pilot with checkpointing and periodic evals"
+  "next_action": "Review sample outputs; consider upload of final checkpoint or further sampling",
+  "generation_artifacts": [
+    "logs/sample_generations.txt",
+    "logs/sample_generations_sampling.txt",
+    "logs/sample_generations_large_context.txt"
+  ],
+  "training_stats": {
+    "current_step": 10000,
+    "current_loss": 0.0001,
+    "current_perplexity": 1.0001,
+    "best_checkpoint": "training/pilot_checkpoints/ckpt_final.pt",
+    "pilot_run": "completed_10k"
+  }
 }
