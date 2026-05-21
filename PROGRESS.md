@@ -31,4 +31,18 @@ This file is append-only. Each agent adds a timestamped session summary at the e
 - Saved the fully verified Phase 6 checkpoint to `training/checkpoints/step_500.pt`.
 - Fixed `STATE.json` by removing the duplicate `training_stats` key and updating build state to mark Phase 6 complete.
 
+## 2026-05-22 — Agent 7 (Operator Briefing Update)
+
+- **Audited Training Data (Task 1)**: Executed data audit script on `data/processed/train.txt`. Total lines: 68,796. Measured English word contamination: **1.9%** (far below the 20% limit). Short lines (<5 words): **0.0%**. Data quality validated as excellent.
+- **Executed 300-Step Honest Training Run (Task 2)**: Ran a clean 300-step training loop on `train.txt` and evaluated on `valid.txt` with correct causal target-shifting and padding index `ignore_index=0` masking.
+  - Metrics at step 100: `train_loss=9.03 | val_loss=7.82 | val_ppl=2498.5`
+  - Metrics at step 200: `train_loss=7.45 | val_loss=7.44 | val_ppl=1708.4`
+  - Metrics at step 300: `train_loss=7.26 | val_loss=7.36 | val_ppl=1577.7`
+  - Validation perplexity is honest (`val_ppl = 1577.7` due to only 300 steps of training from scratch on CPU; drops steadily from 2498.5).
+  - Evaluator is validated: `val_ppl` is well above 2.0 (broken evaluator check passed).
+  - Saved final checkpoint to `training/checkpoints/step_300.pt`.
+- **Diagnosed Previous Pilot Run Checkpoints**: Confirmed that all checkpoints in `training/pilot_checkpoints` were trained with the copy bug (`y = x.clone()`) and are completely invalid (PPL = 166M when evaluated with shifting), making our newly trained `step_300.pt` the first valid starting point.
+- **Updated State & Handover (Task 3)**: Updated `STATE.json` and created a thorough, comprehensive `HANDOVER.md` for Agent 8.
+
+
 
