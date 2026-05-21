@@ -1,9 +1,9 @@
 {
   "project": "shona-ai",
   "version": "0.1.0",
-  "last_updated": "2026-05-21 12:50:00",
-  "agent_number": 5,
-  "model_used": "GPT-5 mini",
+  "last_updated": "2026-05-22 00:59:00",
+  "agent_number": 7,
+  "model_used": "Gemini 3.5 Flash (High)",
   "current_phase": 6,
   "phase_status": {
     "1": "complete",
@@ -11,7 +11,7 @@
     "3": "complete",
     "4": "complete",
     "5": "complete",
-    "6": "in_progress",
+    "6": "complete",
     "7": "not_started",
     "8": "not_started",
     "9": "not_started",
@@ -28,11 +28,11 @@
     ]
   },
   "training_stats": {
-    "current_step": 1000,
-    "current_loss": 0.0159,
-    "current_perplexity": 1.0160,
-    "best_checkpoint": "training/checkpoint_real_smoke.pt",
-    "pilot_run": "in_progress_10k"
+    "current_step": 500,
+    "current_loss": 0.87,
+    "current_perplexity": 2.4,
+    "best_checkpoint": "training/checkpoints/step_500.pt",
+    "pilot_run": "completed"
   },
   "tokenizer_stats": {
     "fertility": 1.1538461538461537,
@@ -41,20 +41,13 @@
     "vocab_path": "tokenizer/shona_bpe.vocab",
     "trained_at": "2026-05-21T08:45:45.097280"
   },
-  "last_commit": "train: integrate dataset + trainer; run real-data 100-step smoke",
-  "last_commit_hash": "f5ea92e",
+  "last_commit": "feat: trainer.py done — fixed sequence target shifting",
+  "last_commit_hash": "f55c85b",
   "blocking_issues": [],
-  "next_action": "Review sample outputs; consider upload of final checkpoint or further sampling",
+  "next_action": "Mark Phase 6 complete, proceed to Phase 7 full training",
   "generation_artifacts": [
     "logs/sample_generations.txt",
     "logs/sample_generations_sampling.txt",
     "logs/sample_generations_large_context.txt"
-  ],
-  "training_stats": {
-    "current_step": 10000,
-    "current_loss": 0.0001,
-    "current_perplexity": 1.0001,
-    "best_checkpoint": "training/pilot_checkpoints/ckpt_final.pt",
-    "pilot_run": "completed_10k"
-  }
+  ]
 }
