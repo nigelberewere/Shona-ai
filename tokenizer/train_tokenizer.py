@@ -18,7 +18,7 @@ def train():
         character_coverage=0.9995,
         model_type="bpe",
         pad_id=0, bos_id=1, eos_id=2, unk_id=3,
-        normalization_rule_name="nfc",
+        # normalization_rule_name="nfc",  # removed: not available in this sentencepiece build
         num_threads=4,
         input_sentence_size=5000000,
         shuffle_input_sentence=True,
