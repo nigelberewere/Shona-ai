@@ -1,7 +1,7 @@
 {
   "project": "shona-ai",
   "version": "0.1.0",
-  "last_updated": "2026-05-21 12:05:00",
+  "last_updated": "2026-05-21 12:35:00",
   "agent_number": 5,
   "model_used": "GPT-5 mini",
   "current_phase": 6,
@@ -40,8 +40,8 @@
     "vocab_path": "tokenizer/shona_bpe.vocab",
     "trained_at": "2026-05-21T08:45:45.097280"
   },
-  "last_commit": "train: 100-step smoke training run complete (checkpoint saved)",
-  "last_commit_hash": "d09cbe8",
+  "last_commit": "train: integrate dataset + trainer; run real-data 100-step smoke",
+  "last_commit_hash": "f5ea92e",
   "blocking_issues": [],
-  "next_action": "Integrate model with training/trainer.py and run another smoke training on a small real dataset slice"
+  "next_action": "Run extended pilot training (e.g., 1000 steps) on real tokenized dataset; monitor loss and checkpoint frequently"
 }
