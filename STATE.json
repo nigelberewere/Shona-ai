@@ -1,7 +1,7 @@
 {
   "project": "shona-ai",
   "version": "0.1.0",
-  "last_updated": "2026-05-21 12:40:00",
+  "last_updated": "2026-05-21 12:45:00",
   "agent_number": 5,
   "model_used": "GPT-5 mini",
   "current_phase": 6,
@@ -28,11 +28,11 @@
     ]
   },
   "training_stats": {
-    "current_step": 0,
-    "current_loss": null,
-    "current_perplexity": null,
-    "best_checkpoint": null,
-    "pilot_run": "started"
+    "current_step": 1000,
+    "current_loss": 0.0159,
+    "current_perplexity": 1.0160,
+    "best_checkpoint": "training/checkpoint_real_smoke.pt",
+    "pilot_run": "completed"
   },
   "tokenizer_stats": {
     "fertility": 1.1538461538461537,
@@ -44,5 +44,5 @@
   "last_commit": "train: integrate dataset + trainer; run real-data 100-step smoke",
   "last_commit_hash": "f5ea92e",
   "blocking_issues": [],
-  "next_action": "Run extended pilot training (1000 steps) on real tokenized dataset; monitor loss and checkpoint frequently"
+  "next_action": "Evaluate pilot run metrics and begin longer pilot (e.g., 10k steps) or tune hyperparameters as needed"
 }

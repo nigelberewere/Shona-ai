@@ -25,7 +25,8 @@ Integrate `model/GPTModel` into `training/trainer.py` and run a 100-step smoke t
 1. Update `training/dataset.py` to load a small HF or file-backed dataset slice from `data/processed/train.txt` and tokenize with `tokenizer/shona_bpe.model`.
 2. Hook the dataset into `training/trainer.py` and configure a small experiment (cfg similar to the smoke config in `training/smoke_train.py`).
 3. Run 100-step smoke training on the real data slice; ensure loss decreases, save checkpoint.
-4. If smoke run succeeds, begin a longer pilot training run (config in `training/config.yaml`).
+4. Pilot training run completed (1,000 steps). See `training/checkpoint_real_smoke.pt`.
+5. Evaluate pilot metrics (loss curve, sample generations), then start a longer pilot or tune hyperparameters.
 
 ## Known issues / blockers
 - Checkpoint files are ignored by `.gitignore` by default; training checkpoints may not be pushed. Use `upload_to_hub.py` or push checkpoints to external storage if required.
