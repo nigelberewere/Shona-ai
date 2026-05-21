@@ -28,10 +28,10 @@
     ]
   },
   "training_stats": {
-    "current_step": 0,
-    "current_loss": null,
-    "current_perplexity": null,
-    "best_checkpoint": null
+    "current_step": 100,
+    "current_loss": 7.3613,
+    "current_perplexity": 1576.42,
+    "best_checkpoint": "training/checkpoint_smoke.pt"
   },
   "tokenizer_stats": {
     "fertility": 1.1538461538461537,
@@ -43,5 +43,5 @@
   "last_commit": "feat: model architecture (minimal) + unit test",
   "last_commit_hash": "0eba24c",
   "blocking_issues": [],
-  "next_action": "Implement model/config.py, model/embeddings.py, model/attention.py, model/model.py — full decoder architecture"
+  "next_action": "Integrate model with training/trainer.py and run another smoke training on a small real dataset slice"
 }

@@ -1,3 +1,20 @@
+# WORKING — Agent 5
+
+**RIGHT NOW:** Run 100-step smoke training run using `training/smoke_train.py` (local synthetic data)
+
+## Task queue for this session
+
+- [x] Read `AGENT_START.md`, `INSTRUCTIONS.md`, `HANDOVER.md`, `STATE.json`
+- [x] Create agent log and initialize `STATE.json` for Agent 5
+- [x] Implement minimal model architecture (`model/*.py`)
+- [x] Add unit test `tests/test_model.py` and run forward-pass smoke
+- [ ] Run 100-step smoke training run and verify loss decreases
+- [ ] Commit smoke training results and checkpoint
+- [ ] Update `HANDOVER.md` and `PROGRESS.md` before stopping
+
+## Completed this session
+
+- 2026-05-21 11:30 Agent 5 started; implemented model files and tests; unit test passed.
 # SHONA AI — WORKING STATE
 ## This file is updated by the agent BEFORE and AFTER every single task.
 ## It is the crash-recovery file. If an agent dies, this shows exactly what it was doing.

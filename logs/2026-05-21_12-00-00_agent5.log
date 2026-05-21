@@ -1,0 +1,2 @@
+[2026-05-21 12:00:00] [INFO] [PHASE-6] Starting 100-step smoke training run (training/smoke_train.py)
+[2026-05-21 12:03:48] [MILESTONE] [PHASE-6] Smoke training complete: first_loss=8.3925 last_loss=7.3613. Checkpoint written to training/checkpoint_smoke.pt
