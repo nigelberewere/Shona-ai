@@ -4,11 +4,11 @@
 
 ---
 
-**Agent:** [N]  
-**Model:** [model name]  
-**Session started:** [YYYY-MM-DD HH:MM:SS]  
-**Last updated:** [YYYY-MM-DD HH:MM:SS]  
-**Phase:** [X]  
+**Agent:** 4  
+**Model:** local (development)  
+**Session started:** 2026-05-21 08:30:00  
+**Last updated:** 2026-05-21 11:06:00  
+**Phase:** 5  
 
 ---
 
@@ -16,9 +16,10 @@
 > Agent fills this in AT THE START of the session, then checks off as it goes.
 > If the agent dies, the next agent sees exactly what was done and what wasn't.
 
-- [ ] Task 1 — [description]
-- [ ] Task 2 — [description]
-- [ ] Task 3 — [description]
+- [x] Task 1 — Build Shona wordlist and write `data/dictionaries/shona_words.txt`
+- [x] Task 2 — Update `scripts/clean_data.py` to use dictionary and re-run cleaning
+- [x] Task 3 — Train SentencePiece tokenizer and write `tokenizer/shona_bpe.*`
+- [x] Task 4 — Run tests (`pytest`) and finalize handover
 
 ---
 
@@ -28,10 +29,10 @@
 > If I die mid-task, the next agent knows exactly what was in progress.
 
 ```
-CURRENT TASK: [exact description of what is being worked on right now]
-FILE BEING WRITTEN: [path/to/file.py]
-STARTED AT: [HH:MM:SS]
-STATUS: [in progress / blocked / complete]
+CURRENT TASK: idle — handover complete
+FILE BEING WRITTEN: none
+STARTED AT: 2026-05-21 11:00:00
+STATUS: complete
 ```
 
 ---
@@ -41,7 +42,10 @@ STATUS: [in progress / blocked / complete]
 
 | Time | Task | File | Commit hash |
 |------|------|------|-------------|
-| [HH:MM] | [task description] | [file path] | [hash] |
+| 10:40 | Build Shona wordlist (Wiktionary fallback) | scripts/build_shona_wordlist.py | 9b253ec |
+| 10:45 | Update cleaner and re-run cleaning; produced processed corpus | scripts/clean_data.py, data/processed/* | 9b253ec |
+| 10:50 | Train SentencePiece tokenizer (32k) | tokenizer/shona_bpe.* | 9b253ec |
+| 11:05 | Finalize handover and record test results | HANDOVER.md | 3b3b4cc |
 
 ---
 
