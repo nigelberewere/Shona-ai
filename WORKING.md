@@ -1,6 +1,6 @@
 # WORKING — Agent 5
 
-**RIGHT NOW:** Run 100-step smoke training run using `training/smoke_train.py` (local synthetic data)
+**RIGHT NOW:** Running 1,000-step pilot training run using `training/trainer.py` on tokenized `data/processed/train.txt` (or fallback synthetic). This may take several minutes.
 
 ## Task queue for this session
 
@@ -8,9 +8,10 @@
 - [x] Create agent log and initialize `STATE.json` for Agent 5
 - [x] Implement minimal model architecture (`model/*.py`)
 - [x] Add unit test `tests/test_model.py` and run forward-pass smoke
-- [ ] Run 100-step smoke training run and verify loss decreases
-- [ ] Commit smoke training results and checkpoint
-- [ ] Update `HANDOVER.md` and `PROGRESS.md` before stopping
+- [x] Run 100-step smoke training run and verify loss decreases
+- [x] Commit smoke training results and checkpoint
+- [x] Update `HANDOVER.md` and `PROGRESS.md` before stopping
+- [ ] Run 1,000-step pilot training (in progress)
 
 ## Completed this session
 
