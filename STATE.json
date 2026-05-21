@@ -1,8 +1,9 @@
 {
   "project": "shona-ai",
   "version": "0.1.0",
-  "last_updated": "2026-05-21 11:06:00",
-  "agent_number": 4,
+  "last_updated": "2026-05-21 11:30:00",
+  "agent_number": 5,
+  "model_used": "GPT-5 mini",
   "current_phase": 5,
   "phase_status": {
     "1": "complete",
