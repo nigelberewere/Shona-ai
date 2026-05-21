@@ -1,3 +1,48 @@
+# HANDOVER — Agent 5 → Agent 6
+**Date:** 2026-05-21 12:05:00
+**Agent:** 5
+**Reason for handover:** Completed model implementation and 100-step smoke training; moving to Phase 6 (training pipeline integration).
+
+## What I completed this session
+- Implemented minimal decoder architecture:
+  - `model/config.py` — dataclass with hyperparameters
+  - `model/embeddings.py` — token + positional embeddings
+  - `model/attention.py` — causal multi-head attention
+  - `model/model.py` — GPT-style decoder stack
+- Added unit test `tests/test_model.py` and verified forward pass (smoke)
+- Implemented `training/smoke_train.py` and ran a 100-step smoke training run on synthetic data; loss decreased (first=8.3925, last=7.3613)
+- Wrote `WORKING.md` for this session and logs: `logs/2026-05-21_11-30-00_agent5.log`, `logs/2026-05-21_12-00-00_agent5.log`
+
+## Current state
+- **Phase:** 6 — Training pipeline (in_progress)
+- **Last commit:** d09cbe8 — train: 100-step smoke training run complete (checkpoint saved)
+- **Last log entry:** [2026-05-21 12:03:48] [MILESTONE] [PHASE-6] Smoke training complete: first_loss=8.3925 last_loss=7.3613
+
+## What you must do FIRST
+Integrate `model/GPTModel` into `training/trainer.py` and run a 100-step smoke training on a small real dataset slice (tokenized lines from `data/processed/train.txt`).
+
+## What you must do this session (ordered)
+1. Update `training/dataset.py` to load a small HF or file-backed dataset slice from `data/processed/train.txt` and tokenize with `tokenizer/shona_bpe.model`.
+2. Hook the dataset into `training/trainer.py` and configure a small experiment (cfg similar to the smoke config in `training/smoke_train.py`).
+3. Run 100-step smoke training on the real data slice; ensure loss decreases, save checkpoint.
+4. If smoke run succeeds, begin a longer pilot training run (config in `training/config.yaml`).
+
+## Known issues / blockers
+- Checkpoint files are ignored by `.gitignore` by default; training checkpoints may not be pushed. Use `upload_to_hub.py` or push checkpoints to external storage if required.
+
+## Files I created or modified this session
+- `model/config.py`, `model/embeddings.py`, `model/attention.py`, `model/model.py` — core model
+- `training/smoke_train.py` — smoke training runner
+- `WORKING.md` — session task tracker
+- `tests/test_model.py` — unit test
+- `logs/2026-05-21_11-30-00_agent5.log`, `logs/2026-05-21_12-00-00_agent5.log`
+
+## Environment notes
+- Python interpreter: same environment used by repository (assumed Python 3.12)
+- No GPU was required; training ran on CPU for the smoke test
+
+## Do NOT do this
+- Do not change tokenizer vocab_size or re-train tokenizer without updating dataset statistics and re-tokenizing the corpus.
 # HANDOVER — Agent 4 → Agent 5
 **Date:** 2026-05-21 10:40:46
 **Agent:** 4
