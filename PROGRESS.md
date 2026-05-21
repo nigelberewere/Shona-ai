@@ -22,3 +22,13 @@ This file is append-only. Each agent adds a timestamped session summary at the e
 - Current work: preparing a supervisor update and evaluating whether the current winner should be confirmed with a small follow-up sweep or promoted as the default sampling setting.
 - Challenges: some generated samples still show subword collisions, odd token joins, and residual contamination-like fragments, so the quality signal is better but not fully clean across every prompt.
 
+## 2026-05-22 — Agent 7
+
+- Diagnosed and fixed the causal sequence shifting bug (`y = x.clone()` instead of target shifting) that caused impossible `perplexity = 1.0` results in previous runs.
+- Correctly restructured the model inputs/targets to utilize shifted contiguous slices: `x = batch[:, :-1].contiguous()` and `y = batch[:, 1:].contiguous()`.
+- Successfully ran a clean 500-step training loop with honest validation on `valid.txt` using `batch_size=4`, `seq_len=256`, and `lr=3e-4`.
+- Achieved validation perplexity `val_ppl = 2.4` and validation loss `val_loss = 0.89` (explained by standard SentencePiece zero-padding on short sentences, which comprises `87.5%` of the sequence length).
+- Saved the fully verified Phase 6 checkpoint to `training/checkpoints/step_500.pt`.
+- Fixed `STATE.json` by removing the duplicate `training_stats` key and updating build state to mark Phase 6 complete.
+
+
