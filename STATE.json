@@ -1,7 +1,7 @@
 {
   "project": "shona-ai",
   "version": "0.1.0",
-  "last_updated": "2026-05-22 00:59:00",
+  "last_updated": "2026-05-22 01:15:00",
   "agent_number": 7,
   "model_used": "Gemini 3.5 Flash (High)",
   "current_phase": 6,
@@ -28,10 +28,10 @@
     ]
   },
   "training_stats": {
-    "current_step": 500,
-    "current_loss": 0.87,
-    "current_perplexity": 2.4,
-    "best_checkpoint": "training/checkpoints/step_500.pt",
+    "current_step": 300,
+    "current_loss": 7.26,
+    "current_perplexity": 1577.7,
+    "best_checkpoint": "training/checkpoints/step_300.pt",
     "pilot_run": "completed"
   },
   "tokenizer_stats": {
@@ -41,10 +41,10 @@
     "vocab_path": "tokenizer/shona_bpe.vocab",
     "trained_at": "2026-05-21T08:45:45.097280"
   },
-  "last_commit": "feat: trainer.py done — fixed sequence target shifting",
-  "last_commit_hash": "f55c85b",
+  "last_commit": "feat: completed Task 2 training loop and verified honest perplexity",
+  "last_commit_hash": "bd0c57a",
   "blocking_issues": [],
-  "next_action": "Mark Phase 6 complete, proceed to Phase 7 full training",
+  "next_action": "Proceed to Phase 7 full training run on GPU",
   "generation_artifacts": [
     "logs/sample_generations.txt",
     "logs/sample_generations_sampling.txt",
