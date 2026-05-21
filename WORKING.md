@@ -1,6 +1,6 @@
 # WORKING — Agent 5
 
-**RIGHT NOW:** Completed 1,000-step pilot training run. Final loss: 0.0159; checkpoint: `training/checkpoint_real_smoke.pt`.
+**RIGHT NOW:** Starting 10,000-step pilot training using `training/pilot_run.py` with checkpointing and periodic evals.
 
 ## Task queue for this session
 
@@ -12,6 +12,7 @@
 - [x] Commit smoke training results and checkpoint
 - [x] Update `HANDOVER.md` and `PROGRESS.md` before stopping
 - [x] Run 1,000-step pilot training (completed)
+- [ ] Run 10,000-step pilot training (in progress)
 
 ## Completed this session
 
