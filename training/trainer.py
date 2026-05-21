@@ -24,8 +24,8 @@ def evaluate(model, val_tensor, cfg, device, batch_size=8):
             batch = val_tensor[i:i+batch_size].to(device)
             if batch.size(0) == 0:
                 continue
-            x = batch[:, :-1]
-            y = batch[:, 1:]
+            x = batch[:, :-1].contiguous()
+            y = batch[:, 1:].contiguous()
             logits = model(x)
             loss = criterion(logits.view(-1, cfg.vocab_size), y.view(-1))
             total_loss += loss.item() * batch.size(0)
@@ -91,8 +91,8 @@ def train_real_smoke(steps: int = 500, log_interval: int = 100):
         batch = train_tensor[idx].to(device)
         
         # Causal shift
-        x = batch[:, :-1]
-        y = batch[:, 1:]
+        x = batch[:, :-1].contiguous()
+        y = batch[:, 1:].contiguous()
 
         optimizer.zero_grad()
         logits = model(x)
