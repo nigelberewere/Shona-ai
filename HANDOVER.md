@@ -41,3 +41,8 @@
 ## Do NOT do this
 - Do not re-run scraping unless intentionally replacing broken sources.
 - Do not change tokenization hyperparameters (vocab_size) without re-running dataset statistics.
+
+## Final checks performed
+- **Tests:** `pytest` — 3 passed, 0 failed.
+- **Git:** commit `9b253ec` created; user confirmed pushed to remote.
+- **Status:** All changes (cleaner, wordlist, tokenizer, `STATE.json`, and this `HANDOVER.md`) are committed and pushed; the repo is ready for model implementation.
