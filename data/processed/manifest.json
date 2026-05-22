@@ -1,0 +1,38 @@
+[
+  {
+    "source": "wikipedia_sn",
+    "input_lines": 341109,
+    "output_lines": 20186,
+    "removed_duplicates": 5542,
+    "removed_language": 0,
+    "removed_junk": 315381,
+    "output_path": "data\\processed\\wikipedia_sn.clean.txt"
+  },
+  {
+    "source": "cc100_sn",
+    "input_lines": 2,
+    "output_lines": 0,
+    "removed_duplicates": 0,
+    "removed_language": 0,
+    "removed_junk": 2,
+    "output_path": "data\\processed\\cc100_sn.clean.txt"
+  },
+  {
+    "source": "bible_shona",
+    "input_lines": 95651,
+    "output_lines": 29114,
+    "removed_duplicates": 110,
+    "removed_language": 0,
+    "removed_junk": 66427,
+    "output_path": "data\\processed\\bible_shona.clean.txt"
+  },
+  {
+    "source": "opus_en_sn",
+    "input_lines": 86867,
+    "output_lines": 20786,
+    "removed_duplicates": 0,
+    "removed_language": 0,
+    "removed_junk": 66081,
+    "output_path": "data\\processed\\opus_en_sn.clean.txt"
+  }
+]

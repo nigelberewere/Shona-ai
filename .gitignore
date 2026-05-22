@@ -19,6 +19,11 @@ pip-wheel-metadata/
 data/raw/*
 !data/raw/manifest.json
 data/processed/*
+!data/processed/train.txt
+!data/processed/valid.txt
+!data/processed/test.txt
+!data/processed/stats.json
+!data/processed/manifest.json
 data/tokenized/*
 data/eval/*
 
