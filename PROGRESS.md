@@ -44,5 +44,12 @@ This file is append-only. Each agent adds a timestamped session summary at the e
 - **Diagnosed Previous Pilot Run Checkpoints**: Confirmed that all checkpoints in `training/pilot_checkpoints` were trained with the copy bug (`y = x.clone()`) and are completely invalid (PPL = 166M when evaluated with shifting), making our newly trained `step_300.pt` the first valid starting point.
 - **Updated State & Handover (Task 3)**: Updated `STATE.json` and created a thorough, comprehensive `HANDOVER.md` for Agent 8.
 
+## 2026-05-22 — Agent 8
+
+- Replaced the legacy 487-line `data/dictionaries/shona_words.txt` file with the expanded 12,850-line wordlist from `shona dictionary/shona_wordlist.txt` so the cleaner can recognize the fuller Shona morphology inventory.
+- Appended 12,119 unique Shona definition sentences from `shona dictionary/shona_dictionary_expanded.json` into `data/processed/all_clean.txt`, then spot-checked the tail to confirm the corpus append landed correctly.
+- Updated `STATE.json` and logged the session start/completion in `logs/2026-05-22_20-27-10_agent8.log`.
+- Next work is the Phase 7 GPU training launch from scratch using the refreshed corpus and corrected causal shifting.
+
 
 

@@ -1,0 +1,2 @@
+[2026-05-22 20:27:10] [INFO] [PHASE-7] Agent 8 starting. Model: GPT-5.4 mini. Previous agent completed: validated the training loop, but the legacy dictionary remained in data/dictionaries/shona_words.txt.
+[2026-05-22 20:28:38] [MILESTONE] [PHASE-7] Replaced data/dictionaries/shona_words.txt with the expanded wordlist (12,850 lines) and appended 12,119 unique definition sentences to data/processed/all_clean.txt; tail spot-check confirmed the append.
