@@ -1,24 +1,29 @@
-# HANDOVER — Agent 8 → Agent 9
-**Date:** 2026-05-22 20:28:38  
-**Agent:** 8  
+# HANDOVER — Agent 9 → Agent 10
+**Date:** 2026-05-23 01:11:15
+**Agent:** 9
 **Model:** GPT-5.4 mini  
-**Reason for Handover:** Refreshed the dictionary used by the cleaning pipeline and augmented the processed corpus with validated Shona definition sentences. The next step is the full Phase 7 training launch.
+**Reason for handover:** Data prep is complete; the corpus has been rebuilt, the dictionary definitions are back in the processed corpus, and Phase 7 training has not been started.
 
----
+## What I completed this session
+- Re-ran `scripts/clean_data.py` with the upgraded morphologically expanded dictionary wordlist.
+- Appended 12,119 Shona `definition_sn` sentences from `shona dictionary/shona_dictionary_expanded.json` back into `data/processed/all_clean.txt` after the clean rebuild.
+- Regenerated `data/processed/train.txt`, `data/processed/valid.txt`, and `data/processed/test.txt` from the refreshed corpus.
+- Verified the final processed corpus size: 82,205 lines and 1,338,677 tokens.
+- Ran a quick tokenizer fertility check on 200 sampled dictionary definition lines and got 1.628973 tokens/word.
+- Updated `STATE.json`, `PROGRESS.md`, and the session log.
+- Committed the corpus refresh as `fad7b27`.
 
-## 1. What I completed
+## Current state
+- **Phase:** 6 — complete
+- **Last commit:** fad7b27 — feat: upgraded shona_words.txt, expanded corpus with dictionary definitions, re-cleaned data
+- **Last log entry:** [2026-05-23 01:11:15] [MILESTONE] [PHASE-3] Final corpus: 82,205 lines, 1,338,677 tokens; fertility sample on 200 dictionary lines: 1.629 tokens/word.
 
-- Replaced `data/dictionaries/shona_words.txt` with the expanded 12,850-line wordlist from `shona dictionary/shona_wordlist.txt`.
-- Appended 12,119 unique `definition_sn` sentences from `shona dictionary/shona_dictionary_expanded.json` into `data/processed/all_clean.txt`.
-- Verified the append by spot-checking the tail of `data/processed/all_clean.txt`; the new definition sentences are present locally in the workspace.
-- Updated `STATE.json` and wrote the session log at `logs/2026-05-22_20-27-10_agent8.log`.
+## What you must do FIRST
+If you continue from here, inspect the refreshed corpus and state snapshot, then start Phase 7 GPU training only on a CUDA host.
 
-## 2. Notes for the next agent
+## What you must do this session (ordered)
+1. Confirm the refreshed corpus statistics in `STATE.json` and `data/processed/stats.json`.
+2. Start Phase 7 training only on a GPU/CUDA host.
 
-1. The cleaning pipeline already reads `data/dictionaries/shona_words.txt`, so the expanded morphology list is now active for any future re-processing.
-2. The processed corpus append is local workspace state; if you need it reproduced from scratch, rebuild it from `shona dictionary/shona_dictionary_expanded.json` and re-run the corpus preparation flow.
-3. The next substantive task is still Phase 7: write and launch `training/train_full.py` for GPU training from scratch with the corrected causal shift and padding mask.
-
-## 3. Safe starting point
-
-Begin by confirming the training entrypoint exists, then launch the full GPU run only after you verify the data loader is consuming the refreshed corpus. Do not reuse the invalid pilot checkpoints.
+## Known issues / blockers
+- `data/processed/all_clean.txt` is a generated corpus artifact and was force-added so the refreshed snapshot is preserved in Git.

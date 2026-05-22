@@ -18,6 +18,13 @@
 | 23:15 | Task 3: Update STATE.json | STATE.json | ebbd293 |
 | 23:18 | Finalize session and documentation | WORKING.md, PROGRESS.md, walkthrough.md | |
 
+## 2026-05-23 — Agent 9 session
+
+- [x] Rebuilt the processed corpus with the upgraded dictionary wordlist.
+- [x] Appended 12,119 dictionary definition lines and regenerated the train/valid/test splits.
+- [x] Measured final corpus size and tokenizer fertility.
+- [x] Updated session metadata files and wrote the agent 9 log.
+
 ---
 
 *This file is updated every single task. Last commit includes this file.*

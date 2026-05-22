@@ -51,5 +51,13 @@ This file is append-only. Each agent adds a timestamped session summary at the e
 - Updated `STATE.json` and logged the session start/completion in `logs/2026-05-22_20-27-10_agent8.log`.
 - Next work is the Phase 7 GPU training launch from scratch using the refreshed corpus and corrected causal shifting.
 
+## 2026-05-23 — Agent 9
+
+- Re-ran `scripts/clean_data.py` with the upgraded dictionary wordlist, then appended 12,119 Shona `definition_sn` lines back into the rebuilt `data/processed/all_clean.txt`.
+- Regenerated `data/processed/train.txt`, `data/processed/valid.txt`, and `data/processed/test.txt` from the refreshed corpus.
+- Final processed corpus size: 82,205 lines and 1,338,677 tokens.
+- Ran a quick tokenizer fertility check on 200 sampled dictionary definition lines; fertility was 1.628973 tokens/word.
+- Updated `STATE.json` and the session handoff notes; Phase 7 training was not started.
+
 
 
