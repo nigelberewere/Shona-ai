@@ -158,6 +158,43 @@ SYSTEM_LOG_PATTERNS = [
     )
 ]
 
+ENGLISH_BOILERPLATE_PATTERNS = [
+    re.compile(pattern, re.IGNORECASE)
+    for pattern in (
+        r"\bapologies? for (?:writing|delivering|addressing) you in english\b",
+        r"\bsorry for (?:writing|delivering|addressing) you in english\b",
+        r"\bplease help translate(?: the)? pages?\b",
+        r"\bplease help translate(?: it)?\b",
+        r"\bplease help us by providing a translation below\b",
+        r"\bwe look forward to collaborating with you\b",
+        r"\bwe welcome your feedback and questions\b",
+        r"\bthank you for your help and your understanding\b",
+        r"\bdo you want to help attract new contributors\b",
+        r"\bdo you want to improve retention of our existing editors\b",
+        r"\bdo you want to strengthen our community\b",
+        r"\bthe wikimedia foundation\b",
+        r"\bwikimedia foundation\b",
+        r"\bwikimedia projects\b",
+        r"\bglobal message delivery\b",
+        r"\btranslatewiki\.net\b",
+        r"\bmeta-wiki\b",
+        r"\bmeta wiki\b",
+        r"\buser experience project\b",
+        r"\bfundraising committee\b",
+        r"\brequest for comment\b",
+        r"\bsecurepoll voting page\b",
+        r"\bthe following are the areas that you will probably be most interested in\b",
+        r"\bfaster loading of javascript files\b",
+        r"\bbetter timezone recognition\b",
+        r"\blanguage converter improved\b",
+        r"\bthe project is divided into three phases\b",
+        r"\blanguage links in the sidebar\b",
+        r"\bthis extension is designed to help organizers\b",
+        r"\bthe three main features of this extension are\b",
+        r"\bwe invite you to take part\b",
+    )
+]
+
 DICTIONARY_ENTRY_PATTERNS = [
     re.compile(pattern, re.IGNORECASE)
     for pattern in (
@@ -177,6 +214,8 @@ def is_structural_contamination(text: str) -> bool:
     if any(pattern.search(lower_text) for pattern in STRUCTURAL_REJECT_PATTERNS):
         return True
     if any(pattern.search(lower_text) for pattern in SYSTEM_LOG_PATTERNS):
+        return True
+    if any(pattern.search(lower_text) for pattern in ENGLISH_BOILERPLATE_PATTERNS):
         return True
     # Reject bare layout fragments or high token repetition
     token_count = len(text.split())
