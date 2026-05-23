@@ -6,3 +6,7 @@
 [2026-05-23 15:59:00] [INFO] [PHASE-2] Regenerated train, valid, test splits with 98/1/1 split using scripts/update_splits_stats.py.
 [2026-05-23 16:00:00] [INFO] [PHASE-2] Updated STATE.json, PROGRESS.md, and HANDOVER.md with new token counts and status.
 [2026-05-23 16:01:00] [INFO] [PHASE-2] Phase 2 Data Collection Sprint complete. Ready for Phase 10 handover.
+[2026-05-23 17:05:00] [INFO] [PHASE-2] Executed strict cleaning pass. Corpus shrunk to 81 lines due to strict 25% dictionary constraint collision.
+[2026-05-23 17:23:00] [INFO] [PHASE-2] Restored raw merged corpus and executed light cleaning pass (stripping tags, technical lines, duplicates, and short lines).
+[2026-05-23 17:24:00] [INFO] [PHASE-2] Regenerated train/valid/test datasets (98/1/1 split). Cleaned corpus size: 129,394 lines (~2,168,210 tokens).
+[2026-05-23 17:25:00] [INFO] [PHASE-2] Updated STATE.json and PROGRESS.md. Session completed.
