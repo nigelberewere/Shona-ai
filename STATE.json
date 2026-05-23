@@ -19,7 +19,7 @@
   },
   "data_stats": {
     "raw_tokens": 7568460,
-    "clean_tokens": 2168210,
+    "clean_tokens": 2031740,
     "sources_complete": [
       "wikipedia_sn",
       "cc100_sn",
@@ -44,7 +44,7 @@
     "vocab_path": "tokenizer/shona_bpe.vocab",
     "trained_at": "2026-05-21T08:45:45.097280"
   },
-  "last_commit": "fix: light corpus cleaning pass - strip tags and technical lines only",
+  "last_commit": "fix: remove URL noise and English leakage from corpus",
   "last_commit_hash": "",
   "blocking_issues": [],
   "next_action": "Evaluate tokenizer fertility and prepare for pre-training run",

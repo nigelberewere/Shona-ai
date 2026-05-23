@@ -1,6 +1,6 @@
 # WORKING — Agent 13
 
-**RIGHT NOW:** STOPPED — Light corpus cleaning complete. Sanity check successful and ready for user review.
+**RIGHT NOW:** STOPPED — Targeted cleaning pass complete. Sanity check successful and ready for final review.
 
 ## Task queue for this session
 
@@ -14,6 +14,7 @@
 - [x] Task 8: Complete Phase 2 handover protocol.
 - [x] Task 9: Execute strict data cleaning pass requested by the user, and report counts and samples before retraining.
 - [x] Task 10: Run much lighter cleaning pass (stripping tags, length and alphabetic density checks, removing duplicates, and splitting) to restore the training corpus.
+- [x] Task 11: Perform targeted cleaning pass to eliminate URL noise, truncation ellipses, price strings, consecutive English blocks, and parenthesized English indicators.
 
 ## Completed this session
 
@@ -27,6 +28,7 @@
 | 16:00 | Task 8: Complete logs and STATE.json | STATE.json, WORKING.md, HANDOVER.md | |
 | 17:05 | Task 9: Strict corpus cleaning pass | data/processed/all_clean.txt, train.txt, valid.txt, test.txt | |
 | 17:24 | Task 10: Light corpus cleaning pass and split update | data/processed/all_clean.txt, train.txt, valid.txt, test.txt | |
+| 17:36 | Task 11: Targeted cleaning pass for URL and English leakage | data/processed/all_clean.txt, train.txt, valid.txt, test.txt | |
 
 ---
 
