@@ -9,4 +9,6 @@
 [2026-05-23 17:05:00] [INFO] [PHASE-2] Executed strict cleaning pass. Corpus shrunk to 81 lines due to strict 25% dictionary constraint collision.
 [2026-05-23 17:23:00] [INFO] [PHASE-2] Restored raw merged corpus and executed light cleaning pass (stripping tags, technical lines, duplicates, and short lines).
 [2026-05-23 17:24:00] [INFO] [PHASE-2] Regenerated train/valid/test datasets (98/1/1 split). Cleaned corpus size: 129,394 lines (~2,168,210 tokens).
-[2026-05-23 17:25:00] [INFO] [PHASE-2] Updated STATE.json and PROGRESS.md. Session completed.
+[2026-05-23 17:36:00] [INFO] [PHASE-2] Executed targeted cleaning pass, removing URLs, trailing ellipses, price strings, and consecutive/parenthesized English words.
+[2026-05-23 17:37:00] [INFO] [PHASE-2] Regenerated splits. Cleaned corpus size: 122,947 lines (~2,031,740 tokens).
+[2026-05-23 17:38:00] [INFO] [PHASE-2] Updated STATE.json and PROGRESS.md. Final session completed.
