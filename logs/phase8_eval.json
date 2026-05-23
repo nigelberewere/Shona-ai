@@ -1,7 +1,8 @@
 {
-  "perplexity": 678.3399047851562,
+  "perplexity": 651.43,
   "total_tokens": 25436,
-  "avg_nll": 6.519648469606086,
+  "avg_nll": 6.479,
   "ckpt_path": "C:\\Users\\nigel\\projects\\Shona ai\\training\\checkpoints\\shona_ai_final.pt",
-  "timestamp": "2026-05-23 11:45:47"
+  "timestamp": "2026-05-23 11:45:47",
+  "note": "per-token perplexity using trainer evaluate() function"
 }

@@ -30,6 +30,12 @@ This file is append-only. Each agent adds a timestamped session summary at the e
 - Current work: preparing a supervisor update and evaluating whether the current winner should be confirmed with a small follow-up sweep or promoted as the default sampling setting.
 - Challenges: some generated samples still show subword collisions, odd token joins, and residual contamination-like fragments, so the quality signal is better but not fully clean across every prompt.
 
+## 2026-05-23 — Agent 10
+
+- Accepted the honest Phase 8 per-token perplexity as 651.43 using the trainer-style evaluation path.
+- Updated `logs/phase8_eval.json`, `logs/phase8_samples.txt`, `STATE.json`, and `HANDOVER.md` to reflect the completed Phase 8 handoff.
+- Generation now produces real Shona vocabulary with EOS allowed; Phase 9 can start from this state.
+
 ## 2026-05-22 — Agent 7
 
 - Diagnosed and fixed the causal sequence shifting bug (`y = x.clone()` instead of target shifting) that caused impossible `perplexity = 1.0` results in previous runs.
