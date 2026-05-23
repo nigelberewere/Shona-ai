@@ -1,2 +1,29 @@
 [2026-05-23 12:30:00] [INFO] [PHASE-8] Agent 10 starting. Model: GPT-5 mini. Previous agent completed: Phase 7 training (100,000 steps, val_ppl=94.1). See HANDOVER.md for full summary.
 [2026-05-23 12:31:05] [ERROR] [PHASE-8] Checkpoint not found in repository at training/checkpoints/shona_ai_final.pt — HANDOVER.md notes checkpoint is local only. Cannot load checkpoint; Phase 8 evaluation blocked until checkpoint is provided.
+[2026-05-23 11:37:07] [INFO] [PHASE-8] Phase 8 runner starting. Using checkpoint: C:\Users\nigel\projects\Shona ai\training\checkpoints\shona_ai_final.pt
+[2026-05-23 11:37:07] [INFO] [PHASE-8] Model loaded on cpu.
+[2026-05-23 11:37:11] [MILESTONE] [PHASE-8] Sample generation saved to C:\Users\nigel\projects\Shona ai\logs\phase8_samples.txt
+[2026-05-23 11:37:11] [INFO] [PHASE-8] Computing perplexity on C:\Users\nigel\projects\Shona ai\data\processed\test.txt
+[2026-05-23 11:37:21] [MILESTONE] [PHASE-8] Eval saved to C:\Users\nigel\projects\Shona ai\logs\phase8_eval.json — perp=678.34 tokens=25436
+[2026-05-23 11:37:21] [INFO] [PHASE-8] STATE.json updated: phase 8 complete
+[2026-05-23 11:37:21] [INFO] [PHASE-8] Committing eval artifacts and STATE.json
+[2026-05-23 11:37:21] [MILESTONE] [PHASE-8] Commit pushed
+[2026-05-23 11:37:49] [INFO] [PHASE-8] Phase 8 runner starting. Using checkpoint: C:\Users\nigel\projects\Shona ai\training\checkpoints\shona_ai_final.pt
+[2026-05-23 11:37:49] [INFO] [PHASE-8] Model loaded on cpu.
+[2026-05-23 11:37:52] [MILESTONE] [PHASE-8] Sample generation saved to C:\Users\nigel\projects\Shona ai\logs\phase8_samples.txt
+[2026-05-23 11:37:52] [INFO] [PHASE-8] Computing perplexity on C:\Users\nigel\projects\Shona ai\data\processed\test.txt
+[2026-05-23 11:38:02] [MILESTONE] [PHASE-8] Eval saved to C:\Users\nigel\projects\Shona ai\logs\phase8_eval.json — perp=678.34 tokens=25436
+[2026-05-23 11:38:02] [INFO] [PHASE-8] STATE.json updated: phase 8 complete
+[2026-05-23 11:38:02] [INFO] [PHASE-8] Committing eval artifacts and STATE.json
+[2026-05-23 11:38:05] [MILESTONE] [PHASE-8] Commit pushed
+[2026-05-23 11:45:02] [INFO] [PHASE-8] Phase 8 runner starting. Using checkpoint: C:\Users\nigel\projects\Shona ai\training\checkpoints\shona_ai_final.pt
+[2026-05-23 11:45:02] [INFO] [PHASE-8] Model loaded on cpu.
+[2026-05-23 11:45:02] [ERROR] [PHASE-8] Exception during Phase 8 run: NameError("name 'greedy_generate' is not defined")
+[2026-05-23 11:45:19] [INFO] [PHASE-8] Phase 8 runner starting. Using checkpoint: C:\Users\nigel\projects\Shona ai\training\checkpoints\shona_ai_final.pt
+[2026-05-23 11:45:19] [INFO] [PHASE-8] Model loaded on cpu.
+[2026-05-23 11:45:38] [MILESTONE] [PHASE-8] Sample generation saved to C:\Users\nigel\projects\Shona ai\logs\phase8_samples.txt
+[2026-05-23 11:45:38] [INFO] [PHASE-8] Computing perplexity on C:\Users\nigel\projects\Shona ai\data\processed\test.txt
+[2026-05-23 11:45:47] [MILESTONE] [PHASE-8] Eval saved to C:\Users\nigel\projects\Shona ai\logs\phase8_eval.json — perp=678.34 tokens=25436
+[2026-05-23 11:45:47] [INFO] [PHASE-8] STATE.json updated: phase 8 complete
+[2026-05-23 11:45:47] [INFO] [PHASE-8] Committing eval artifacts and STATE.json
+[2026-05-23 11:45:51] [MILESTONE] [PHASE-8] Commit pushed

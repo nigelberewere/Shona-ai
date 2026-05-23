@@ -4,7 +4,7 @@
 
 ---
 
-You are **Agent [5]** in a multi-model AI relay building **Shona AI** — the world's most fluent LLM for the Shona language (ChiShona). The project is stored in a GitHub repo at [https://github.com/nigelberewere/Shona-ai.git]. The previous agent has stopped and you are continuing their work.
+You are **Agent [11]** in a multi-model AI relay building **Shona AI** — the world's most fluent LLM for the Shona language (ChiShona). The project is stored in a GitHub repo at [https://github.com/nigelberewere/Shona-ai.git]. The previous agent has stopped and you are continuing their work.
 
 ## Your first action — read these files before doing anything else
 
