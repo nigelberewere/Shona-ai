@@ -1,0 +1,10 @@
+{"prompt": "Mhoro, makadii?", "generated": "Mhoro, makadii?,,,,,,,,,,,,,,,,,,.  ⁇ /s>.  ⁇ /s>.  ⁇ /s>,,. "}
+{"prompt": "Ndiri well", "generated": "Ndiri well,,,,,,,,,,,,,,,,,,,,,.  ⁇ /s>.  ⁇ /s>.  ⁇ /s>,"}
+{"prompt": "Zita rako ndiani?", "generated": "Zita rako ndiani?,,,,,,,,,,,,,,,,,,,.  ⁇ /s>.  ⁇ /s>.  ⁇ /s>,,."}
+{"prompt": "Zita rangu ndiJohn", "generated": "Zita rangu ndiJohn,,,,,,,,,,,,,,,,,,,.  ⁇ /s>.  ⁇ /s>.  ⁇ /s>,,."}
+{"prompt": "Ndinoda Zimbabwe", "generated": "Ndinoda Zimbabwe,,,,,,,,,,,,,,,,,,,,,.  ⁇ /s>.  ⁇ /s>.  ⁇ /s>,"}
+{"prompt": "Mvura", "generated": "Mvura,,,,,,,,,,,,,,,,,,,,,,.  ⁇ /s>.  ⁇ /s>.  ⁇ /s>"}
+{"prompt": "Mwari", "generated": "Mwari,,,,,,,,,,,,,,,,,,,,,,.  ⁇ /s>.  ⁇ /s>.  ⁇ /s>"}
+{"prompt": "Amai", "generated": "Amai,,,,,,,,,,,,,,,,,,,,,,.  ⁇ /s>.  ⁇ /s>.  ⁇ /s>"}
+{"prompt": "Mwana", "generated": "Mwana,,,,,,,,,,,,,,,,,,,,,,.  ⁇ /s>.  ⁇ /s>.  ⁇ /s>"}
+{"prompt": "Tinoenda kumba", "generated": "Tinoenda kumba,,,,,,,,,,,,,,,,,,,,.  ⁇ /s>.  ⁇ /s>.  ⁇ /s>,,"}

@@ -1,10 +1,10 @@
 {
   "project": "shona-ai",
   "version": "0.1.0",
-  "last_updated": "2026-05-23 12:30:00",
+  "last_updated": "2026-05-23 11:38:02",
   "agent_number": 9,
   "model_used": "GPT-5.4 mini",
-  "current_phase": 7,
+  "current_phase": 8,
   "phase_status": {
     "1": "complete",
     "2": "complete",
@@ -13,7 +13,7 @@
     "5": "complete",
     "6": "complete",
     "7": "complete",
-    "8": "not_started",
+    "8": "complete",
     "9": "not_started",
     "10": "not_started"
   },
@@ -32,7 +32,8 @@
     "current_loss": 3.97,
     "current_perplexity": 94.1,
     "best_checkpoint": "training/checkpoints/shona_ai_final.pt",
-    "pilot_run": "completed"
+    "pilot_run": "completed",
+    "eval_perplexity": 678.3399047851562
   },
   "tokenizer_stats": {
     "fertility": 1.1538461538461537,
