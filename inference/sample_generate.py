@@ -1,16 +1,21 @@
-"""Sample generation using the final pilot checkpoint.
+"""Sample generation using the final trained checkpoint.
 
-Loads `training/pilot_checkpoints/ckpt_final.pt`, the SentencePiece tokenizer
+Loads `training/checkpoints/shona_ai_final.pt`, the SentencePiece tokenizer
 at `tokenizer/shona_bpe.model`, and runs greedy generation for a few prompts.
 Saves outputs to `logs/sample_generations.txt` and prints them.
 """
 
 import os
 import time
+import sys
+from pathlib import Path
 from typing import List
 
 import torch
 import torch.nn.functional as F
+
+# Allow running the script directly from the repo root.
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from model.config import ModelConfig
 from model.model import GPTModel
@@ -30,23 +35,17 @@ def load_tokenizer(path: str = 'tokenizer/shona_bpe.model'):
 
 def load_model(ckpt_path: str, tokenizer):
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-
-    cfg = ModelConfig()
-    if tokenizer is not None:
-        cfg.vocab_size = min(tokenizer.GetPieceSize(), 32000)
-    else:
-        cfg.vocab_size = 32000
-    # Match pilot_run architecture
-    cfg.hidden_size = 256
-    cfg.num_layers = 4
-    cfg.num_heads = 8
-    cfg.intermediate_size = 1024
-    cfg.max_position_embeddings = 128
-
-    model = GPTModel(cfg).to(device)
     if not os.path.exists(ckpt_path):
         raise FileNotFoundError(f"Checkpoint not found: {ckpt_path}")
     ckpt = torch.load(ckpt_path, map_location=device)
+
+    cfg = ModelConfig()
+    for key, value in ckpt.get('config', {}).items():
+        setattr(cfg, key, value)
+    if tokenizer is not None:
+        cfg.vocab_size = min(tokenizer.GetPieceSize(), int(getattr(cfg, 'vocab_size', 32000)))
+
+    model = GPTModel(cfg).to(device)
     model.load_state_dict(ckpt['model_state_dict'])
     model.eval()
     return model, cfg, device
@@ -82,14 +81,14 @@ def greedy_generate(model, tokenizer, prompt: str, cfg: ModelConfig, device, max
 
 
 def main():
-    ckpt_path = 'training/pilot_checkpoints/ckpt_final.pt'
+    ckpt_path = 'training/checkpoints/shona_ai_final.pt'
     tokenizer = load_tokenizer()
     model, cfg, device = load_model(ckpt_path, tokenizer)
 
     prompts: List[str] = [
-        'Ndiri kuenda kumusika',
-        'Rudo rwaMwari',
-        'Nhasi zuva rakanaka',
+        'mhoro',
+        'unonzi ani',
+        'uri kuitei',
     ]
 
     os.makedirs('logs', exist_ok=True)

@@ -1,9 +1,9 @@
-PROMPT: Ndiri kuenda kumusika
-GENERATED: Ndiri kuenda kumusika kumusika kumusika kumusika kumusika kumusika kumusika kumusika kumusika kumusika kumusika kumusika kumusika kumusika kumusika kumusika kumusika kumusika kumusika kumusika kumusika kumusika kumusika kumusika kumusika kumusika kumusika kumusika kumusika kumusika kumusika kumusika kumusika kumusika kumusika kumusika kumusika kumusika kumusika kumusika kumusika
+PROMPT: mhoro
+GENERATED: mhoro,,,,,,,,,,,,,,,,,,,,,,.  ⁇ /s>.  ⁇ /s>.  ⁇ /s>
 ---
-PROMPT: Rudo rwaMwari
-GENERATED: Rudo rwaMwarilarlarlarlarlarlarlarlarlarlarlarlarlarlarlarlarlarlarlarlarlarlarlarlarlarlarlarlarlarlarlarlarlarlarlarlarlarlarlarlar
+PROMPT: unonzi ani
+GENERATED: unonzi ani,,,,,,,,,,,,,,,,,,,,,.  ⁇ /s>.  ⁇ /s>.  ⁇ /s>,
 ---
-PROMPT: Nhasi zuva rakanaka
-GENERATED: Nhasi zuva rakanaka rakanaka rakanaka rakanaka rakanaka rakanaka rakanaka rakanaka rakanaka rakanaka rakanaka rakanaka rakanaka rakanaka rakanaka rakanaka rakanaka rakanaka rakanaka rakanaka rakanaka rakanaka rakanaka rakanaka rakanaka rakanaka rakanaka rakanaka rakanaka rakanaka rakanaka rakanaka rakanaka rakanaka rakanaka rakanaka rakanaka rakanaka rakanaka rakanaka rakanaka
+PROMPT: uri kuitei
+GENERATED: uri kuitei,,,,,,,,,,,,,,,,,,,,,.  ⁇ /s>.  ⁇ /s>.  ⁇ /s>,
 ---
