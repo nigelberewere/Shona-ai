@@ -1,0 +1,10 @@
+[2026-05-23 01:30:12] [INFO] [PHASE-3] Agent 3: clean_data.py started
+[2026-05-23 01:30:12] [INFO] [PHASE-3] Cleaning source wikipedia_sn from data\raw\wikipedia\shona_wiki.txt
+[2026-05-23 01:30:29] [MILESTONE] [PHASE-3] wikipedia_sn cleaned: 120330 lines kept from 341109; removed language=81513, junk=87241, duplicates=52025
+[2026-05-23 01:30:29] [INFO] [PHASE-3] Cleaning source cc100_sn from data\raw\cc100\shona_cc100.txt
+[2026-05-23 01:30:29] [MILESTONE] [PHASE-3] cc100_sn cleaned: 0 lines kept from 2; removed language=2, junk=0, duplicates=0
+[2026-05-23 01:30:29] [INFO] [PHASE-3] Cleaning source bible_shona from data\raw\bible\shona_bible.txt
+[2026-05-23 01:30:33] [MILESTONE] [PHASE-3] bible_shona cleaned: 30777 lines kept from 95651; removed language=0, junk=64615, duplicates=259
+[2026-05-23 01:30:33] [INFO] [PHASE-3] Cleaning source opus_en_sn from data\raw\opus\en-sn_parallel.txt
+[2026-05-23 01:30:39] [MILESTONE] [PHASE-3] opus_en_sn cleaned: 86866 lines kept from 86867; removed language=0, junk=1, duplicates=0
+[2026-05-23 01:30:41] [MILESTONE] [PHASE-3] Cleaning complete: 237973 lines, ~3,006,019 tokens

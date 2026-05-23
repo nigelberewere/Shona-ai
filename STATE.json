@@ -1,7 +1,7 @@
 {
   "project": "shona-ai",
   "version": "0.1.0",
-  "last_updated": "2026-05-23 01:11:15",
+  "last_updated": "2026-05-23 04:58:04",
   "agent_number": 9,
   "model_used": "GPT-5.4 mini",
   "current_phase": 6,
@@ -19,7 +19,7 @@
   },
   "data_stats": {
     "raw_tokens": 5193376,
-    "clean_tokens": 1338677,
+    "clean_tokens": 1537149,
     "sources_complete": [
       "wikipedia_sn",
       "cc100_sn",
@@ -41,8 +41,8 @@
     "vocab_path": "tokenizer/shona_bpe.vocab",
     "trained_at": "2026-05-21T08:45:45.097280"
   },
-  "last_commit": "feat: upgraded shona_words.txt, expanded corpus with dictionary definitions, re-cleaned data",
-  "last_commit_hash": "fad7b27",
+  "last_commit": "docs: record data prep session and refreshed corpus state",
+  "last_commit_hash": "64e1360",
   "blocking_issues": [],
   "next_action": "Launch Phase 7 GPU training on a CUDA host only after this data-prep handoff; do not start training on CPU.",
   "generation_artifacts": [

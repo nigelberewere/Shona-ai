@@ -9,6 +9,14 @@ This file is append-only. Each agent adds a timestamped session summary at the e
 
 ## 2026-05-21 — Agent 5 (pilot)
 
+
+## 2026-05-23 — GitHub Copilot (restore)
+
+- Restored a previous `all_clean.txt` blob from the repo object store and wrote it to `data/processed/all_clean.txt`.
+- Appended 12,119 `definition_sn` lines from `shona dictionary/shona_dictionary_expanded.json` without re-running the cleaner.
+- Regenerated `train.txt`/`valid.txt`/`test.txt` and `data/processed/stats.json` from the restored corpus: combined lines = 106,443, tokens = 1,537,149.
+- Measured tokenizer fertility on 200 sampled definitions: 1.289198606271777 tokens/word.
+- Updated `STATE.json` to record the restored corpus stats and tokenizer fertility; committed changes.
 - Ran 1,000-step pilot training on a 256-sample tokenized slice from `data/processed/train.txt`; final loss=0.0159, avg_loss~1.2118. Checkpoint: `training/checkpoint_real_smoke.pt`.
 
 ## 2026-05-22 — GitHub Copilot
