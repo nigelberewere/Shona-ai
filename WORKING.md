@@ -1,6 +1,6 @@
 # WORKING — Agent 13
 
-**RIGHT NOW:** STOPPED — waiting for user input on extreme corpus reduction after strict cleaning pass.
+**RIGHT NOW:** STOPPED — Light corpus cleaning complete. Sanity check successful and ready for user review.
 
 ## Task queue for this session
 
@@ -13,6 +13,7 @@
 - [x] Task 7: Append VOA and OPUS corpora to training datasets, regenerate splits, and update STATE.json/PROGRESS.md.
 - [x] Task 8: Complete Phase 2 handover protocol.
 - [x] Task 9: Execute strict data cleaning pass requested by the user, and report counts and samples before retraining.
+- [x] Task 10: Run much lighter cleaning pass (stripping tags, length and alphabetic density checks, removing duplicates, and splitting) to restore the training corpus.
 
 ## Completed this session
 
@@ -25,6 +26,7 @@
 | 15:52 | Task 6 & 7: Merge VOA & OPUS and update splits | data/processed/all_clean.txt, train.txt, valid.txt, test.txt | |
 | 16:00 | Task 8: Complete logs and STATE.json | STATE.json, WORKING.md, HANDOVER.md | |
 | 17:05 | Task 9: Strict corpus cleaning pass | data/processed/all_clean.txt, train.txt, valid.txt, test.txt | |
+| 17:24 | Task 10: Light corpus cleaning pass and split update | data/processed/all_clean.txt, train.txt, valid.txt, test.txt | |
 
 ---
 

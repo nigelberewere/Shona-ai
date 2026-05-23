@@ -5,20 +5,7 @@ import json
 from pathlib import Path
 from datetime import datetime
 
-def load_dictionary(path):
-    words = set()
-    if os.path.exists(path):
-        with open(path, "r", encoding="utf-8") as f:
-            for line in f:
-                w = line.strip().lower()
-                if w:
-                    if w.startswith("-"):
-                        w = w[1:]
-                    words.add(w)
-    return words
-
-def clean_corpus():
-    dict_path = "data/dictionaries/shona_words.txt"
+def clean_corpus_light():
     backup_path = "data/processed/all_clean.bak.txt"
     voa_path = "data/raw/voa/voa_shona.txt"
     opus_path = "data/raw/opus/opus_shona.txt"
@@ -28,10 +15,6 @@ def clean_corpus():
         print(f"ERROR: Backup file {backup_path} not found!")
         return
         
-    shona_words = load_dictionary(dict_path)
-    print(f"Loaded {len(shona_words):,} words from {dict_path}")
-    
-    # Re-merge in-memory
     print("Loading existing backup lines...")
     with open(backup_path, "r", encoding="utf-8") as f:
         existing_lines = [line.strip() for line in f if line.strip()]
@@ -56,33 +39,36 @@ def clean_corpus():
     cleaned_lines = []
     seen_lines = set()
     
+    fails_pattern = 0
+    fails_length = 0
+    fails_non_alpha = 0
+    fails_duplicate = 0
+    
     for line in raw_lines:
-        # 1. Strip </s> tokens
+        # 1. Strip </s> tags from all lines
         cleaned_line = line.replace("</s>", "").strip()
         cleaned_line = re.sub(r'\s+', ' ', cleaned_line).strip()
         
-        # 3. Remove all lines containing the pattern chemunhu:
+        # 4. Remove lines containing chemunhu:
         if "chemunhu:" in cleaned_line:
+            fails_pattern += 1
             continue
             
-        # 4. Remove all lines shorter than 15 characters after stripping
-        if len(cleaned_line) < 15:
+        # 2. Remove lines shorter than 20 characters after stripping
+        if len(cleaned_line) < 20:
+            fails_length += 1
             continue
             
-        # 2. Remove all lines where more than 25% of words are not found in data/dictionaries/shona_words.txt
-        words = re.findall(r'[a-zA-Z]+', cleaned_line.lower())
-        if not words:
+        # 3. Remove lines where more than 50% of characters are non-alphabetic
+        alpha_count = sum(1 for c in cleaned_line if c.isalpha())
+        if len(cleaned_line) > 0 and (alpha_count / len(cleaned_line)) < 0.50:
+            fails_non_alpha += 1
             continue
             
-        absent_count = sum(1 for w in words if w not in shona_words)
-        absent_ratio = absent_count / len(words)
-        
-        if absent_ratio > 0.25:
-            continue
-            
-        # 5. Deduplicate the entire corpus
+        # 5. Remove exact duplicate lines
         line_key = cleaned_line.casefold()
         if line_key in seen_lines:
+            fails_duplicate += 1
             continue
             
         seen_lines.add(line_key)
@@ -135,14 +121,18 @@ def clean_corpus():
         json.dump(stats, f, indent=2, ensure_ascii=False)
         
     print("\n" + "=" * 50)
-    print("         CLEANING PIPELINE COMPLETE")
+    print("         LIGHT CLEANING COMPLETE")
     print("=" * 50)
+    print(f"Fails 'chemunhu:' pattern:    {fails_pattern:,}")
+    print(f"Fails < 20 chars:             {fails_length:,}")
+    print(f"Fails > 50% non-alpha chars:  {fails_non_alpha:,}")
+    print(f"Fails duplicate check:        {fails_duplicate:,}")
     print(f"Lines before vs after:   {total_lines_before:,} -> {total_lines_after:,}")
     print(f"Tokens before vs after:  {total_tokens_before:,} -> {total_tokens_after:,}")
     print("=" * 50 + "\n")
     
     if cleaned_lines:
-        print("--- 10 Random Samples from Cleaned Corpus ---")
+        print("--- 10 Random Samples from Lightly Cleaned Corpus ---")
         random.seed(123)
         sample_indices = random.sample(range(total_lines_after), min(10, total_lines_after))
         for i, idx in enumerate(sample_indices):
@@ -151,4 +141,4 @@ def clean_corpus():
         print("WARNING: Cleaned corpus is empty!")
 
 if __name__ == "__main__":
-    clean_corpus()
+    clean_corpus_light()
