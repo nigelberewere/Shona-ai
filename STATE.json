@@ -18,15 +18,13 @@
     "10": "not_started"
   },
   "data_stats": {
-    "raw_tokens": 7568460,
-    "clean_tokens": 2031740,
+    "raw_tokens": 5083930,
+    "clean_tokens": 3133991,
     "sources_complete": [
       "wikipedia_sn",
-      "cc100_sn",
       "bible_shona",
-      "opus_en_sn",
       "voa_shona",
-      "opus_shona"
+      "opus_shona_clean"
     ]
   },
   "training_stats": {
@@ -44,7 +42,7 @@
     "vocab_path": "tokenizer/shona_bpe.vocab",
     "trained_at": "2026-05-21T08:45:45.097280"
   },
-  "last_commit": "fix: remove URL noise and English leakage from corpus",
+  "last_commit": "fix: remove CCAligned data, rebuild clean corpus from VOA+Bible+Wikipedia only",
   "last_commit_hash": "",
   "blocking_issues": [],
   "next_action": "Evaluate tokenizer fertility and prepare for pre-training run",
