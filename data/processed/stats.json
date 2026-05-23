@@ -1,13 +1,13 @@
 {
-  "created_at": "2026-05-23T04:57:46.262893",
+  "created_at": "2026-05-23T17:53:33.504459",
   "sources": [],
   "combined": {
-    "lines": 106443,
-    "tokens": 1537149
+    "lines": 252071,
+    "tokens": 3912233
   },
   "splits": {
-    "train": 104314,
-    "valid": 1064,
-    "test": 1065
+    "train": 247029,
+    "valid": 2521,
+    "test": 2521
   }
 }

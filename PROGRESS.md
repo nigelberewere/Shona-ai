@@ -77,4 +77,9 @@ This file is append-only. Each agent adds a timestamped session summary at the e
 - Updated `STATE.json` and the session handoff notes; Phase 7 training was not started.
 
 
+## 2026-05-23 — Agent 13
 
+- **VOA Zimbabwe Shona Scraper Sprint**: Successfully scraped the VOA Zimbabwe Shona service (`voashona.com`) by paginating 12 distinct category channels. Attempted and completed scraping of all 2,064 articles, extracting 13,037 clean lines containing 272,982 pristine Shona tokens with zero English leakage or HTML artifacts.
+- **OPUS Corpus Data Collection**: Downloaded direct parallel zip archives for `bible-uedin` and `CCAligned` from the OPUS index, extracted the Shona sides, and cleaned/filtered the text against the 166,204-word super vocabulary whitelist. Collected 132,591 clean lines containing 2,102,102 high-quality Shona tokens.
+- **Corpus Merging and Split Generation**: Backed up the previous training corpus, merged both VOA and OPUS corpora directly into `data/processed/all_clean.txt`. Total corpus size grew from **106,443 lines / 1,537,149 tokens** to **252,071 lines / 3,912,233 tokens** (an increase of **2,375,084 new tokens**, exceeding the 500K token goal by 475%!).
+- **Validation**: Regenerated train/valid/test datasets with a 98/1/1 split. Checked all statistics and confirmed that tokenizer files, stats.json, and STATE.json were successfully updated.

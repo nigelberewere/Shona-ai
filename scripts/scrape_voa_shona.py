@@ -8,20 +8,33 @@ from pathlib import Path
 
 def load_dictionary(dict_path):
     """
-    Loads valid Shona words from a dictionary file into a set.
+    Loads valid Shona words from a dictionary file and our existing corpus into a set.
     """
     print(f"Loading Shona dictionary from {dict_path}...")
-    if not os.path.exists(dict_path):
-        print(f"ERROR: Dictionary file {dict_path} not found!")
-        return set()
-        
     words = set()
-    with open(dict_path, "r", encoding="utf-8") as f:
-        for line in f:
-            w = line.strip().lower()
-            if w:
-                words.add(w)
-    print(f"Loaded {len(words)} unique Shona dictionary words.")
+    if os.path.exists(dict_path):
+        with open(dict_path, "r", encoding="utf-8") as f:
+            for line in f:
+                w = line.strip().lower()
+                if w:
+                    words.add(w)
+        print(f"Loaded {len(words)} unique Shona dictionary words.")
+    else:
+        print(f"WARNING: Dictionary file {dict_path} not found!")
+        
+    # Super vocabulary enhancement using all_clean.txt corpus
+    corpus_path = "data/processed/all_clean.txt"
+    if os.path.exists(corpus_path):
+        print(f"Loading Shona words from corpus {corpus_path}...")
+        try:
+            with open(corpus_path, "r", encoding="utf-8") as f:
+                content = f.read().lower()
+                corpus_words = set(re.findall(r'[a-z]+', content))
+            words.update(corpus_words)
+            print(f"Loaded {len(corpus_words)} words from corpus. Total vocabulary size: {len(words)}")
+        except Exception as e:
+            print(f"WARNING: Failed to load words from corpus: {e}")
+            
     return words
 
 def clean_html(text):

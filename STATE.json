@@ -1,9 +1,9 @@
 {
   "project": "shona-ai",
   "version": "0.1.0",
-  "last_updated": "2026-05-23 14:22:20",
-  "agent_number": 12,
-  "model_used": "Gemini 1.5 Pro",
+  "last_updated": "2026-05-23 15:55:00",
+  "agent_number": 13,
+  "model_used": "Antigravity (Gemini)",
   "current_phase": 2,
   "phase_status": {
     "1": "complete",
@@ -18,13 +18,15 @@
     "10": "not_started"
   },
   "data_stats": {
-    "raw_tokens": 5193376,
-    "clean_tokens": 1537149,
+    "raw_tokens": 7568460,
+    "clean_tokens": 3912233,
     "sources_complete": [
       "wikipedia_sn",
       "cc100_sn",
       "bible_shona",
-      "opus_en_sn"
+      "opus_en_sn",
+      "voa_shona",
+      "opus_shona"
     ]
   },
   "training_stats": {
@@ -42,10 +44,10 @@
     "vocab_path": "tokenizer/shona_bpe.vocab",
     "trained_at": "2026-05-21T08:45:45.097280"
   },
-  "last_commit": "feat: Phase 9 complete - FastAPI inference API server complete",
-  "last_commit_hash": "b2c6a4d",
+  "last_commit": "feat: add VOA Zimbabwe Shona corpus",
+  "last_commit_hash": "",
   "blocking_issues": [],
-  "next_action": "VOA Shona and OPUS Shona data collection sprint",
+  "next_action": "Evaluate tokenizer fertility and prepare for pre-training run",
   "generation_artifacts": [
     "logs/sample_generations.txt",
     "logs/sample_generations_sampling.txt",
