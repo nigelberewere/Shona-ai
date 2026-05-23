@@ -1,30 +1,10 @@
 {
-  "created_at": "2026-05-23T23:24:25.568442",
-  "sources": {
-    "voa": {
-      "raw_lines": 13037,
-      "raw_tokens": 272982
-    },
-    "opus_clean": {
-      "raw_lines": 125475,
-      "raw_tokens": 1932686
-    },
-    "bible": {
-      "raw_lines": 95651,
-      "raw_tokens": 585419
-    },
-    "wikipedia": {
-      "raw_lines": 274230,
-      "raw_tokens": 1864199
-    }
-  },
-  "combined": {
-    "lines": 246706,
-    "tokens": 3133991
-  },
-  "splits": {
-    "train": 241771,
-    "valid": 2467,
-    "test": 2468
-  }
+  "total_lines": 272779,
+  "total_tokens": 3773335,
+  "train_lines": 267325,
+  "valid_lines": 2727,
+  "test_lines": 2727,
+  "train_tokens": 3698970,
+  "valid_tokens": 37400,
+  "test_tokens": 36965
 }

@@ -1,13 +1,13 @@
 {
   "project": "shona-ai",
   "version": "0.1.0",
-  "last_updated": "2026-05-23 15:55:00",
-  "agent_number": 13,
+  "last_updated": "2026-05-23 23:28:00",
+  "agent_number": 14,
   "model_used": "Antigravity (Gemini)",
   "current_phase": 2,
   "phase_status": {
     "1": "complete",
-    "2": "in_progress",
+    "2": "complete",
     "3": "complete",
     "4": "complete",
     "5": "complete",
@@ -18,13 +18,16 @@
     "10": "not_started"
   },
   "data_stats": {
-    "raw_tokens": 5083930,
-    "clean_tokens": 3133991,
+    "raw_tokens": 5723274,
+    "clean_tokens": 3773335,
     "sources_complete": [
       "wikipedia_sn",
       "bible_shona",
       "voa_shona",
-      "opus_shona_clean"
+      "opus_shona_clean",
+      "masakhane_sn",
+      "internet_archive_literature",
+      "voa_historical_archive"
     ]
   },
   "training_stats": {
@@ -42,10 +45,10 @@
     "vocab_path": "tokenizer/shona_bpe.vocab",
     "trained_at": "2026-05-21T08:45:45.097280"
   },
-  "last_commit": "fix: remove CCAligned data, rebuild clean corpus from VOA+Bible+Wikipedia only",
+  "last_commit": "feat: literature and news data collection sprint",
   "last_commit_hash": "",
   "blocking_issues": [],
-  "next_action": "Evaluate tokenizer fertility and prepare for pre-training run",
+  "next_action": "Retrain Shona AI model on the expanded 3.77M token corpus",
   "generation_artifacts": [
     "logs/sample_generations.txt",
     "logs/sample_generations_sampling.txt",

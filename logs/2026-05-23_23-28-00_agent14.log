@@ -1,0 +1,20 @@
+[2026-05-23 21:44:00] [INFO] [PHASE-2] Agent 14 starting. Model: Antigravity (Gemini).
+[2026-05-23 21:52:32] [INFO] [PHASE-2] Commencing Job 2: Additional data collection sprint.
+[2026-05-23 22:03:07] [INFO] [PHASE-2] Masakhane scraper run completed. Successfully loaded masakhanews and mafand splits, yielding 5,244 raw unique lines.
+[2026-05-23 22:05:54] [INFO] [PHASE-2] Internet Archive API crawler completed. Successfully parsed subject:"Shona language" texts, downloading 14,537 lines.
+[2026-05-23 22:06:12] [INFO] [PHASE-2] VOA Shona sitemap search completed. Downloaded sitemap_436_1.xml.gz and sitemap_436_2.xml.gz, extracted 40,000 unique article URLs.
+[2026-05-23 22:07:42] [INFO] [PHASE-2] Internet Archive strict cleaning run completed. Filtered out English text, OCR anomalies, and noise. Retained 1,507 clean Shona lines (10,069 tokens).
+[2026-05-23 22:14:03] [INFO] [PHASE-2] VOA historical scraper run 1 completed. Concurrently crawled 3,500 sampled URLs using 40 threads, saving 9,569 raw lines (198,987 tokens).
+[2026-05-23 22:23:21] [INFO] [PHASE-2] VOA historical scraper run 2 completed. Concurrently crawled 6,000 additional sampled URLs using 40 threads with seed 2026, saving 16,077 raw lines (334,886 tokens).
+[2026-05-23 22:28:03] [INFO] [PHASE-2] compiler_additional_data.py execution completed. 
+  - Masakhane: Cleaned and integrated 3,899 lines (202,729 tokens).
+  - Literature: Cleaned and integrated 1,507 lines (10,069 tokens).
+  - VOA Archive: Cleaned and integrated 23,318 lines (481,547 tokens).
+  - Net Growth: +12,522 unique lines and +256,878 tokens added over first-pass baseline.
+  - Overall Sprint Gain: +639,344 clean tokens added to Gold baseline.
+  - Final Corpus Size: 272,779 lines, 3,773,335 tokens.
+[2026-05-23 22:28:04] [INFO] [PHASE-2] Shuffled and regenerated dataset splits (98/1/1 split):
+  - train.txt: 267,325 lines
+  - valid.txt: 2,727 lines
+  - test.txt: 2,727 lines
+[2026-05-23 23:28:00] [INFO] [PHASE-2] Handover files, STATE.json, and progress logs updated. Sprint successfully completed!

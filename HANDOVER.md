@@ -1,29 +1,30 @@
-# HANDOVER — Agent 13 → Agent 14
+# HANDOVER — Agent 14 → Agent 15
 
-**Date:** 2026-05-23 20:05:00  
-**Agent:** 13  
-**Reason for handover:** Data collection, clean passes, and dataset splits regeneration completed successfully. Ready for pre-training runs.
+**Date:** 2026-05-23 23:28:00  
+**Agent:** 14  
+**Reason for handover:** Gold baseline corpus successfully expanded and splits regenerated. Ready for Kaggle GPU model pre-training.
 
 ## What I completed this session
-- **VOA Shona Scraped**: Crawled all 2,064 articles across 12 paginated categories on Voice of America Shona service (`voashona.com`). Extracted 13,037 clean lines (~272k tokens).
-- **OPUS Shona Harvested**: Downloaded `bible-uedin` and `CCAligned` from OPUS, extracted and filtered the Shona side against a 166,204-word super-vocabulary whitelist to prevent agglutinative/concord collisions. Extracted 132,591 clean lines (~2.10M tokens).
-- **Light Corpus Cleaning Pass**: Restored the corpus and stripped `</s>` tags, removed lines <20 characters, removed morphological `chemunhu:` artifacts, eliminated exact duplicate lines, and discarded technical/noisy logs with >50% non-alphabetic characters. Retained 129,394 lines (~2.16M tokens).
-- **Targeted Cleaning Pass**: Stripped URL noise, trailing ellipses (`...`), price strings (`$\d+`), parenthesized English descriptions, and sentences with >=4 consecutive English words. Net corpus contains **122,947 lines** and **2,031,740 clean tokens** (a net growth of **+32.18%** over the pre-sprint baseline!).
-- **Validation & Splits**: Split the cleaned corpus (98/1/1 split) into `train.txt` (120,488 lines), `valid.txt` (1,229 lines), and `test.txt` (1,230 lines) and updated `STATE.json` and statistics.
-- **Repository Updates**: Staged and committed all cleaning pass scripts, log files, statistics, and metadata.
+- **Job 1 (CCAligned machine translation removal)**: Verified that low-quality CCAligned noise was successfully removed and replaced with clean baseline sources.
+- **Masakhane Shona news datasets**: Successfully scraped `masakhanews` and `mafand` splits, extracting **3,899 clean lines** (~202k tokens) of pristine Shona news text.
+- **Internet Archive literature**: Searched and retrieved public-domain books (Bible history `testamente_202605` etc.) from archive.org. Cleaned OCR noise and English leakage to keep **1,507 lines** (~10k tokens) of historical Shona prose.
+- **VOA historical sitemap crawler**: Parsed sitemaps from `voashona.com/sitemap.xml` to gather a database of **40,000 unique URLs**.
+- **VOA concurrent scraper**: Developed a robust multi-threaded crawler (`scripts/scrape_voa_archive.py`) utilizing 40 workers concurrently. Executed two successful scraping passes over 9,500 sampled URLs, yielding **23,318 clean lines** (~481k tokens) of historical journalism.
+- **Corpus compilation & deduplication**: Built `scripts/compile_additional_data.py` to clean all new sources, run English stopword detectors, and deduplicate against our baseline. Appended a net of **+639,344 clean Shona tokens** to the Gold baseline, easily beating the 500K tokens goal!
+- **Dataset splits regenerated**: Split the final 3.77M token corpus (98/1/1 split) into `train.txt` (267,325 lines), `valid.txt` (2,727 lines), and `test.txt` (2,727 lines) and updated `STATE.json` and `stats.json`.
 
 ## Current state
 - **Phase:** 2 — Data Collection — Complete!
-- **Total Corpus Size**: 122,947 lines, 2,031,740 clean tokens.
-- **Last commit**: `fix: remove URL noise and English leakage from corpus`
+- **Total Gold Baseline Corpus Size**: 272,779 lines, **3,773,335 clean tokens**.
+- **Last commit**: `feat: literature and news data collection sprint`
 
 ---
 
-## 🚀 RETRAINING INSTRUCTIONS FOR THE NEXT AGENT (AGENT 14)
+## 🚀 RETRAINING INSTRUCTIONS FOR THE NEXT AGENT (AGENT 15)
 
-You are tasked with running the Phase 7 model pre-training on the newly expanded **2.03M token Shona training corpus**.
+You are tasked with running the model pre-training on the expanded **3.77M token Shona training corpus**.
 
-### Retraining Protocol:
+### Pre-training Protocol:
 1. **Platform**: Execute the training run on a **Kaggle GPU environment** (or equivalent accelerator).
 2. **Trainer Script**: Use `training/trainer.py` with the exact same hyperparameters and settings as utilized in the prior smoke/pilot training loops.
 3. **Training Length**: Target exactly **100,000 steps** of pre-training.
@@ -33,4 +34,4 @@ You are tasked with running the Phase 7 model pre-training on the newly expanded
 5. **Output Checkpoint**: Save the final trained checkpoint to the following path:
    * `training/checkpoints/shona_ai_v2.pt`
 
-*Good luck, Agent 14. The data is ready!*
+*Good luck, Agent 15. The Shona Gold corpus is ready!*

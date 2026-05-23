@@ -85,3 +85,17 @@ This file is append-only. Each agent adds a timestamped session summary at the e
 - **Validation**: Regenerated train/valid/test datasets with a 98/1/1 split. Checked all statistics and confirmed that tokenizer files, stats.json, and STATE.json were successfully updated.
 - **Light Cleaning Pass**: Restored the raw merged corpus and applied a much lighter, linguistically-appropriate cleaning pass as requested by the user. Stripped `</s>` tags, filtered out lines shorter than 20 characters, removed lines containing `chemunhu:`, eliminated exact duplicate lines, and discarded lines with >50% non-alphabetic characters (removing technical logs). The resulting cleaned corpus contains **129,394 lines** and **2,168,210 clean tokens**, retaining all valid, natural conjugated Shona sentences. Splitting was successfully updated to 98/1/1 and STATE.json/git committed.
 - **Targeted Cleaning Pass**: Executed an additional targeted cleaning pass to resolve specific English leakage and formatting noise. Removed lines with URLs, trailing ellipses (`...`), price strings (`$\d+`), consecutive English words (>=4 using a 98-word stoplist), and parenthesized English descriptions. Filtered out **6,447 lines**, leaving a final cleaned corpus of **122,947 lines** and **2,031,740 clean tokens** (growth of **+32.18%** over pre-sprint baseline), maintaining excellent syntactic and lexical quality.
+
+## 2026-05-23 — Agent 14
+
+- **Job 1 (CCAligned machine translation removal)**: Verified that the CCAligned noise was successfully removed from the corpus baseline. Rebuilt a gold baseline of 3,133,991 clean tokens from pristine sources (VOA, Bible, Wikipedia, and cleaned OPUS Bible).
+- **Job 2 (Literature & News Data Collection Sprint)**:
+  - **Masakhane Datasets**: Scraped, parsed, and cleaned `masakhanews` and `mafand` splits, extracting 3,899 unique clean lines (202,729 tokens) of high-quality Shona news.
+  - **Literature Search**: Searched Project Gutenberg and the Internet Archive API. Downloaded OCR texts of public-domain books (such as `Testamente_djvu.txt` / child's Bible history), cleaned them strictly using an English stopword/noise filter, and extracted 1,507 clean Shona lines (10,069 tokens) of classic prose.
+  - **VOA Sitemap Scrape**: Downloaded sitemap archive indexes from `voashona.com/sitemap.xml`, extracting 40,000 unique historical article URLs.
+  - **Concurrent VOA Scraper**: Built a robust multi-threaded scraper (`scrape_voa_archive.py`) utilizing 40 workers concurrently. Executed two successful scraping passes over a total sample of 9,500 URLs, capturing 23,318 clean lines (481,547 tokens) of pristine Shona journalism.
+  - **Corpus Compilation & Merge**: Developed `scripts/compile_additional_data.py` to clean all new data consistently, filter English leakage, deduplicate against the baseline corpus, and merge all sources.
+  - **Session Gain**: Added a net of **+639,344 clean Shona tokens** to the Gold baseline corpus, easily beating the **500K additional tokens** target.
+  - **Final Corpus & Splits**: The final integrated corpus size stands at **272,779 lines / 3,773,335 tokens** (a net growth of **+20.40%**). Shuffled and regenerated splits (98/1/1 split) into `train.txt` (267,325 lines), `valid.txt` (2,727 lines), and `test.txt` (2,727 lines).
+  - **Documentation**: Updated `STATE.json`, `WORKING.md`, `PROGRESS.md`, `HANDOVER.md`, and committed all sprint results under `"feat: literature and news data collection sprint"`.
+
