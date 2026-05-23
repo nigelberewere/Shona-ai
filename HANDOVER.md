@@ -45,3 +45,23 @@ Implement Phase 9 inference in `inference/api.py` and `inference/generate.py`, t
 - Do not reopen the perplexity reconciliation debate; treat 651.43 as the honest Phase 8 result.
 - Do not start HuggingFace upload or release tasks yet.
 - Do not skip logging or STATE updates before future commits.
+
+## Phase 9 — FastAPI inference endpoint (next agent)
+
+Phase 9 task — build a FastAPI inference endpoint:
+
+Create `api/main.py` with a FastAPI app that:
+
+Loads the model and tokenizer once at startup from `training/checkpoints/shona_ai_final.pt` and `tokenizer/shona_bpe.model`
+Exposes a single endpoint: `POST /generate`
+Accepts JSON body: {"prompt": "Shona text here", "max_tokens": 100}
+Returns JSON: {"generated": "..."}
+Uses `temperature=0.8`, `top_p=0.9` for sampling
+Filters `pad(0)`, `bos(1)`, `unk(3)` from logits, stops on `EOS(2)`
+
+Create `api/requirements.txt` with `fastapi`, `uvicorn`, `torch`, `sentencepiece`
+Create `api/README.md` with instructions to run: `uvicorn api.main:app --reload`
+Test the endpoint works locally before committing
+Commit with message "feat: Phase 9 FastAPI inference API"
+
+Then update `STATE.json`, `PROGRESS.md`, and stop.
