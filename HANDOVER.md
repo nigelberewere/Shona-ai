@@ -1,29 +1,53 @@
-# HANDOVER — Agent 9 → Agent 10
-**Date:** 2026-05-23 01:11:15
-**Agent:** 9
-**Model:** GPT-5.4 mini  
-**Reason for handover:** Data prep is complete; the corpus has been rebuilt, the dictionary definitions are back in the processed corpus, and Phase 7 training has not been started.
+# HANDOVER — Agent 10 → Agent 11
+**Date:** 2026-05-23
+**Agent:** 10
+**Model:** Human-supervised (Nigel + Claude)
+**Reason for handover:** Phase 7 training is complete. Moving to Phase 8 evaluation.
 
-## What I completed this session
-- Re-ran `scripts/clean_data.py` with the upgraded morphologically expanded dictionary wordlist.
-- Appended 12,119 Shona `definition_sn` sentences from `shona dictionary/shona_dictionary_expanded.json` back into `data/processed/all_clean.txt` after the clean rebuild.
-- Regenerated `data/processed/train.txt`, `data/processed/valid.txt`, and `data/processed/test.txt` from the refreshed corpus.
-- Verified the final processed corpus size: 82,205 lines and 1,338,677 tokens.
-- Ran a quick tokenizer fertility check on 200 sampled dictionary definition lines and got 1.628973 tokens/word.
-- Updated `STATE.json`, `PROGRESS.md`, and the session log.
-- Committed the corpus refresh as `fad7b27`.
+## What was completed
+- Data prep: corpus restored to 106,443 lines, 1,537,149 tokens
+- Dictionary definitions (12,119 Shona definition_sn sentences) appended to corpus
+- Phase 7 full training run completed on Kaggle T4 GPU
+- 100,000 steps, final val_ppl = 94.1, final train_loss = 3.97
+- Final checkpoint saved locally: training/checkpoints/shona_ai_final.pt (103.5MB)
+- Checkpoint is NOT in git (gitignored) — it is on Nigel's local machine only
+- HuggingFace upload deferred to Phase 10
 
 ## Current state
-- **Phase:** 6 — complete
-- **Last commit:** fad7b27 — feat: upgraded shona_words.txt, expanded corpus with dictionary definitions, re-cleaned data
-- **Last log entry:** [2026-05-23 01:11:15] [MILESTONE] [PHASE-3] Final corpus: 82,205 lines, 1,338,677 tokens; fertility sample on 200 dictionary lines: 1.629 tokens/word.
+- **Phase:** 7 complete, 8 not started
+- **Best checkpoint:** training/checkpoints/shona_ai_final.pt
+- **val_ppl:** 94.1 at step 100,000
+- **Tokenizer:** SentencePiece BPE, vocab=32000, fertility=1.154
+- **Training data:** 104,314 train samples, 1,064 validation samples
+
+## Training history summary
+| Step | val_ppl |
+|------|---------|
+| 300 | 1,577 (pilot, CPU) |
+| 1,000 | 428 |
+| 5,000 | 275 |
+| 10,000 | 215 |
+| 50,000 | ~120 (estimated) |
+| 100,000 | 94.1 |
 
 ## What you must do FIRST
-If you continue from here, inspect the refreshed corpus and state snapshot, then start Phase 7 GPU training only on a CUDA host.
+Read AGENT_START.md and STATE.json. Confirm checkpoint exists at training/checkpoints/shona_ai_final.pt before doing anything else.
 
-## What you must do this session (ordered)
-1. Confirm the refreshed corpus statistics in `STATE.json` and `data/processed/stats.json`.
-2. Start Phase 7 training only on a GPU/CUDA host.
+## What you must do this session (Phase 8)
+1. Load the checkpoint and run sample generation — generate 5-10 Shona text samples from seed prompts and save to logs/phase8_samples.txt
+2. Use verified Shona sentences from INSTRUCTIONS.md Section 9.4 as prompts only — never hallucinate Shona
+3. Run evaluation metrics — perplexity on test.txt, character-level and word-level accuracy
+4. Save all results to logs/phase8_eval.json
+5. Update STATE.json: current_phase=8, phase_status.8=complete
+6. Update PROGRESS.md with session note
+7. Commit everything
 
-## Known issues / blockers
-- `data/processed/all_clean.txt` is a generated corpus artifact and was force-added so the refreshed snapshot is preserved in Git.
+## What NOT to do
+- Do not upload to HuggingFace — that is Phase 10
+- Do not start Phase 9 (inference API) until Phase 8 eval is committed
+- Do not hallucinate Shona text — only use verified sentences from INSTRUCTIONS.md Section 9.4
+
+## Known issues
+- val_ppl of 94.1 means the model has learned Shona structure but will not be perfectly fluent
+- Corpus was 1.5M tokens which is lean for a 25M parameter model — manage expectations on generation quality
+- All pilot_checkpoints/ are INVALID (old causal shifting bug) — use only shona_ai_final.pt
