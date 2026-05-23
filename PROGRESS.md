@@ -66,11 +66,14 @@ This file is append-only. Each agent adds a timestamped session summary at the e
 - Next work is the Phase 7 GPU training launch from scratch using the refreshed corpus and corrected causal shifting.
 
 ## 2026-05-23 — Agent 9
-
-- Re-ran `scripts/clean_data.py` with the upgraded dictionary wordlist, then appended 12,119 Shona `definition_sn` lines back into the rebuilt `data/processed/all_clean.txt`.
-- Regenerated `data/processed/train.txt`, `data/processed/valid.txt`, and `data/processed/test.txt` from the refreshed corpus.
 - Final processed corpus size: 82,205 lines and 1,338,677 tokens.
 - Ran a quick tokenizer fertility check on 200 sampled dictionary definition lines; fertility was 1.628973 tokens/word.
+ Implemented the Phase 9 FastAPI inference API and generation helper.
+ Added `inference/generate.py` with checkpoint-driven model-config inference and top-p sampling.
+ Added `api/main.py` exposing `GET /health` and `POST /generate` (JSON input: `prompt`, `max_tokens`).
+ Added `api/requirements.txt` and `api/README.md` with run instructions.
+ Fixed model loading to infer model hyperparameters from checkpoint shapes and handled sampling tensor/device issues.
+ Ran smoke tests locally: `/health` returned 200 OK; `/generate` returned valid JSON for prompt `"Ndinoda Zimbabwe"`.
 - Updated `STATE.json` and the session handoff notes; Phase 7 training was not started.
 
 
