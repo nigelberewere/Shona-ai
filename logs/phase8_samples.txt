@@ -1,10 +1,10 @@
-{"prompt": "Mhoro, makadii?", "generated": "Mhoro, makadii?,,,,,,,,,,,,,,,,,,.  ⁇ /s>.  ⁇ /s>.  ⁇ /s>,,. "}
-{"prompt": "Ndiri well", "generated": "Ndiri well,,,,,,,,,,,,,,,,,,,,,.  ⁇ /s>.  ⁇ /s>.  ⁇ /s>,"}
-{"prompt": "Zita rako ndiani?", "generated": "Zita rako ndiani?,,,,,,,,,,,,,,,,,,,.  ⁇ /s>.  ⁇ /s>.  ⁇ /s>,,."}
-{"prompt": "Zita rangu ndiJohn", "generated": "Zita rangu ndiJohn,,,,,,,,,,,,,,,,,,,.  ⁇ /s>.  ⁇ /s>.  ⁇ /s>,,."}
-{"prompt": "Ndinoda Zimbabwe", "generated": "Ndinoda Zimbabwe,,,,,,,,,,,,,,,,,,,,,.  ⁇ /s>.  ⁇ /s>.  ⁇ /s>,"}
-{"prompt": "Mvura", "generated": "Mvura,,,,,,,,,,,,,,,,,,,,,,.  ⁇ /s>.  ⁇ /s>.  ⁇ /s>"}
-{"prompt": "Mwari", "generated": "Mwari,,,,,,,,,,,,,,,,,,,,,,.  ⁇ /s>.  ⁇ /s>.  ⁇ /s>"}
-{"prompt": "Amai", "generated": "Amai,,,,,,,,,,,,,,,,,,,,,,.  ⁇ /s>.  ⁇ /s>.  ⁇ /s>"}
-{"prompt": "Mwana", "generated": "Mwana,,,,,,,,,,,,,,,,,,,,,,.  ⁇ /s>.  ⁇ /s>.  ⁇ /s>"}
-{"prompt": "Tinoenda kumba", "generated": "Tinoenda kumba,,,,,,,,,,,,,,,,,,,,.  ⁇ /s>.  ⁇ /s>.  ⁇ /s>,,"}
+{"prompt": "Mhoro, makadii?", "generated": "Mhoro, makadii?,, richiti yavo zvakakura he.  ⁇ /s> mweya.  ⁇ /s> they.  ⁇ /s> U ⁇ /s> iyes> kuro pakati, shokopa;/s> chemunhu:u, ya;, ti ma.  ⁇ /s> kuti Muchi mavhidhiyo.  ⁇ /s> zvoses>,saru, inochengetedza/s>tarira a/s> yakawanda pakati,  ⁇ /s>, pfungwa,: S, fosi.  ⁇ "}
+{"prompt": "Ndiri well", "generated": "Ndiri wellit yakeitwa zvinotaura kunyoresaru kwaMwari kuchak,  ⁇ /s> chemunhu,  ⁇ /s>,bvunza.  ⁇ /s>siri iye.  ⁇ /s> Mashoko  ⁇ /s> haufaniri, yavo nem,eriou.  ⁇ /s> iye nomumwely;  ⁇ /s>, kubva pane:  ⁇ /s>;.  ⁇ /s>henda; asi nezita.  ⁇ /s>, ine, se  ⁇ /s"}
+{"prompt": "Zita rako ndiani?", "generated": "Zita rako ndiani? ndipo  ⁇ /s> Ndipo.  ⁇ /s>anzania, n  ⁇ /s>, namai.  ⁇ /s>,.  ⁇ /s>, akavapa,.  ⁇ /s> achangobva, kuC kubva pane: akafa zvandaka, Mu, ( mo nemumwe; inoti ari, kurwa kubva pane: mas vanhu imba mwanakomana kana;  ⁇ /s>  ⁇ /s>gularererano pedyo kunyatso,, kuva  ⁇ /s> Kinshasa in> Ch wake"}
+{"prompt": "Zita rangu ndiJohn", "generated": "Zita rangu ndiJohn rake, iwe pamusoro matikiti.  ⁇ /s>ciaed, mavhidhiyo, ino.  ⁇ /s>.  ⁇ /s> zvinhu, vakati,.  ⁇ /s> vana, uye ruzivo zita>Bhenayaura chakaitika.  ⁇ /s> dzem; nenguva yo.  ⁇ /s>.  ⁇ /s>;  ⁇ /s> uyes>kati:ungwe,.  ⁇ /s> wa pe, vaka  ⁇ /s> nayo kuba"}
+{"prompt": "Ndinoda Zimbabwe", "generated": "Ndinoda Zimbabwe Malawi chemunhu: kuitika kana zvakawanda (: pamusoro kuwedzera) kubva pane: wenyu dis '', goreing, uye,.  ⁇ /s>s> mberi,?.  ⁇ /s> kubva pane: kuitika rinoshandiswa,; R akati kubva pane;.  ⁇ /s> Ga ve.  ⁇ /s> remuita mdhchekare.  ⁇ /s> kuyarukatai izvi uye pachena- ino  ⁇ /s> (/s> kuti wenyika ⁇ /s>indi"}
+{"prompt": "Mvura", "generated": "Mvura vake, pamutemo,;.  ⁇ /s>,;;, helical yevusvu.  ⁇ /s>; kufamba,  ⁇ /s>;, achangobva.  ⁇ /s> chino.  ⁇ /s>  ⁇ /s>.  ⁇ /s> saizvozvo; vari pamwechete pasina kumu.  ⁇ /s> uye vaka yedu alad.  ⁇ /s>, nayo,), kuitwa ye ⁇ /s>mbura.  ⁇ /s>"}
+{"prompt": "Mwari", "generated": "Mwari chichazoitika chemunhu:  ⁇ /s> varipo;  ⁇ /s> mvura, pe,, vanhu.  ⁇ /s>i/s>chi, munhu moit  ⁇ /s>.  ⁇ /s> bhengi,,  ⁇ /s>.  ⁇ /s>indi vachiti ⁇ /s>.  ⁇ /s>, kuuraya pamberi nesimba.  ⁇ /s>;, kubvira ⁇ /s>.  ⁇ /s>  ⁇ /"}
+{"prompt": "Amai", "generated": "Amai Munhupo chemunhu: akamu (plural) basa naJehovhatongerwa) eku; kwa.  ⁇ /s>,ent.  ⁇ /s>> choku ane; wako (.  ⁇ /s> S no, ambiso he/s>,ould kumu ( kusvikira kutarisa.  ⁇ /s> uye format take,  ⁇ /s> nguva,:> kuda (.  ⁇ /s>> FAQ.  ⁇ /s> kuvharwashe/s> im, ...."}
+{"prompt": "Mwana", "generated": "Mwana,j chemunhu:  ⁇ /s> wehondo,.  ⁇ /s>, iyo,i,.  ⁇ /s>).  ⁇ /s>proit kuti.  ⁇ /s>, rinowanikwa.  ⁇ /s>.  ⁇ /s>;?.  ⁇ /s> (/s>,ak HTML>, varume,; zuva, akau ⁇ /s> kwaMwari ⁇ /s>.  ⁇ /s> haazi/s>"}
+{"prompt": "Tinoenda kumba", "generated": "Tinoenda kumba, kubvaone,,, mapa ino,mera, ''ga.  ⁇ /s>ywa.  ⁇ /s>.  ⁇ /s> uyevaraidza) wake.  ⁇ /s> sarudzo  ⁇ /s>.  ⁇ /s> kudenga, page  ⁇ /s> kumisa.  ⁇ /s>, mhiri> I.  ⁇ /s>asha.  ⁇ /s>cherera.  ⁇ /s>ungura ⁇ /s> Train kuti"}
