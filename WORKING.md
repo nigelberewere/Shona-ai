@@ -1,6 +1,6 @@
 # WORKING — Agent 13
 
-**RIGHT NOW:** STOPPED — session ended, handover ready.
+**RIGHT NOW:** STOPPED — waiting for user input on extreme corpus reduction after strict cleaning pass.
 
 ## Task queue for this session
 
@@ -12,6 +12,7 @@
 - [x] Task 6: Attempt to download and parse WikiMatrix, OpenSubtitles, and Opus-100 Shona corpora (Pivoted to CCAligned and bible-uedin).
 - [x] Task 7: Append VOA and OPUS corpora to training datasets, regenerate splits, and update STATE.json/PROGRESS.md.
 - [x] Task 8: Complete Phase 2 handover protocol.
+- [x] Task 9: Execute strict data cleaning pass requested by the user, and report counts and samples before retraining.
 
 ## Completed this session
 
@@ -23,6 +24,7 @@
 | 15:46 | Task 5: Verify quality of VOA and OPUS corpora | | |
 | 15:52 | Task 6 & 7: Merge VOA & OPUS and update splits | data/processed/all_clean.txt, train.txt, valid.txt, test.txt | |
 | 16:00 | Task 8: Complete logs and STATE.json | STATE.json, WORKING.md, HANDOVER.md | |
+| 17:05 | Task 9: Strict corpus cleaning pass | data/processed/all_clean.txt, train.txt, valid.txt, test.txt | |
 
 ---
 

@@ -19,7 +19,7 @@
   },
   "data_stats": {
     "raw_tokens": 7568460,
-    "clean_tokens": 3912233,
+    "clean_tokens": 484,
     "sources_complete": [
       "wikipedia_sn",
       "cc100_sn",
@@ -44,7 +44,7 @@
     "vocab_path": "tokenizer/shona_bpe.vocab",
     "trained_at": "2026-05-21T08:45:45.097280"
   },
-  "last_commit": "feat: add VOA Zimbabwe Shona corpus",
+  "last_commit": "fix: corpus cleaning pass before retrain",
   "last_commit_hash": "",
   "blocking_issues": [],
   "next_action": "Evaluate tokenizer fertility and prepare for pre-training run",
