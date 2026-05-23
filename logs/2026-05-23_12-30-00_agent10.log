@@ -1,1 +1,2 @@
 [2026-05-23 12:30:00] [INFO] [PHASE-8] Agent 10 starting. Model: GPT-5 mini. Previous agent completed: Phase 7 training (100,000 steps, val_ppl=94.1). See HANDOVER.md for full summary.
+[2026-05-23 12:31:05] [ERROR] [PHASE-8] Checkpoint not found in repository at training/checkpoints/shona_ai_final.pt — HANDOVER.md notes checkpoint is local only. Cannot load checkpoint; Phase 8 evaluation blocked until checkpoint is provided.
