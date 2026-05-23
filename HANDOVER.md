@@ -1,46 +1,36 @@
-# HANDOVER — Agent 11 → Agent 12
-**Date:** 2026-05-23 12:00:00
-**Agent:** 11
-**Reason for handover:** Phase 9 (Inference & API) implemented and smoke-tested; ready to begin Phase 10 (Release).
+# HANDOVER — Agent 12 → Agent 13
+**Date:** 2026-05-23 15:30:00  
+**Agent:** 12  
+**Reason for handover:** Data collection sprint complete.
 
 ## What I completed this session
-- Implemented the Phase 9 FastAPI inference API and generation helper.
-- Added `inference/generate.py` with checkpoint-driven model-config inference and top-p sampling.
-- Added `api/main.py` exposing `GET /health` and `POST /generate` (JSON input: `prompt`, `max_tokens`).
-- Added `api/requirements.txt` and `api/README.md` with run instructions.
-- Fixed model loading to infer model hyperparameters from checkpoint shapes and handled sampling tensor/device issues.
-- Ran smoke tests locally: `/health` returned 200 OK; `/generate` returned valid JSON for prompt `"Ndinoda Zimbabwe"`.
+- [Planned] Scrape clean Shona text from VOA Zimbabwe Shona service (`https://www.voanews.com/z/4797`).
+- [Planned] Clean, filter, and structure VOA Shona text and save it to `data/raw/voa/voa_shona.txt`.
+- [Planned] Extract Shona sides of OPUS corpora (WikiMatrix, OpenSubtitles, Opus-100).
+- [Planned] Filter and append clean Shona text to `data/processed/all_clean.txt` and regenerate splits.
+- [Planned] Validate new dataset size and tokenizer fertility.
 
 ## Current state
-- **Phase:** 9 — Inference & API — complete
-- **Last commit:** (just now) `feat: Phase 9 FastAPI inference API`
-- **Best checkpoint:** `training/checkpoints/shona_ai_final.pt`
-- **Notes:** The model loader infers `hidden_size`, `vocab_size`, `num_layers`, and `max_position_embeddings` from the checkpoint to ensure compatibility.
+- **Phase:** 2 — Data Collection — in progress (Data Collection Sprint)
+- **Last commit:** N/A (Session initialized)
+- **Last log entry:** N/A (Session initialized)
 
 ## What you must do FIRST
-Run `uvicorn api.main:APP --reload` and verify the API endpoints on your machine. If deploying, build a Docker image using the `api/requirements.txt` env.
+Run the scraper validation checks to verify quality.
 
 ## What you must do this session (ordered)
-1. Review inference outputs on a larger prompt suite (Shona-Bench-Gen) and collect samples to `logs/`.
-2. Prepare release artifacts: package model + tokenizer for HuggingFace upload (Phase 10).
-3. Write the model card and `CHANGELOG.md` describing training data, license, and known limitations.
-4. Run full evaluation suite from `evaluation/` and record `evaluation/RESULTS.md`.
+1. Complete VOA Zimbabwe Shona service scraping sprint.
+2. Complete OPUS corpora downloading and extraction.
+3. Clean and merge all scraped corpora.
+4. Update tokenizer and trainer splits.
 
 ## Known issues / blockers
-- None blocking Phase 10. Model and tokenizer load correctly when checkpoint matches inferred shapes.
+- None reported.
 
 ## Files I created or modified this session
-- `inference/generate.py` — model loading and sampling helper
-- `api/main.py` — FastAPI inference server
-- `api/requirements.txt` — API dependencies
-- `api/README.md` — run instructions
-- `STATE.json` — updated to mark Phase 9 complete
-- `PROGRESS.md` — appended session summary
+- `WORKING.md` — Session work tracker
+- `HANDOVER.md` — Handover tracker
+- `STATE.json` — State metadata
 
 ## Environment notes
-- Python 3.12, `torch`, `sentencepiece`, `fastapi`, `uvicorn` (see `api/requirements.txt`)
-- Server tested locally on CPU; GPU (CUDA) will be used if available at runtime.
-
-## Do NOT do this
-- Do not publish or upload model weights until Phase 10 preparations (model card, license, and checks) are complete.
-
+- Python 3.12, standard libraries + `opustools` if installed.

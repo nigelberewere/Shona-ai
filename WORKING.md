@@ -1,29 +1,23 @@
-# WORKING — Agent 7 (Operator Briefing Tasks)
+# WORKING — Agent 12
 
-**RIGHT NOW:** STOPPED — session ended
+**RIGHT NOW:** INITIALIZING — Session started.
 
 ## Task queue for this session
 
-- [x] Task 1: Audit training data quality using the provided Python audit script.
-- [x] Task 2: Ensure `trainer.py` evaluates on `valid.txt` and trains on `train.txt`. Run exactly 300 steps of training with honest sequence target shifting, ignoring padding token index 0. Save checkpoint to `step_300.pt`.
-- [x] Task 3: Update `STATE.json` and write `HANDOVER.md` with contamination, perplexity, and clear next steps.
-- [x] Finalize session and update `PROGRESS.md` and `walkthrough.md`.
+- [ ] Task 1: Initialize session files (log file, WORKING.md, HANDOVER.md, STATE.json) and commit.
+- [ ] Task 2: Explore target VOA Shona URL structure (`https://www.voanews.com/z/4797`) and identify article list structure.
+- [ ] Task 3: Implement `scripts/scrape_voa_shona.py` with polite scraping, body text extraction, wordlist validation, and saving.
+- [ ] Task 4: Run `scripts/scrape_voa_shona.py` and extract VOA corpus.
+- [ ] Task 5: Verify VOA data quality and show sample prose.
+- [ ] Task 6: Attempt to fetch and parse WikiMatrix, OpenSubtitles, and Opus-100 Shona corpora using `opustools` API.
+- [ ] Task 7: Append VOA and OPUS corpora to training datasets, regenerate splits, and update STATE.json/PROGRESS.md.
+- [ ] Task 8: Complete Phase 2 handover protocol.
 
 ## Completed this session
 
 | Time | Task | File | Commit hash |
 |------|------|------|-------------|
-| 23:07 | Task 1: Run data audit script | scripts/audit_data.py | bd0c57a |
-| 23:12 | Task 2: Run 300-step training loop | training/trainer.py | task-234 |
-| 23:15 | Task 3: Update STATE.json | STATE.json | ebbd293 |
-| 23:18 | Finalize session and documentation | WORKING.md, PROGRESS.md, walkthrough.md | |
-
-## 2026-05-23 — Agent 9 session
-
-- [x] Rebuilt the processed corpus with the upgraded dictionary wordlist.
-- [x] Appended 12,119 dictionary definition lines and regenerated the train/valid/test splits.
-- [x] Measured final corpus size and tokenizer fertility.
-- [x] Updated session metadata files and wrote the agent 9 log.
+| 14:24 | Task 1: Initialize session metadata | WORKING.md, HANDOVER.md, STATE.json | |
 
 ---
 
