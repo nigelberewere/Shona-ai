@@ -1,22 +1,23 @@
-# HANDOVER — Agent 17 → Agent 18
+# HANDOVER — Agent 18 → Agent 19
 
-**Date:** 2026-05-24 15:01:07  
-**Agent:** 17  
-**Reason for handover:** Social/web scraping sprint completed. The collector appended a small amount of new material from Reddit, My Zimbabwe, and NewsDay, regenerated splits, and updated the corpus state. Most requested social sources were blocked or empty.
+**Date:** 2026-05-24 17:52:42  
+**Agent:** 18  
+**Reason for handover:** Tokenizer retraining + data collection sprint in progress.
 
 ## What I completed this session
-- Added `scripts/scrape_social_web.py`, a best-effort collector for Reddit, Nitter mirrors, Facebook public pages, YouTube, Telegram, and Zimbabwean news sites.
-- Applied the requested Shona detection rule, light cleaning, and dedupe against the existing corpus.
-- Wrote source-specific outputs under `data/raw/social/` and `data/raw/news/`.
-- Appended **22 new unique lines** to `data/processed/all_clean.txt`.
-- Regenerated the 98/1/1 splits and updated `data/processed/stats.json` and `STATE.json`.
-
-## Source results
-- Succeeded: `reddit`, `myzimbabwe`, `newsday`
-- Blocked or empty: `twitter`, `facebook`, `youtube`, `telegram`, `masvingo_mirror`, `zimetro`, `nehanda_radio`, `sunday_mail`, `chronicle`
-- Final gain: **157 new tokens** from this sprint
+- Session initialized and planned.
 
 ## Current state
-- Corpus total after this sprint: **212,132 lines**, **3,536,024 tokens**
-- Phase 2 remains complete; phase 3 cleaning is still the next logical step.
-- The session log is in `logs/2026-05-24_15-00-00_agent17.log`.
+- **Phase:** 2 — DATA COLLECTION / TOKENIZER PREP
+- **Last commit:** d86e645 — feat: social media and web scraping sprint
+
+## What you must do FIRST
+- Retrain the SentencePiece tokenizer on the full corpus.
+
+## What you must do this session (ordered)
+1. JOB 1: Retrain the SentencePiece tokenizer on the full corpus (`shona_bpe_v2.model`) and measure/compare fertility.
+2. JOB 2: Find, scrape, clean and download additional Shona Bible translations from ebible.org, Christos, Bible Gateway, and OPUS. Save to `data/raw/bible/shona_bible_v2.txt`.
+3. JOB 3: Check and download additional HuggingFace datasets (`opus_books`, `opus-100`, `flores`, `nllb`, `ccmatrix`, `masakhanews`).
+4. JOB 4: Create a synthetic Shona conversation dataset using only verified Shona vocabulary. Write `scripts/generate_conversations.py`.
+5. JOB 5: Append new datasets to `data/processed/all_clean.txt`, regenerate 98/1/1 splits, and report final corpus counts.
+6. JOB 7: Update `STATE.json`, `HANDOVER.md` and commit with message "feat: v5 prep - retrain tokenizer and data collection".

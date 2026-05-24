@@ -1,9 +1,9 @@
 {
   "project": "shona-ai",
   "version": "0.1.0",
-  "last_updated": "2026-05-24 15:01:07",
-  "agent_number": 17,
-  "model_used": "GPT-5.4 mini",
+  "last_updated": "2026-05-24 17:52:42",
+  "agent_number": 18,
+  "model_used": "Gemini 3.5 Flash (High)",
   "current_phase": 2,
   "phase_status": {
     "1": "complete",
@@ -54,7 +54,7 @@
   "last_commit": "feat: social media and web scraping sprint",
   "last_commit_hash": "d86e645",
   "blocking_issues": [],
-  "next_action": "Review the sparse social/web additions and decide whether a phase 3 cleaning pass is worth rerunning before training.",
+  "next_action": "Retrain SentencePiece tokenizer and collect more Shona sources.",
   "generation_artifacts": [
     "logs/sample_generations.txt",
     "logs/sample_generations_sampling.txt",
