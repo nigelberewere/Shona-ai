@@ -1,8 +1,8 @@
 {
   "project": "shona-ai",
   "version": "0.1.0",
-  "last_updated": "2026-05-24 07:56:00",
-  "agent_number": 15,
+  "last_updated": "2026-05-24 13:30:48",
+  "agent_number": 16,
   "model_used": "Antigravity",
   "current_phase": 2,
   "phase_status": {
@@ -19,7 +19,7 @@
   },
   "data_stats": {
     "raw_tokens": 5723274,
-    "clean_tokens": 3510337,
+    "clean_tokens": 3527647,
     "sources_complete": [
       "wikipedia_sn",
       "bible_shona",
@@ -28,7 +28,8 @@
       "masakhane_sn",
       "internet_archive_literature",
       "voa_historical_archive",
-      "leipzig_shona"
+      "leipzig_shona",
+      "o_level_shona"
     ]
   },
   "training_stats": {
