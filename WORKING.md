@@ -1,32 +1,25 @@
-# WORKING — Agent 14
+# WORKING — Agent 15
 
-**RIGHT NOW:** STOPPED — Handoff complete. Training data v3 completely finalized.
+**RIGHT NOW:** STOPPED — session ended. Leipzig data collection sprint complete, Gold baseline corpus successfully expanded to 3.51M clean tokens, splits regenerated, and STATE.json updated. Ready for GPU pre-training!
 
 ## Task queue for this session
 
 - [x] Task 1: Initialize session files (log file, WORKING.md, HANDOVER.md, STATE.json) and commit.
-- [x] Task 2: Verify CCAligned cleanup and Job 1 rebuilt baseline corpus (3.13M tokens).
-- [x] Task 3: Scrape and parse Masakhane datasets (masakhanews and mafand), extracting 5,244 raw lines and 3,899 clean lines.
-- [x] Task 4: Search and download Shona language literature from Internet Archive API (testamente_202605, etc.), cleaning 1,507 lines.
-- [x] Task 5: Extract 40,000 URLs from VOA sitemaps.
-- [x] Task 6: Scrape 9,500 historical VOA articles concurrently using 40 threads, saving 23,318 clean lines (481,547 tokens).
-- [x] Task 7: Compile, clean, deduplicate and integrate all new sources, achieving +639,344 clean tokens.
-- [x] Task 8: Regenerate train/valid/test splits (98/1/1).
-- [x] Task 9: Update STATE.json, log files, PROGRESS.md, and HANDOVER.md.
-- [x] Task 10: Execute final cleaning pass to strip wiki markup and technical noise, and regenerate 98/1/1 splits.
+- [x] Task 2: Audit OPUS API, SOAS Endangered Languages Archive, and LLOD catalogues for Shona data.
+- [x] Task 3: Attempt direct downloads of JW300, GlobalVoices, and GNOME from CSC pouta storage and verify status.
+- [x] Task 4: Discover active Shona corpora in Leipzig downloads.
+- [x] Task 5: Download, extract, and strictly clean Leipzig 100K web corpus (sna-zw_web_2018_100K.tar.gz).
+- [x] Task 6: Merge Leipzig clean sentences into all_clean.txt, run strict deduplication.
+- [x] Task 7: Shuffled and regenerated dataset splits (98/1/1).
+- [x] Task 8: Update stats.json, STATE.json, and progress files.
+- [x] Task 9: Git commit and push all code and data to remote origin.
 
 ## Completed this session
 
 | Time | Task | File | Commit hash |
 |------|------|------|-------------|
-| 21:44 | Task 1: Initialize session metadata | WORKING.md, STATE.json | |
-| 22:03 | Task 3: Scrape Masakhane | data/raw/masakhane/masakhane_shona.txt | |
-| 22:05 | Task 4: Download Internet Archive literature | data/raw/literature/archive_org_shona.txt | |
-| 22:06 | Task 5: Extract VOA sitemaps | data/raw/voa/sitemap_urls.txt | |
-| 22:07 | Task 4: Clean Internet Archive literature | data/processed/literature/archive_org_clean.txt | |
-| 22:14 | Task 6: VOA Historical scrape run 1 | data/raw/voa/voa_shona_archive.txt | |
-| 22:23 | Task 6: VOA Historical scrape run 2 | data/raw/voa/voa_shona_archive_2.txt | |
-| 22:28 | Task 7: Compile and deduplicate all data | data/processed/all_clean.txt | |
-| 22:28 | Task 8: Regenerate dataset splits | data/processed/train.txt, valid.txt, test.txt | |
-| 23:28 | Task 9: Handover and state documentation | STATE.json, WORKING.md, HANDOVER.md, PROGRESS.md | |
-| 05:12 | Task 10: Run final strict cleaning pass | data/processed/all_clean.txt, train.txt, valid.txt, test.txt | |
+| 07:32 | Task 1: Initialize session metadata | logs/2026-05-24_07-30-03_agent15.log | 5463dc6 |
+| 07:45 | Task 2-4: Audited OPUS, SOAS, LLOD and Leipzig | scratch/list_opus_shona.py, test_leipzig_download.py | 720c853 |
+| 07:53 | Task 5: Download & clean Leipzig 100K corpus | scripts/download_leipzig_corpora.py | 720c853 |
+| 07:55 | Task 6-8: Merge, deduplicate, splits, state | scripts/merge_leipzig.py, STATE.json, stats.json | 995ade7 |
+| 10:55 | Task 9: Handover & Documentation | HANDOVER.md, WORKING.md, PROGRESS.md | |

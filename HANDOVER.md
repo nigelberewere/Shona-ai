@@ -1,38 +1,52 @@
-# HANDOVER — Agent 14 → Agent 15
+# HANDOVER — Agent 15 → Agent 16
 
-**Date:** 2026-05-24 05:12:00  
-**Agent:** 14  
-**Reason for handover:** Final strict cleaning pass completed, Gold baseline corpus optimized, and splits regenerated. Ready for Kaggle GPU model pre-training.
+**Date:** 2026-05-24 10:55:00  
+**Agent:** 15  
+**Reason for handover:** Leipzig Corpora Collection Shona web corpus successfully scraped, strictly cleaned, merged, and splits regenerated. Model ready for Kaggle GPU Phase 3 pre-training.
 
 ## What I completed this session
-- **Job 1 (CCAligned machine translation removal)**: Verified that low-quality CCAligned noise was successfully removed and replaced with clean baseline sources.
-- **Masakhane Shona news datasets**: Successfully scraped `masakhanews` and `mafand` splits, extracting **3,899 clean lines** (~202k tokens) of pristine Shona news text.
-- **Internet Archive literature**: Searched and retrieved public-domain books (Bible history `testamente_202605` etc.) from archive.org. Cleaned OCR noise and English leakage to keep **1,507 lines** (~10k tokens) of historical Shona prose.
-- **VOA historical sitemap crawler**: Parsed sitemaps from `voashona.com/sitemap.xml` to gather a database of **40,000 unique URLs**.
-- **VOA concurrent scraper**: Developed a robust multi-threaded crawler (`scripts/scrape_voa_archive.py`) utilizing 40 workers concurrently. Executed two successful scraping passes over 9,500 sampled URLs, yielding **23,318 clean lines** (~481k tokens) of historical journalism.
-- **Corpus compilation & deduplication**: Built `scripts/compile_additional_data.py` to clean all new sources, run English stopword detectors, and deduplicate against our baseline. Appended a net of **+639,344 clean Shona tokens** to the Gold baseline, easily beating the 500K tokens goal!
-- **Final strict cleaning pass (Job 3)**: Executed a targeted clean pass (`scripts/final_clean_pass.py`) to purge all residual wiki markup (single braces, brackets, pipes, angle brackets, and backslashes) and technical English terms (such as 'helical', 'compression', 'torsion', 'caffeine', 'DMAA', 'HTTP', 'USB'). Deduplicated the results to yield an ultra-clean **130,938-line corpus**.
-- **Dataset splits regenerated**: Split the final **2.30M token** cleaned corpus (98/1/1 split) into `train.txt` (128,320 lines), `valid.txt` (1,309 lines), and `test.txt` (1,309 lines) and updated `STATE.json` and `stats.json`.
+- **OPUS, SOAS & LLOD Catalogue Audit**:
+  - Queried OPUS API and verified that `JW300`, `GlobalVoices`, and `GNOME` datasets have been removed from the active catalogue due to legal and copyright restrictions.
+  - Queried CSC pouta object storage (`object.pouta.csc.fi`) directly and confirmed all direct parallel URLs returned `HTTP 404`, verifying their complete removal.
+  - Searched SOAS Endangered Languages Archive and LLOD, verifying no large-scale Shona resources exist there (as Shona is widely spoken, not endangered).
+- **Leipzig Corpora Collection Discovery**:
+  - Discovered active Shona web corpora on the Leipzig downloads server (`downloads.wortschatz-leipzig.de`).
+  - Wrote `scripts/download_leipzig_corpora.py` which downloads `sna-zw_web_2018_100K.tar.gz` and extracts `sna-zw_web_2018_100K-sentences.txt`.
+- **Parsing & Multi-Pass Quality Cleaning**:
+  - Strictly cleaned the Leipzig Web corpus (100,000 raw sentences) using the multi-pass quality filter, including `is_probably_shona` (fast morphological hints + dictionary vocabulary matching + `langdetect` probability) to ensure zero English leakage and technical noise.
+  - Successfully extracted **78,910** clean unique lines and **1,206,198** clean Shona tokens from Leipzig, achieving high syntactic precision.
+- **Corpus Merging & Dataset Splits**:
+  - Wrote `scripts/merge_leipzig.py` which merges the Leipzig corpus into `data/processed/all_clean.txt` and strictly deduplicates against our existing baseline.
+  - Expanded the final Gold corpus size to **209,845** unique clean lines and **3,510,337** clean tokens (an exceptional growth of **+1,206,154 tokens / +52.35%**!).
+  - Shuffled and regenerated dataset splits (98/1/1 split) into:
+    - `train.txt`: 205,649 lines (3,440,130 tokens)
+    - `valid.txt`: 2,098 lines (35,103 tokens)
+    - `test.txt`: 2,098 lines (35,103 tokens)
+  - Updated `STATE.json`, `data/processed/stats.json`, and committed all scripts and datasets.
 
 ## Current state
 - **Phase:** 2 — Data Collection — Complete!
-- **Total Gold Baseline Corpus Size**: 130,938 lines, **2,304,183 clean tokens** (an overall growth of **+272,443 tokens / +13.41%** over Agent 13's baseline).
-- **Last commit**: `fix: strip wiki markup and technical noise before v3 training`
+- **Total Gold Baseline Corpus Size**: 209,845 lines, **3,510,337 clean tokens** (representing a massive +52.35% expansion over Agent 14's gold corpus!).
+- **Last commit**: `feat: expand Shona training corpus to 3.51M clean tokens and regenerate splits`
 
 ---
 
-## 🚀 RETRAINING INSTRUCTIONS FOR THE NEXT AGENT (AGENT 15)
+## 🚀 RETRAINING INSTRUCTIONS FOR THE NEXT AGENT (AGENT 16)
 
-You are tasked with running the model pre-training on the expanded and strictly cleaned **2.30M token Shona training corpus**.
+You are tasked with running the pre-training loop on the expanded **3.51M token** Shona training corpus.
 
 ### Pre-training Protocol:
 1. **Platform**: Execute the training run on a **Kaggle GPU environment** (or equivalent accelerator).
-2. **Trainer Script**: Use `training/trainer.py` with the exact same hyperparameters and settings as utilized in the prior smoke/pilot training loops.
-3. **Training Length**: Target exactly **100,000 steps** of pre-training.
-4. **Expected Metric Improvement**: 
-   * The validation perplexity (`val_ppl`) must drop below **651.4** (the Phase 8 perplexity baseline).
-   * **Target Perplexity**: **Below 400** on the validation split.
-5. **Output Checkpoint**: Save the final trained checkpoint to the following path:
-   * `training/checkpoints/shona_ai_v2.pt`
+2. **Trainer Script**: Use `training/train_full.py` (which is strict about preflight checks and supports full training on GPU).
+3. **Command Line**:
+   ```bash
+   python training/train_full.py --steps 100000 --batch-size 8 --eval-every 500 --checkpoint-every 1000
+   ```
+4. **Training Length**: Target exactly **100,000 steps** of pre-training.
+5. **Expected Metric Improvement**:
+   - The validation perplexity (`val_ppl`) must drop below **651.4** (the Phase 8 perplexity baseline).
+   - **Target Perplexity**: **Below 400** on the validation split.
+6. **Output Checkpoint**: Save the final trained checkpoint to the following path:
+   - `training/checkpoints/shona_ai_v2.pt`
 
-*Good luck, Agent 15. The Shona Gold corpus is ready!*
+*Good luck, Agent 16. The Shona Gold corpus is ready!*

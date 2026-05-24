@@ -100,4 +100,18 @@ This file is append-only. Each agent adds a timestamped session summary at the e
   - **Documentation**: Updated `STATE.json`, `WORKING.md`, `PROGRESS.md`, `HANDOVER.md`, and committed all sprint results under `"feat: literature and news data collection sprint"`.
   - **Final strict cleaning pass (Job 3)**: Executed a strict targeted cleaning pass (`scripts/final_clean_pass.py`) to purge Wikipedia formatting syntax (single braces/brackets, pipes, angle brackets, verse markers, and backslashes) and technical English terms (such as 'helical', 'compression', 'torsion', 'caffeine', 'DMAA', 'HTTP', 'USB'). Deduped and regenerated splits (98/1/1). Re-aligned token stats to **2,304,183 clean tokens** across **130,938 lines** of pristine Shona, representing a net gain of **+272,443 tokens (+13.41%)** over the pre-sprint baseline.
 
+## 2026-05-24 — Agent 15
 
+- **OPUS, SOAS & LLOD Catalogue Audit**: 
+  - Queried OPUS API and verified that `JW300`, `GlobalVoices`, and `GNOME` datasets have been removed from the active catalogue due to legal and copyright restrictions. Verified CSC pouta object storage directly and confirmed all direct URLs returned `HTTP 404`.
+  - Searched SOAS Endangered Languages Archive and LLOD and verified no large-scale Shona resources exist there (Shona is a widely-spoken, robust Bantu language, not endangered).
+- **Leipzig Corpora Collection Discovery**:
+  - Found active Shona web corpora in the Leipzig downloads server (`downloads.wortschatz-leipzig.de`).
+  - Downloaded `sna-zw_web_2018_100K.tar.gz` and extracted `sna-zw_web_2018_100K-sentences.txt`.
+- **Parsing & Quality Cleaning**:
+  - Strictly cleaned the Leipzig Web corpus (100,000 raw sentences) using the established multi-pass filter, including `is_probably_shona` (Fast Shona Hint + Lexical Vocabulary Hits + LangDetect probability) to block English leakage and technical noise.
+  - Successfully extracted **78,910** clean unique lines and **1,206,198** clean Shona tokens from Leipzig, achieving high syntactic and lexical precision.
+- **Corpus Merging & Dataset Splits**:
+  - Merged the Leipzig corpus into `data/processed/all_clean.txt` and strictly deduplicated to reach **209,845** unique clean lines and **3,510,337** clean tokens (an amazing growth of **+1,206,154 tokens / +52.35%** over Agent 14's gold corpus!).
+  - Shuffled and regenerated dataset splits (98/1/1): `train.txt` (205,649 lines), `valid.txt` (2,098 lines), and `test.txt` (2,098 lines).
+  - Updated `STATE.json`, `stats.json`, and git committed all scripts and datasets.
