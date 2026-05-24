@@ -2,3 +2,5 @@
 [2026-05-24 18:05:00] [MILESTONE] [PHASE-2] Retrained BPE tokenizer on full corpus. Old fertility: 1.6078, New fertility: 1.5224, Improvement: 5.31% fewer tokens.
 [2026-05-24 18:08:00] [MILESTONE] [PHASE-2] Downloaded and processed additional Shona Bible translations into data/raw/bible/shona_bible_v2.txt. 65,881 unique lines, ~927k words. Sources: OPUS Bible, ebible.org sna.
 [2026-05-24 18:23:00] [MILESTONE] [PHASE-2] Attempted HuggingFace datasets. Successfully processed and saved masakhane/masakhanews into data/raw/huggingface/masakhanews_shona.txt. 1,842 unique lines.
+[2026-05-24 18:33:00] [MILESTONE] [PHASE-2] Generated synthetic conversation dataset using verified Shona vocabulary. 1,892 dialogue lines. Saved to data/raw/conversations/shona_conversations.txt.
+[2026-05-24 18:43:00] [MILESTONE] [PHASE-2] Appended new sources (Bible v2, MasakhaNews, synthetic conversations) to clean corpus and regenerated 98/1/1 splits. Total clean lines: 254,771, Total clean tokens: 4,467,364.

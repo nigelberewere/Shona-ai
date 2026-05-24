@@ -1,10 +1,13 @@
 {
-  "total_lines": 212132,
-  "total_tokens": 3536024,
-  "train_lines": 207889,
-  "valid_lines": 2121,
-  "test_lines": 2122,
-  "train_tokens": 3466597,
-  "valid_tokens": 34217,
-  "test_tokens": 35210
+  "created_at": "2026-05-24T18:43:46.224453",
+  "sources": [],
+  "combined": {
+    "lines": 254771,
+    "tokens": 4467364
+  },
+  "splits": {
+    "train": 249675,
+    "valid": 2548,
+    "test": 2548
+  }
 }
