@@ -1,1 +1,2 @@
 [2026-05-24 17:52:42] [INFO] [PHASE-2] Agent 18 starting. Model: Gemini 3.5 Flash (High).
+[2026-05-24 18:05:00] [MILESTONE] [PHASE-2] Retrained BPE tokenizer on full corpus. Old fertility: 1.6078, New fertility: 1.5224, Improvement: 5.31% fewer tokens.
