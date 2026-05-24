@@ -15,4 +15,4 @@
 
 | Time | Task | File | Commit hash |
 |------|------|------|-------------|
-| 15:01 | Social/web scraping sprint and corpus update | scripts/scrape_social_web.py, data/processed/all_clean.txt, data/processed/stats.json, STATE.json, data/raw/social/*, data/raw/news/* | pending |
+| 15:01 | Social/web scraping sprint and corpus update | scripts/scrape_social_web.py, data/processed/all_clean.txt, data/processed/stats.json, STATE.json, data/raw/social/*, data/raw/news/* | d86e645 |

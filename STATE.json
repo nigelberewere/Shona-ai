@@ -52,7 +52,7 @@
     "trained_at": "2026-05-21T08:45:45.097280"
   },
   "last_commit": "feat: social media and web scraping sprint",
-  "last_commit_hash": "",
+  "last_commit_hash": "d86e645",
   "blocking_issues": [],
   "next_action": "Review the sparse social/web additions and decide whether a phase 3 cleaning pass is worth rerunning before training.",
   "generation_artifacts": [
