@@ -1,7 +1,7 @@
 {
   "project": "shona-ai",
   "version": "0.1.0",
-  "last_updated": "2026-05-24 13:30:48",
+  "last_updated": "2026-05-24 14:38:00",
   "agent_number": 16,
   "model_used": "Antigravity",
   "current_phase": 2,
@@ -19,7 +19,7 @@
   },
   "data_stats": {
     "raw_tokens": 5723274,
-    "clean_tokens": 3527647,
+    "clean_tokens": 3539407,
     "sources_complete": [
       "wikipedia_sn",
       "bible_shona",
@@ -29,7 +29,8 @@
       "internet_archive_literature",
       "voa_historical_archive",
       "leipzig_shona",
-      "o_level_shona"
+      "o_level_shona",
+      "tambaoga_mwanangu_novel"
     ]
   },
   "training_stats": {
