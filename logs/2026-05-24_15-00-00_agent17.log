@@ -1,0 +1,185 @@
+[2026-05-24 15:00:00] [INFO] [PHASE-2] Agent 17 starting. Model: GPT-5.4 mini.
+[2026-05-24 14:54:43] [INFO] [PHASE-2] Agent 17 social/web scraping sprint started
+[2026-05-24 14:54:51] [INFO] [PHASE-2] Loaded 212,110 existing corpus lines for dedupe
+[2026-05-24 14:54:51] [INFO] [PHASE-2] Starting Reddit JSON collection
+[2026-05-24 14:56:11] [WARN] [PHASE-2] 429 for https://www.reddit.com/r/zimbabwe.json?limit=100
+[2026-05-24 14:56:11] [WARN] [PHASE-2] 429 for https://www.reddit.com/r/Zimbabwe/search.json?q=chishona&limit=100
+[2026-05-24 14:56:11] [WARN] [PHASE-2] 429 for https://www.reddit.com/search.json?q=chishona+language&limit=100
+[2026-05-24 14:56:11] [WARN] [PHASE-2] 429 for https://www.reddit.com/search.json?q=shona+zimbabwe&limit=100
+[2026-05-24 14:56:12] [INFO] [PHASE-2] Reddit collected 18 candidate Shona lines
+[2026-05-24 14:56:12] [INFO] [PHASE-2] reddit raw output written to data\raw\social\reddit_shona.txt
+[2026-05-24 14:56:12] [INFO] [PHASE-2] Starting Twitter/X collection via Nitter mirrors
+[2026-05-24 14:56:15] [WARN] [PHASE-2] 403 for https://nitter.poast.org/search?f=tweets&q=chiShona
+[2026-05-24 14:56:15] [WARN] [PHASE-2] 403 for https://nitter.poast.org/search?f=tweets&q=ndiri%20kufara
+[2026-05-24 14:56:15] [WARN] [PHASE-2] 403 for https://nitter.poast.org/search?f=tweets&q=ndinoda%20Zimbabwe
+[2026-05-24 14:56:16] [WARN] [PHASE-2] 403 for https://nitter.poast.org/search?f=tweets&q=vanhu%20veZimbabwe
+[2026-05-24 14:56:16] [WARN] [PHASE-2] 403 for https://nitter.poast.org/search?f=tweets&q=mhoro%20makadii
+[2026-05-24 14:56:16] [WARN] [PHASE-2] 403 for https://nitter.poast.org/search?f=tweets&q=ndatenda
+[2026-05-24 14:56:17] [WARN] [PHASE-2] 403 for https://nitter.poast.org/search?f=tweets&q=zvakanaka
+[2026-05-24 14:56:19] [WARN] [PHASE-2] Fetch failed for https://nitter.privacydev.net/search?f=tweets&q=chiShona: HTTPSConnectionPool(host='nitter.privacydev.net', port=443): Max retries exceeded with url: /search?f=tweets&q=chiShona (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000026A2D424C20>: Failed to resolve 'nitter.privacydev.net' ([Errno 11004] getaddrinfo failed)"))
+[2026-05-24 14:56:19] [WARN] [PHASE-2] Fetch failed for https://nitter.privacydev.net/search?f=tweets&q=ndiri%20kufara: HTTPSConnectionPool(host='nitter.privacydev.net', port=443): Max retries exceeded with url: /search?f=tweets&q=ndiri%20kufara (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000026A2D425580>: Failed to resolve 'nitter.privacydev.net' ([Errno 11004] getaddrinfo failed)"))
+[2026-05-24 14:56:19] [WARN] [PHASE-2] Fetch failed for https://nitter.privacydev.net/search?f=tweets&q=ndinoda%20Zimbabwe: HTTPSConnectionPool(host='nitter.privacydev.net', port=443): Max retries exceeded with url: /search?f=tweets&q=ndinoda%20Zimbabwe (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000026A2D426480>: Failed to resolve 'nitter.privacydev.net' ([Errno 11004] getaddrinfo failed)"))
+[2026-05-24 14:56:19] [WARN] [PHASE-2] Fetch failed for https://nitter.privacydev.net/search?f=tweets&q=vanhu%20veZimbabwe: HTTPSConnectionPool(host='nitter.privacydev.net', port=443): Max retries exceeded with url: /search?f=tweets&q=vanhu%20veZimbabwe (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000026A2D425FD0>: Failed to resolve 'nitter.privacydev.net' ([Errno 11004] getaddrinfo failed)"))
+[2026-05-24 14:56:19] [WARN] [PHASE-2] Fetch failed for https://nitter.privacydev.net/search?f=tweets&q=mhoro%20makadii: HTTPSConnectionPool(host='nitter.privacydev.net', port=443): Max retries exceeded with url: /search?f=tweets&q=mhoro%20makadii (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000026A2D4268A0>: Failed to resolve 'nitter.privacydev.net' ([Errno 11004] getaddrinfo failed)"))
+[2026-05-24 14:56:19] [WARN] [PHASE-2] Fetch failed for https://nitter.privacydev.net/search?f=tweets&q=ndatenda: HTTPSConnectionPool(host='nitter.privacydev.net', port=443): Max retries exceeded with url: /search?f=tweets&q=ndatenda (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000026A2D426D50>: Failed to resolve 'nitter.privacydev.net' ([Errno 11004] getaddrinfo failed)"))
+[2026-05-24 14:56:19] [WARN] [PHASE-2] Fetch failed for https://nitter.privacydev.net/search?f=tweets&q=zvakanaka: HTTPSConnectionPool(host='nitter.privacydev.net', port=443): Max retries exceeded with url: /search?f=tweets&q=zvakanaka (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000026A2D427590>: Failed to resolve 'nitter.privacydev.net' ([Errno 11004] getaddrinfo failed)"))
+[2026-05-24 14:56:19] [WARN] [PHASE-2] Fetch failed for https://nitter.1d4.us/search?f=tweets&q=chiShona: HTTPSConnectionPool(host='nitter.1d4.us', port=443): Max retries exceeded with url: /search?f=tweets&q=chiShona (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000026A2D427AA0>: Failed to resolve 'nitter.1d4.us' ([Errno 11001] getaddrinfo failed)"))
+[2026-05-24 14:56:19] [WARN] [PHASE-2] Fetch failed for https://nitter.1d4.us/search?f=tweets&q=ndiri%20kufara: HTTPSConnectionPool(host='nitter.1d4.us', port=443): Max retries exceeded with url: /search?f=tweets&q=ndiri%20kufara (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000026A2D427D40>: Failed to resolve 'nitter.1d4.us' ([Errno 11001] getaddrinfo failed)"))
+[2026-05-24 14:56:19] [WARN] [PHASE-2] Fetch failed for https://nitter.1d4.us/search?f=tweets&q=ndinoda%20Zimbabwe: HTTPSConnectionPool(host='nitter.1d4.us', port=443): Max retries exceeded with url: /search?f=tweets&q=ndinoda%20Zimbabwe (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000026A315F0170>: Failed to resolve 'nitter.1d4.us' ([Errno 11001] getaddrinfo failed)"))
+[2026-05-24 14:56:19] [WARN] [PHASE-2] Fetch failed for https://nitter.1d4.us/search?f=tweets&q=vanhu%20veZimbabwe: HTTPSConnectionPool(host='nitter.1d4.us', port=443): Max retries exceeded with url: /search?f=tweets&q=vanhu%20veZimbabwe (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000026A2D427FB0>: Failed to resolve 'nitter.1d4.us' ([Errno 11001] getaddrinfo failed)"))
+[2026-05-24 14:56:19] [WARN] [PHASE-2] Fetch failed for https://nitter.1d4.us/search?f=tweets&q=mhoro%20makadii: HTTPSConnectionPool(host='nitter.1d4.us', port=443): Max retries exceeded with url: /search?f=tweets&q=mhoro%20makadii (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000026A2D427890>: Failed to resolve 'nitter.1d4.us' ([Errno 11001] getaddrinfo failed)"))
+[2026-05-24 14:56:19] [WARN] [PHASE-2] Fetch failed for https://nitter.1d4.us/search?f=tweets&q=ndatenda: HTTPSConnectionPool(host='nitter.1d4.us', port=443): Max retries exceeded with url: /search?f=tweets&q=ndatenda (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000026A2D427530>: Failed to resolve 'nitter.1d4.us' ([Errno 11001] getaddrinfo failed)"))
+[2026-05-24 14:56:19] [WARN] [PHASE-2] Fetch failed for https://nitter.1d4.us/search?f=tweets&q=zvakanaka: HTTPSConnectionPool(host='nitter.1d4.us', port=443): Max retries exceeded with url: /search?f=tweets&q=zvakanaka (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000026A2D426690>: Failed to resolve 'nitter.1d4.us' ([Errno 11001] getaddrinfo failed)"))
+[2026-05-24 14:56:19] [INFO] [PHASE-2] Nitter collected 0 candidate Shona lines
+[2026-05-24 14:56:19] [INFO] [PHASE-2] twitter raw output written to data\raw\social\twitter_shona.txt
+[2026-05-24 14:56:19] [INFO] [PHASE-2] Starting Facebook public page collection
+[2026-05-24 14:56:22] [WARN] [PHASE-2] 400 for https://www.facebook.com/voashona
+[2026-05-24 14:56:24] [WARN] [PHASE-2] 400 for https://mbasic.facebook.com/voashona/?v=timeline
+[2026-05-24 14:56:25] [WARN] [PHASE-2] 400 for https://mbasic.facebook.com/voashona/posts
+[2026-05-24 14:56:25] [WARN] [PHASE-2] 400 for https://www.facebook.com/zbcnewsonline
+[2026-05-24 14:56:25] [WARN] [PHASE-2] 400 for https://mbasic.facebook.com/zbcnewsonline/?v=timeline
+[2026-05-24 14:56:26] [WARN] [PHASE-2] 400 for https://mbasic.facebook.com/zbcnewsonline/posts
+[2026-05-24 14:56:26] [WARN] [PHASE-2] 400 for https://www.facebook.com/263Chat
+[2026-05-24 14:56:27] [WARN] [PHASE-2] 400 for https://mbasic.facebook.com/263Chat/?v=timeline
+[2026-05-24 14:56:27] [WARN] [PHASE-2] 400 for https://mbasic.facebook.com/263Chat/posts
+[2026-05-24 14:56:27] [WARN] [PHASE-2] Fetch failed for /search?q=site:facebook.com+%22ndinoda%22+OR+%22ndiri%22+OR+%22vanhu%22+Zimbabwe&sca_esv=b2f91a6579888e50&hl=en&emsg=SG_REL&sei=dfUSaqaJD4DIwN4Pr7zJkA4: No connection adapters were found for '/search?q=site:facebook.com+%22ndinoda%22+OR+%22ndiri%22+OR+%22vanhu%22+Zimbabwe&sca_esv=b2f91a6579888e50&hl=en&emsg=SG_REL&sei=dfUSaqaJD4DIwN4Pr7zJkA4'
+[2026-05-24 14:56:28] [WARN] [PHASE-2] 400 for https://mbasic.facebook.com/search/?v=timeline
+[2026-05-24 14:56:28] [WARN] [PHASE-2] 400 for https://mbasic.facebook.com/search/posts
+[2026-05-24 14:56:28] [INFO] [PHASE-2] Facebook collected 0 candidate Shona lines
+[2026-05-24 14:56:28] [INFO] [PHASE-2] facebook raw output written to data\raw\social\facebook_shona.txt
+[2026-05-24 14:56:28] [INFO] [PHASE-2] Starting YouTube search collection
+[2026-05-24 14:56:33] [INFO] [PHASE-2] YouTube collected 0 candidate Shona lines
+[2026-05-24 14:56:33] [INFO] [PHASE-2] youtube raw output written to data\raw\social\youtube_shona.txt
+[2026-05-24 14:56:33] [INFO] [PHASE-2] Starting Telegram public channel collection
+[2026-05-24 14:56:37] [INFO] [PHASE-2] Telegram collected 0 candidate Shona lines
+[2026-05-24 14:56:37] [INFO] [PHASE-2] telegram raw output written to data\raw\social\telegram_shona.txt
+[2026-05-24 14:56:37] [INFO] [PHASE-2] Starting website crawl for masvingo_mirror
+[2026-05-24 14:57:18] [WARN] [PHASE-2] 404 for https://www.masvingomirror.com/author/simbarashe/
+[2026-05-24 14:57:20] [INFO] [PHASE-2] masvingo_mirror collected 0 candidate Shona lines
+[2026-05-24 14:57:20] [INFO] [PHASE-2] masvingo_mirror raw output written to data\raw\news\masvingomirror_shona.txt
+[2026-05-24 14:57:20] [INFO] [PHASE-2] Starting website crawl for zimetro
+[2026-05-24 14:57:29] [INFO] [PHASE-2] zimetro collected 0 candidate Shona lines
+[2026-05-24 14:57:29] [INFO] [PHASE-2] zimetro raw output written to data\raw\news\zimetro_shona.txt
+[2026-05-24 14:57:29] [INFO] [PHASE-2] Starting website crawl for myzimbabwe
+[2026-05-24 14:57:47] [INFO] [PHASE-2] myzimbabwe collected 6 candidate Shona lines
+[2026-05-24 14:57:47] [INFO] [PHASE-2] myzimbabwe raw output written to data\raw\news\myzimbabwe_shona.txt
+[2026-05-24 14:57:47] [INFO] [PHASE-2] Starting website crawl for nehanda_radio
+[2026-05-24 14:57:47] [WARN] [PHASE-2] Fetch failed for https://nehanda.radio: HTTPSConnectionPool(host='nehanda.radio', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000026A301D0800>: Failed to resolve 'nehanda.radio' ([Errno 11001] getaddrinfo failed)"))
+[2026-05-24 14:57:47] [WARN] [PHASE-2] Homepage unavailable for nehanda_radio
+[2026-05-24 14:57:47] [INFO] [PHASE-2] nehanda_radio raw output written to data\raw\news\nehanda_radio_shona.txt
+[2026-05-24 14:57:47] [INFO] [PHASE-2] Starting website crawl for newsday
+[2026-05-24 14:58:16] [INFO] [PHASE-2] Agent 17 social/web scraping sprint started
+[2026-05-24 14:58:24] [INFO] [PHASE-2] Loaded 212,110 existing corpus lines for dedupe
+[2026-05-24 14:58:24] [INFO] [PHASE-2] Starting Reddit JSON collection
+[2026-05-24 14:59:41] [WARN] [PHASE-2] 429 for https://www.reddit.com/r/zimbabwe.json?limit=100
+[2026-05-24 14:59:41] [WARN] [PHASE-2] 429 for https://www.reddit.com/r/Zimbabwe/search.json?q=chishona&limit=100
+[2026-05-24 14:59:41] [WARN] [PHASE-2] 429 for https://www.reddit.com/search.json?q=chishona+language&limit=100
+[2026-05-24 14:59:42] [WARN] [PHASE-2] 429 for https://www.reddit.com/search.json?q=shona+zimbabwe&limit=100
+[2026-05-24 14:59:42] [INFO] [PHASE-2] Reddit collected 18 candidate Shona lines
+[2026-05-24 14:59:42] [INFO] [PHASE-2] reddit raw output written to data\raw\social\reddit_shona.txt
+[2026-05-24 14:59:42] [INFO] [PHASE-2] Starting Twitter/X collection via Nitter mirrors
+[2026-05-24 14:59:45] [WARN] [PHASE-2] 403 for https://nitter.poast.org/search?f=tweets&q=chiShona
+[2026-05-24 14:59:45] [WARN] [PHASE-2] 403 for https://nitter.poast.org/search?f=tweets&q=ndiri%20kufara
+[2026-05-24 14:59:46] [WARN] [PHASE-2] 403 for https://nitter.poast.org/search?f=tweets&q=ndinoda%20Zimbabwe
+[2026-05-24 14:59:46] [WARN] [PHASE-2] 403 for https://nitter.poast.org/search?f=tweets&q=vanhu%20veZimbabwe
+[2026-05-24 14:59:46] [WARN] [PHASE-2] 403 for https://nitter.poast.org/search?f=tweets&q=mhoro%20makadii
+[2026-05-24 14:59:47] [WARN] [PHASE-2] 403 for https://nitter.poast.org/search?f=tweets&q=ndatenda
+[2026-05-24 14:59:47] [WARN] [PHASE-2] 403 for https://nitter.poast.org/search?f=tweets&q=zvakanaka
+[2026-05-24 14:59:47] [WARN] [PHASE-2] Fetch failed for https://nitter.privacydev.net/search?f=tweets&q=chiShona: HTTPSConnectionPool(host='nitter.privacydev.net', port=443): Max retries exceeded with url: /search?f=tweets&q=chiShona (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000019709A38E60>: Failed to resolve 'nitter.privacydev.net' ([Errno 11004] getaddrinfo failed)"))
+[2026-05-24 14:59:47] [WARN] [PHASE-2] Fetch failed for https://nitter.privacydev.net/search?f=tweets&q=ndiri%20kufara: HTTPSConnectionPool(host='nitter.privacydev.net', port=443): Max retries exceeded with url: /search?f=tweets&q=ndiri%20kufara (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000019709A38200>: Failed to resolve 'nitter.privacydev.net' ([Errno 11004] getaddrinfo failed)"))
+[2026-05-24 14:59:47] [WARN] [PHASE-2] Fetch failed for https://nitter.privacydev.net/search?f=tweets&q=ndinoda%20Zimbabwe: HTTPSConnectionPool(host='nitter.privacydev.net', port=443): Max retries exceeded with url: /search?f=tweets&q=ndinoda%20Zimbabwe (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000019709A3A1E0>: Failed to resolve 'nitter.privacydev.net' ([Errno 11004] getaddrinfo failed)"))
+[2026-05-24 14:59:47] [WARN] [PHASE-2] Fetch failed for https://nitter.privacydev.net/search?f=tweets&q=vanhu%20veZimbabwe: HTTPSConnectionPool(host='nitter.privacydev.net', port=443): Max retries exceeded with url: /search?f=tweets&q=vanhu%20veZimbabwe (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000019709A39C70>: Failed to resolve 'nitter.privacydev.net' ([Errno 11004] getaddrinfo failed)"))
+[2026-05-24 14:59:47] [WARN] [PHASE-2] Fetch failed for https://nitter.privacydev.net/search?f=tweets&q=mhoro%20makadii: HTTPSConnectionPool(host='nitter.privacydev.net', port=443): Max retries exceeded with url: /search?f=tweets&q=mhoro%20makadii (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000019709A3A900>: Failed to resolve 'nitter.privacydev.net' ([Errno 11004] getaddrinfo failed)"))
+[2026-05-24 14:59:47] [WARN] [PHASE-2] Fetch failed for https://nitter.privacydev.net/search?f=tweets&q=ndatenda: HTTPSConnectionPool(host='nitter.privacydev.net', port=443): Max retries exceeded with url: /search?f=tweets&q=ndatenda (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000019709A3ADE0>: Failed to resolve 'nitter.privacydev.net' ([Errno 11004] getaddrinfo failed)"))
+[2026-05-24 14:59:47] [WARN] [PHASE-2] Fetch failed for https://nitter.privacydev.net/search?f=tweets&q=zvakanaka: HTTPSConnectionPool(host='nitter.privacydev.net', port=443): Max retries exceeded with url: /search?f=tweets&q=zvakanaka (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000019709A3B230>: Failed to resolve 'nitter.privacydev.net' ([Errno 11004] getaddrinfo failed)"))
+[2026-05-24 14:59:47] [WARN] [PHASE-2] Fetch failed for https://nitter.1d4.us/search?f=tweets&q=chiShona: HTTPSConnectionPool(host='nitter.1d4.us', port=443): Max retries exceeded with url: /search?f=tweets&q=chiShona (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000019709A3BA70>: Failed to resolve 'nitter.1d4.us' ([Errno 11001] getaddrinfo failed)"))
+[2026-05-24 14:59:47] [WARN] [PHASE-2] Fetch failed for https://nitter.1d4.us/search?f=tweets&q=ndiri%20kufara: HTTPSConnectionPool(host='nitter.1d4.us', port=443): Max retries exceeded with url: /search?f=tweets&q=ndiri%20kufara (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000019709A3BD10>: Failed to resolve 'nitter.1d4.us' ([Errno 11001] getaddrinfo failed)"))
+[2026-05-24 14:59:47] [WARN] [PHASE-2] Fetch failed for https://nitter.1d4.us/search?f=tweets&q=ndinoda%20Zimbabwe: HTTPSConnectionPool(host='nitter.1d4.us', port=443): Max retries exceeded with url: /search?f=tweets&q=ndinoda%20Zimbabwe (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001970DC23140>: Failed to resolve 'nitter.1d4.us' ([Errno 11001] getaddrinfo failed)"))
+[2026-05-24 14:59:47] [WARN] [PHASE-2] Fetch failed for https://nitter.1d4.us/search?f=tweets&q=vanhu%20veZimbabwe: HTTPSConnectionPool(host='nitter.1d4.us', port=443): Max retries exceeded with url: /search?f=tweets&q=vanhu%20veZimbabwe (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000019709A39220>: Failed to resolve 'nitter.1d4.us' ([Errno 11001] getaddrinfo failed)"))
+[2026-05-24 14:59:47] [WARN] [PHASE-2] Fetch failed for https://nitter.1d4.us/search?f=tweets&q=mhoro%20makadii: HTTPSConnectionPool(host='nitter.1d4.us', port=443): Max retries exceeded with url: /search?f=tweets&q=mhoro%20makadii (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000019709A3BA10>: Failed to resolve 'nitter.1d4.us' ([Errno 11001] getaddrinfo failed)"))
+[2026-05-24 14:59:47] [WARN] [PHASE-2] Fetch failed for https://nitter.1d4.us/search?f=tweets&q=ndatenda: HTTPSConnectionPool(host='nitter.1d4.us', port=443): Max retries exceeded with url: /search?f=tweets&q=ndatenda (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000019709A3B1D0>: Failed to resolve 'nitter.1d4.us' ([Errno 11001] getaddrinfo failed)"))
+[2026-05-24 14:59:47] [WARN] [PHASE-2] Fetch failed for https://nitter.1d4.us/search?f=tweets&q=zvakanaka: HTTPSConnectionPool(host='nitter.1d4.us', port=443): Max retries exceeded with url: /search?f=tweets&q=zvakanaka (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000019709A3A690>: Failed to resolve 'nitter.1d4.us' ([Errno 11001] getaddrinfo failed)"))
+[2026-05-24 14:59:47] [INFO] [PHASE-2] Nitter collected 0 candidate Shona lines
+[2026-05-24 14:59:47] [INFO] [PHASE-2] twitter raw output written to data\raw\social\twitter_shona.txt
+[2026-05-24 14:59:47] [INFO] [PHASE-2] Starting Facebook public page collection
+[2026-05-24 14:59:50] [WARN] [PHASE-2] 400 for https://www.facebook.com/voashona
+[2026-05-24 14:59:52] [WARN] [PHASE-2] 400 for https://mbasic.facebook.com/voashona/?v=timeline
+[2026-05-24 14:59:52] [WARN] [PHASE-2] 400 for https://mbasic.facebook.com/voashona/posts
+[2026-05-24 14:59:53] [WARN] [PHASE-2] 400 for https://www.facebook.com/zbcnewsonline
+[2026-05-24 14:59:53] [WARN] [PHASE-2] 400 for https://mbasic.facebook.com/zbcnewsonline/?v=timeline
+[2026-05-24 14:59:53] [WARN] [PHASE-2] 400 for https://mbasic.facebook.com/zbcnewsonline/posts
+[2026-05-24 14:59:54] [WARN] [PHASE-2] 400 for https://www.facebook.com/263Chat
+[2026-05-24 14:59:54] [WARN] [PHASE-2] 400 for https://mbasic.facebook.com/263Chat/?v=timeline
+[2026-05-24 14:59:54] [WARN] [PHASE-2] 400 for https://mbasic.facebook.com/263Chat/posts
+[2026-05-24 14:59:54] [INFO] [PHASE-2] Facebook collected 0 candidate Shona lines
+[2026-05-24 14:59:54] [INFO] [PHASE-2] facebook raw output written to data\raw\social\facebook_shona.txt
+[2026-05-24 14:59:54] [INFO] [PHASE-2] Starting YouTube search collection
+[2026-05-24 15:00:01] [INFO] [PHASE-2] YouTube collected 0 candidate Shona lines
+[2026-05-24 15:00:01] [INFO] [PHASE-2] youtube raw output written to data\raw\social\youtube_shona.txt
+[2026-05-24 15:00:01] [INFO] [PHASE-2] Starting Telegram public channel collection
+[2026-05-24 15:00:04] [INFO] [PHASE-2] Telegram collected 0 candidate Shona lines
+[2026-05-24 15:00:04] [INFO] [PHASE-2] telegram raw output written to data\raw\social\telegram_shona.txt
+[2026-05-24 15:00:04] [INFO] [PHASE-2] Starting website crawl for masvingo_mirror
+[2026-05-24 15:00:14] [INFO] [PHASE-2] masvingo_mirror collected 0 candidate Shona lines
+[2026-05-24 15:00:14] [INFO] [PHASE-2] masvingo_mirror raw output written to data\raw\news\masvingomirror_shona.txt
+[2026-05-24 15:00:14] [INFO] [PHASE-2] Starting website crawl for zimetro
+[2026-05-24 15:00:37] [INFO] [PHASE-2] zimetro collected 0 candidate Shona lines
+[2026-05-24 15:00:37] [INFO] [PHASE-2] zimetro raw output written to data\raw\news\zimetro_shona.txt
+[2026-05-24 15:00:37] [INFO] [PHASE-2] Starting website crawl for myzimbabwe
+[2026-05-24 15:00:46] [INFO] [PHASE-2] myzimbabwe collected 3 candidate Shona lines
+[2026-05-24 15:00:46] [INFO] [PHASE-2] myzimbabwe raw output written to data\raw\news\myzimbabwe_shona.txt
+[2026-05-24 15:00:46] [INFO] [PHASE-2] Starting website crawl for nehanda_radio
+[2026-05-24 15:00:46] [WARN] [PHASE-2] Fetch failed for https://nehanda.radio: HTTPSConnectionPool(host='nehanda.radio', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001970ED64260>: Failed to resolve 'nehanda.radio' ([Errno 11001] getaddrinfo failed)"))
+[2026-05-24 15:00:46] [WARN] [PHASE-2] Homepage unavailable for nehanda_radio
+[2026-05-24 15:00:46] [INFO] [PHASE-2] nehanda_radio raw output written to data\raw\news\nehanda_radio_shona.txt
+[2026-05-24 15:00:46] [INFO] [PHASE-2] Starting website crawl for newsday
+[2026-05-24 15:00:54] [INFO] [PHASE-2] newsday collected 1 candidate Shona lines
+[2026-05-24 15:00:54] [INFO] [PHASE-2] newsday raw output written to data\raw\news\newsday_shona.txt
+[2026-05-24 15:00:54] [INFO] [PHASE-2] Starting website crawl for sunday_mail
+[2026-05-24 15:00:57] [INFO] [PHASE-2] sunday_mail collected 0 candidate Shona lines
+[2026-05-24 15:00:57] [INFO] [PHASE-2] sunday_mail raw output written to data\raw\news\sundaymail_shona.txt
+[2026-05-24 15:00:57] [INFO] [PHASE-2] Starting website crawl for chronicle
+[2026-05-24 15:00:59] [WARN] [PHASE-2] 404 for https://www.chronicle.co.zw/cdn-cgi/l/email-protection
+[2026-05-24 15:00:59] [INFO] [PHASE-2] chronicle collected 0 candidate Shona lines
+[2026-05-24 15:00:59] [INFO] [PHASE-2] chronicle raw output written to data\raw\news\chronicle_shona.txt
+[2026-05-24 15:00:59] [MILESTONE] [PHASE-2] reddit sample lines before append:
+[2026-05-24 15:00:59] [MILESTONE] [PHASE-2] reddit sample 1: Came here to say exactly this.
+[2026-05-24 15:00:59] [MILESTONE] [PHASE-2] reddit sample 2: Shona: ["Ndiri pano kuti ndione Butch Jones achidzingwa."]( 1.
+[2026-05-24 15:00:59] [MILESTONE] [PHASE-2] reddit sample 3: Its only downhill from here.
+[2026-05-24 15:00:59] [MILESTONE] [PHASE-2] reddit sample 4: Facebook page [here](
+[2026-05-24 15:00:59] [MILESTONE] [PHASE-2] reddit sample 5: Dafaq happened here?!
+[2026-05-24 15:00:59] [WARN] [PHASE-2] twitter produced no new corpus lines after dedupe
+[2026-05-24 15:01:00] [WARN] [PHASE-2] facebook produced no new corpus lines after dedupe
+[2026-05-24 15:01:00] [WARN] [PHASE-2] youtube produced no new corpus lines after dedupe
+[2026-05-24 15:01:00] [WARN] [PHASE-2] telegram produced no new corpus lines after dedupe
+[2026-05-24 15:01:00] [WARN] [PHASE-2] masvingo_mirror produced no new corpus lines after dedupe
+[2026-05-24 15:01:00] [WARN] [PHASE-2] zimetro produced no new corpus lines after dedupe
+[2026-05-24 15:01:00] [MILESTONE] [PHASE-2] myzimbabwe sample lines before append:
+[2026-05-24 15:01:00] [MILESTONE] [PHASE-2] myzimbabwe sample 1: My Zimbabwe News - New Zimbabwe News | Zimbabwe situation | Zimbabwe latest news | Crazy News Zimbabwe | news.co.zw | Zimbabwe Current Affairs | Zimbabwe Online News | Harare News updates | Daily News Day Zimbabwe | Zimbabwe Politics News | Mnangagwa News Chamisa
+[2026-05-24 15:01:00] [MILESTONE] [PHASE-2] myzimbabwe sample 2: My Zimbabwe News publishes Zimbabwe's latest news daily from Harare, Bulawayo and around Zimbabwe.
+[2026-05-24 15:01:00] [MILESTONE] [PHASE-2] myzimbabwe sample 3: 5 Most Expensive Estates and Luxury Neighborhoods in Zimbabwe | My Zimbabwe News
+[2026-05-24 15:01:00] [WARN] [PHASE-2] nehanda_radio produced no new corpus lines after dedupe
+[2026-05-24 15:01:00] [MILESTONE] [PHASE-2] newsday sample lines before append:
+[2026-05-24 15:01:00] [MILESTONE] [PHASE-2] newsday sample 1: The Zimbabwe Independent.
+[2026-05-24 15:01:00] [WARN] [PHASE-2] sunday_mail produced no new corpus lines after dedupe
+[2026-05-24 15:01:00] [WARN] [PHASE-2] chronicle produced no new corpus lines after dedupe
+[2026-05-24 15:01:00] [MILESTONE] [PHASE-2] Appended 22 new unique lines to data\processed\all_clean.txt
+[2026-05-24 15:01:07] [MILESTONE] [PHASE-2] Splits regenerated: total_lines=212,132, total_tokens=3,536,024
+[2026-05-24 15:01:07] [INFO] [PHASE-2] Manifest updated with 12 source entries
+[2026-05-24 15:01:07] [INFO] [PHASE-2] STATE.json updated
+[2026-05-24 15:01:07] [MILESTONE] [PHASE-2] SOURCE SUMMARY
+[2026-05-24 15:01:07] [MILESTONE] [PHASE-2] reddit: success
+[2026-05-24 15:01:07] [MILESTONE] [PHASE-2] twitter: failed
+[2026-05-24 15:01:07] [MILESTONE] [PHASE-2] facebook: failed
+[2026-05-24 15:01:07] [MILESTONE] [PHASE-2] youtube: failed
+[2026-05-24 15:01:07] [MILESTONE] [PHASE-2] telegram: failed
+[2026-05-24 15:01:07] [MILESTONE] [PHASE-2] masvingo_mirror: failed
+[2026-05-24 15:01:07] [MILESTONE] [PHASE-2] zimetro: failed
+[2026-05-24 15:01:07] [MILESTONE] [PHASE-2] myzimbabwe: success
+[2026-05-24 15:01:07] [MILESTONE] [PHASE-2] nehanda_radio: failed
+[2026-05-24 15:01:07] [MILESTONE] [PHASE-2] newsday: success
+[2026-05-24 15:01:07] [MILESTONE] [PHASE-2] sunday_mail: failed
+[2026-05-24 15:01:07] [MILESTONE] [PHASE-2] chronicle: failed
+[2026-05-24 15:01:07] [MILESTONE] [PHASE-2] new raw tokens: 157
+[2026-05-24 15:01:07] [MILESTONE] [PHASE-2] new clean tokens: 157
+[2026-05-24 15:01:07] [MILESTONE] [PHASE-2] final corpus tokens: 3,536,024

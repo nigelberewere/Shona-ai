@@ -1,9 +1,9 @@
 {
   "project": "shona-ai",
   "version": "0.1.0",
-  "last_updated": "2026-05-24 14:38:00",
-  "agent_number": 16,
-  "model_used": "Antigravity",
+  "last_updated": "2026-05-24 15:01:07",
+  "agent_number": 17,
+  "model_used": "GPT-5.4 mini",
   "current_phase": 2,
   "phase_status": {
     "1": "complete",
@@ -18,8 +18,8 @@
     "10": "not_started"
   },
   "data_stats": {
-    "raw_tokens": 5723274,
-    "clean_tokens": 3539407,
+    "raw_tokens": 5723431,
+    "clean_tokens": 3536024,
     "sources_complete": [
       "wikipedia_sn",
       "bible_shona",
@@ -30,7 +30,10 @@
       "voa_historical_archive",
       "leipzig_shona",
       "o_level_shona",
-      "tambaoga_mwanangu_novel"
+      "tambaoga_mwanangu_novel",
+      "reddit",
+      "myzimbabwe",
+      "newsday"
     ]
   },
   "training_stats": {
@@ -48,10 +51,10 @@
     "vocab_path": "tokenizer/shona_bpe.vocab",
     "trained_at": "2026-05-21T08:45:45.097280"
   },
-  "last_commit": "fix: strip wiki markup and technical noise before v3 training",
+  "last_commit": "feat: social media and web scraping sprint",
   "last_commit_hash": "",
   "blocking_issues": [],
-  "next_action": "Retrain Shona AI model on the expanded 2.30M token corpus",
+  "next_action": "Review the sparse social/web additions and decide whether a phase 3 cleaning pass is worth rerunning before training.",
   "generation_artifacts": [
     "logs/sample_generations.txt",
     "logs/sample_generations_sampling.txt",

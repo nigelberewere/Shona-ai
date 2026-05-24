@@ -192,5 +192,89 @@
     "docs": 86867,
     "path": "data\\raw\\opus\\en-sn_parallel.txt",
     "downloaded_at": "2026-05-20T14:47:37.217502"
+  },
+  {
+    "source": "reddit",
+    "tokens": 82,
+    "docs": 18,
+    "path": "data\\raw\\social\\reddit_shona.txt",
+    "downloaded_at": "2026-05-24T15:01:07.605853"
+  },
+  {
+    "source": "twitter",
+    "tokens": 0,
+    "docs": 0,
+    "path": "data\\raw\\social\\twitter_shona.txt",
+    "downloaded_at": "2026-05-24T15:01:07.605853"
+  },
+  {
+    "source": "facebook",
+    "tokens": 0,
+    "docs": 0,
+    "path": "data\\raw\\social\\facebook_shona.txt",
+    "downloaded_at": "2026-05-24T15:01:07.605853"
+  },
+  {
+    "source": "youtube",
+    "tokens": 0,
+    "docs": 0,
+    "path": "data\\raw\\social\\youtube_shona.txt",
+    "downloaded_at": "2026-05-24T15:01:07.610233"
+  },
+  {
+    "source": "telegram",
+    "tokens": 0,
+    "docs": 0,
+    "path": "data\\raw\\social\\telegram_shona.txt",
+    "downloaded_at": "2026-05-24T15:01:07.610233"
+  },
+  {
+    "source": "masvingo_mirror",
+    "tokens": 0,
+    "docs": 0,
+    "path": "data\\raw\\news\\masvingomirror_shona.txt",
+    "downloaded_at": "2026-05-24T15:01:07.610233"
+  },
+  {
+    "source": "zimetro",
+    "tokens": 0,
+    "docs": 0,
+    "path": "data\\raw\\news\\zimetro_shona.txt",
+    "downloaded_at": "2026-05-24T15:01:07.610233"
+  },
+  {
+    "source": "myzimbabwe",
+    "tokens": 72,
+    "docs": 3,
+    "path": "data\\raw\\news\\myzimbabwe_shona.txt",
+    "downloaded_at": "2026-05-24T15:01:07.610233"
+  },
+  {
+    "source": "nehanda_radio",
+    "tokens": 0,
+    "docs": 0,
+    "path": "data\\raw\\news\\nehanda_radio_shona.txt",
+    "downloaded_at": "2026-05-24T15:01:07.610233"
+  },
+  {
+    "source": "newsday",
+    "tokens": 3,
+    "docs": 1,
+    "path": "data\\raw\\news\\newsday_shona.txt",
+    "downloaded_at": "2026-05-24T15:01:07.610233"
+  },
+  {
+    "source": "sunday_mail",
+    "tokens": 0,
+    "docs": 0,
+    "path": "data\\raw\\news\\sundaymail_shona.txt",
+    "downloaded_at": "2026-05-24T15:01:07.610233"
+  },
+  {
+    "source": "chronicle",
+    "tokens": 0,
+    "docs": 0,
+    "path": "data\\raw\\news\\chronicle_shona.txt",
+    "downloaded_at": "2026-05-24T15:01:07.610233"
   }
 ]
