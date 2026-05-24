@@ -1,7 +1,7 @@
 {
   "project": "shona-ai",
   "version": "0.1.0",
-  "last_updated": "2026-05-24 17:52:42",
+  "last_updated": "2026-05-24 18:44:00",
   "agent_number": 18,
   "model_used": "Gemini 3.5 Flash (High)",
   "current_phase": 2,
@@ -18,8 +18,8 @@
     "10": "not_started"
   },
   "data_stats": {
-    "raw_tokens": 5723431,
-    "clean_tokens": 3536024,
+    "raw_tokens": 6751653,
+    "clean_tokens": 4467364,
     "sources_complete": [
       "wikipedia_sn",
       "bible_shona",
@@ -33,7 +33,10 @@
       "tambaoga_mwanangu_novel",
       "reddit",
       "myzimbabwe",
-      "newsday"
+      "newsday",
+      "shona_bible_v2",
+      "masakhanews_shona",
+      "shona_conversations"
     ]
   },
   "training_stats": {
@@ -45,16 +48,16 @@
     "eval_perplexity": 678.3399047851562
   },
   "tokenizer_stats": {
-    "fertility": 1.1538461538461537,
+    "fertility": 1.5224,
     "vocab_size": 32000,
-    "model_path": "tokenizer/shona_bpe.model",
-    "vocab_path": "tokenizer/shona_bpe.vocab",
-    "trained_at": "2026-05-21T08:45:45.097280"
+    "model_path": "tokenizer/shona_bpe_v2.model",
+    "vocab_path": "tokenizer/shona_bpe_v2.vocab",
+    "trained_at": "2026-05-24T18:05:00.000000"
   },
-  "last_commit": "feat: social media and web scraping sprint",
-  "last_commit_hash": "d86e645",
+  "last_commit": "feat: v5 prep - retrain tokenizer and data collection",
+  "last_commit_hash": "f95fb9d",
   "blocking_issues": [],
-  "next_action": "Retrain SentencePiece tokenizer and collect more Shona sources.",
+  "next_action": "Proceed with Phase 5 Model training on v5 corpus using shona_bpe_v2.model.",
   "generation_artifacts": [
     "logs/sample_generations.txt",
     "logs/sample_generations_sampling.txt",
