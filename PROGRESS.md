@@ -115,3 +115,15 @@ This file is append-only. Each agent adds a timestamped session summary at the e
   - Merged the Leipzig corpus into `data/processed/all_clean.txt` and strictly deduplicated to reach **209,845** unique clean lines and **3,510,337** clean tokens (an amazing growth of **+1,206,154 tokens / +52.35%** over Agent 14's gold corpus!).
   - Shuffled and regenerated dataset splits (98/1/1): `train.txt` (205,649 lines), `valid.txt` (2,098 lines), and `test.txt` (2,098 lines).
   - Updated `STATE.json`, `stats.json`, and git committed all scripts and datasets.
+
+## 2026-05-24 — Agent 16
+
+- **O-Level Study Materials Extraction & Integration**:
+  - Extracted clean, native Shona prose from Ordinary Level study materials located in `data/raw/SHONA/` (including grammar books, proverbs/tsumo, and cultural notes).
+  - Handled PDF page-by-page extraction using `pdfplumber` and DOCX paragraph-by-paragraph extraction using `python-docx`. Properly skipped scanned OCR-locked PDFs and password-protected files.
+  - Showed raw extraction samples and validated readable, high-quality native Shona sentences.
+  - Performed a multi-pass cleaning and filtering sweep to strip layout garbage, list numbers, short lines (<15 characters), consecutive English words, and technical noise.
+  - Integrated the clean O-Level study materials into the training corpus, adding **2,087 unique lines** and **17,310 clean Shona tokens** of premium native prose.
+  - Shuffled and regenerated 98/1/1 splits: `train.txt` (207,694 lines), `valid.txt` (2,119 lines), and `test.txt` (2,119 lines).
+  - Verified final gold baseline corpus size stands at **211,932 unique clean lines** and **3,527,647 clean tokens**.
+  - Updated `STATE.json` and `data/processed/stats.json` accordingly, and committed all changes.
