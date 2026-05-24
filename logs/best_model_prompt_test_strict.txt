@@ -1,0 +1,21 @@
+checkpoint: C:\Users\nigel\projects\Shona ai\training\checkpoints\shona_ai_v2.pt
+max_tokens: 50
+temperature: 0.5
+top_p: 0.8
+
+PROMPT: Mhoro, makadii?
+RESPONSE: Kana iwe uri kuziva kuti uri munhu mumwe nomumwe. Kana uri mufunge kuti kana iwe uri kutsvaka, kana iwe uri pano. Kana iwe unogona kukopa ichi, kana iwe uri iwe uri parwendo rwenyu, kana iwe uri parwendo rwenyu, iwe uri pazororo, uye
+---
+PROMPT: Unonzi ani?
+RESPONSE: Kana uri muguva woga, kana uri woga, kana kuti adzikinure, kana mukadzi wake, kana achinge adzokera shure, kana mukadzi wake, kana achinge atadza, kana munhu asina kumukomana wake, kana achitadza, kana mukadzi wake, kana
+---
+PROMPT: Ndinoda kudzidza chiShona nokuti
+RESPONSE: kushandisa zvakawanda, asi hapana, asi isu tiri kuedza, uye kunyange chete tinogona kuwana unhu. Kana iwe unofanira kuita kuti unofanira kuwana mari. Kana iwe unenge uchida kuti iwe unenge uchida kuva nechokwadi kuti ushanyire yako. Kana uri kushandisa chero nguva dzose nzira kana
+---
+PROMPT: Nhasi ndiri kuenda kumusika kunotenga
+RESPONSE: ! Kubva ku € 2 maawa 24 € € 1,7 billion) uye 1x5 Mazuva pavhiki. Saka, asi kwete chete. Kana iwe unogona kuwana nzira kuti nguva dzose. Kana iwe unogona kuwana mukana wekutaura pamusoro pevhiki. Kana iwe uri
+---
+PROMPT: Tsanangura kuti mhuri inokosha sei
+RESPONSE: kuti uri pano. > zino! > chitima matikiti! - Part 2ndwatch After Patch! The Best Christmas Train Travel The Christmas Train Travel The Castle Weddings. The Thalys nezvitima! The chitima kufamba Mazano, uye chitima rwendo. The chitima
+---
+elapsed_seconds: 5.03

@@ -1,0 +1,21 @@
+checkpoint: C:\Users\nigel\projects\Shona ai\training\checkpoints\shona_ai_v2.pt
+max_tokens: 80
+temperature: 0.8
+top_p: 0.9
+
+PROMPT: Mhoro, makadii?
+RESPONSE: Iye zvino, iwe, kuti mumwe murume wako, iwe, kana moyo wako urege kukanganwa. "Mudzidzisi wava nemimbazve, uye ane hanya, uye achagamuchira, uye muchisviniro, uye iwe, ita kuti ndiani! (Mat. 12. 1-888-44). Nokuti ndizvo zvakare, ); nokuti ani zvake sezvo pane imwe). Nokuti makandipindura, asi ndiani ari panzvimbo, uye iwe uzvibvise chiratidzo.
+---
+PROMPT: Unonzi ani?
+RESPONSE: Apo kana ukarasa mumwe chete? Kana uri kuda kwake, kana chinhu munhu wakaita semwana? Asi muromo wake wakasimba. Varanda vake, kana uri uyo wakatarirwa zvakanaka. Ini murume wangu ari panzvimbo yake. Nokuti Mwari, uye haana kuita zvakaipa. Uye zvirokwazvo, haana kuzvizviita, nokuti ndiye akandituma kwamuri, nokuti Mwari, nokuti haana kuva mumwe chete. "Vonzwa izvozvo zvino akanga akapfeka zvose ndakanga zvino
+---
+PROMPT: Ndinoda kudzidza chiShona nokuti
+RESPONSE: vaifamba nechitima kubva Europe uye kweBrussels kuLondon Berlin nechitima vari zvakanaka uye zvachose. Zvino Jesu unoporesa kuziva chaizvo zvakawanda... - ndinovenga rudo rwendo! Zvadaro kunyange rwiyo pamusoro zvose nguva dzose nguva. Kana uri parwendo, kutora chitima, chinhu kunzwisisa zvinhu izvi. Kana uri muti, uye ini ndinofanira kuti ashanyire uye ndafarira vamwe. zvisinei, uye kuitawo nyika; regai kutanga kuti vaparidzi. Uye havasi imi musafamba
+---
+PROMPT: Nhasi ndiri kuenda kumusika kunotenga
+RESPONSE: yako Website kuti imwe nzira dhipoziti. Email, uye kusarudza nzvimbo kana uchida kuti vatengi wasarudza mari. zvisinei, ipapo, Mastercard uye ipapo acharonga, kuwana kombiyuta zvose. zvisinei, zvose zvaunogona kuva paIndaneti playing pamwe kuti mumwe. Nzvimbo 1xbet, uye nyore, unogona kupinda vachitamba mazano Betting. zvisinei, vatambi vatengi. Unogona kusarudza uye chaizvo nyore kuti pano. Zviri nyore kuwana mari. Unogona kuwana bhonasi kana kuti
+---
+PROMPT: Tsanangura kuti mhuri inokosha sei
+RESPONSE: kuti mari tsaru Vatasvi here kuti dzinono. Chicken Insider sei sei kuderedza mari paIndaneti? Check uye basa. Ipapo kana Tamong Ndaiva nguva iyo funding ndiye 50mg, kuti dhipoziti, kana maawa. Kana dzimwe nguva, uye mumwe bookmaker, mazuva uye kuramba anofanira kugara zuva nezuva sezvo bhonasi. Izvi zvichaita kuti dhipoziti ichi kudzikinuraaver. uye dhipoziti iyi havana nguva yokuti uine ose awa
+---
+elapsed_seconds: 12.01
