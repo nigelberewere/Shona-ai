@@ -127,3 +127,10 @@ This file is append-only. Each agent adds a timestamped session summary at the e
   - Shuffled and regenerated 98/1/1 splits: `train.txt` (207,694 lines), `valid.txt` (2,119 lines), and `test.txt` (2,119 lines).
   - Verified final gold baseline corpus size stands at **211,932 unique clean lines** and **3,527,647 clean tokens**.
   - Updated `STATE.json` and `data/processed/stats.json` accordingly, and committed all changes.
+- **Shona Novel Integration**:
+  - Located and parsed the classic Shona novel `Tambaoga Mwanangu.txt` (located under `data/raw/novels/`).
+  - Applied very light, context-aware literary cleaning: removed blank lines and lines < 15 characters, removed empty/short chapter headers (e.g. `CHITSAUKO 5:`), and preserved the actual narrative prose.
+  - Deduped and merged **241 highly clean lines** and **11,760 words (~13,523 subword tokens)** of rich, native prose into the main training corpus.
+  - Shuffled and regenerated 98/1/1 splits: `train.txt` (207,931 lines), `valid.txt` (2,121 lines), and `test.txt` (2,121 lines).
+  - Updated `STATE.json` and `data/processed/stats.json` to record final gold corpus size of **212,173 unique clean lines** and **3,539,407 clean tokens**.
+
