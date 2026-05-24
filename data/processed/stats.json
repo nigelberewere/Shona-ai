@@ -1,10 +1,10 @@
 {
-  "total_lines": 272779,
-  "total_tokens": 3773335,
-  "train_lines": 267325,
-  "valid_lines": 2727,
-  "test_lines": 2727,
-  "train_tokens": 3698970,
-  "valid_tokens": 37400,
-  "test_tokens": 36965
+  "total_lines": 130938,
+  "total_tokens": 2304183,
+  "train_lines": 128320,
+  "valid_lines": 1309,
+  "test_lines": 1309,
+  "train_tokens": 2258669,
+  "valid_tokens": 23198,
+  "test_tokens": 22316
 }

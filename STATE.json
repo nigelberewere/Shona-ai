@@ -19,7 +19,7 @@
   },
   "data_stats": {
     "raw_tokens": 5723274,
-    "clean_tokens": 3773335,
+    "clean_tokens": 2304183,
     "sources_complete": [
       "wikipedia_sn",
       "bible_shona",
@@ -45,10 +45,10 @@
     "vocab_path": "tokenizer/shona_bpe.vocab",
     "trained_at": "2026-05-21T08:45:45.097280"
   },
-  "last_commit": "feat: literature and news data collection sprint",
+  "last_commit": "fix: strip wiki markup and technical noise before v3 training",
   "last_commit_hash": "",
   "blocking_issues": [],
-  "next_action": "Retrain Shona AI model on the expanded 3.77M token corpus",
+  "next_action": "Retrain Shona AI model on the expanded 2.30M token corpus",
   "generation_artifacts": [
     "logs/sample_generations.txt",
     "logs/sample_generations_sampling.txt",

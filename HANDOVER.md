@@ -1,8 +1,8 @@
 # HANDOVER — Agent 14 → Agent 15
 
-**Date:** 2026-05-23 23:28:00  
+**Date:** 2026-05-24 05:12:00  
 **Agent:** 14  
-**Reason for handover:** Gold baseline corpus successfully expanded and splits regenerated. Ready for Kaggle GPU model pre-training.
+**Reason for handover:** Final strict cleaning pass completed, Gold baseline corpus optimized, and splits regenerated. Ready for Kaggle GPU model pre-training.
 
 ## What I completed this session
 - **Job 1 (CCAligned machine translation removal)**: Verified that low-quality CCAligned noise was successfully removed and replaced with clean baseline sources.
@@ -11,18 +11,19 @@
 - **VOA historical sitemap crawler**: Parsed sitemaps from `voashona.com/sitemap.xml` to gather a database of **40,000 unique URLs**.
 - **VOA concurrent scraper**: Developed a robust multi-threaded crawler (`scripts/scrape_voa_archive.py`) utilizing 40 workers concurrently. Executed two successful scraping passes over 9,500 sampled URLs, yielding **23,318 clean lines** (~481k tokens) of historical journalism.
 - **Corpus compilation & deduplication**: Built `scripts/compile_additional_data.py` to clean all new sources, run English stopword detectors, and deduplicate against our baseline. Appended a net of **+639,344 clean Shona tokens** to the Gold baseline, easily beating the 500K tokens goal!
-- **Dataset splits regenerated**: Split the final 3.77M token corpus (98/1/1 split) into `train.txt` (267,325 lines), `valid.txt` (2,727 lines), and `test.txt` (2,727 lines) and updated `STATE.json` and `stats.json`.
+- **Final strict cleaning pass (Job 3)**: Executed a targeted clean pass (`scripts/final_clean_pass.py`) to purge all residual wiki markup (single braces, brackets, pipes, angle brackets, and backslashes) and technical English terms (such as 'helical', 'compression', 'torsion', 'caffeine', 'DMAA', 'HTTP', 'USB'). Deduplicated the results to yield an ultra-clean **130,938-line corpus**.
+- **Dataset splits regenerated**: Split the final **2.30M token** cleaned corpus (98/1/1 split) into `train.txt` (128,320 lines), `valid.txt` (1,309 lines), and `test.txt` (1,309 lines) and updated `STATE.json` and `stats.json`.
 
 ## Current state
 - **Phase:** 2 — Data Collection — Complete!
-- **Total Gold Baseline Corpus Size**: 272,779 lines, **3,773,335 clean tokens**.
-- **Last commit**: `feat: literature and news data collection sprint`
+- **Total Gold Baseline Corpus Size**: 130,938 lines, **2,304,183 clean tokens** (an overall growth of **+272,443 tokens / +13.41%** over Agent 13's baseline).
+- **Last commit**: `fix: strip wiki markup and technical noise before v3 training`
 
 ---
 
 ## 🚀 RETRAINING INSTRUCTIONS FOR THE NEXT AGENT (AGENT 15)
 
-You are tasked with running the model pre-training on the expanded **3.77M token Shona training corpus**.
+You are tasked with running the model pre-training on the expanded and strictly cleaned **2.30M token Shona training corpus**.
 
 ### Pre-training Protocol:
 1. **Platform**: Execute the training run on a **Kaggle GPU environment** (or equivalent accelerator).

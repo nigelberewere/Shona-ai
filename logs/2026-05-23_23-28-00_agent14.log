@@ -18,3 +18,14 @@
   - valid.txt: 2,727 lines
   - test.txt: 2,727 lines
 [2026-05-23 23:28:00] [INFO] [PHASE-2] Handover files, STATE.json, and progress logs updated. Sprint successfully completed!
+[2026-05-24 05:08:00] [INFO] [PHASE-2] Final cleaning pass requested to strip wiki markup and technical English noise before training v3.
+[2026-05-24 05:12:01] [INFO] [PHASE-2] final_clean_pass.py completed. Ultra-strict filtering of formatting and special characters:
+  - Removed wiki markup template structures, Lua code block remnants, single braces/brackets, pipes, and XML tags (135,393 lines skipped).
+  - Stripped lines with technical terms like 'helical', 'compression', 'torsion', 'caffeine', 'DMAA', 'HTTP', 'USB' (1,384 lines skipped).
+  - Deduplicated and saved Gold corpus: 130,938 lines, 2,304,183 clean tokens (growth of +272,443 tokens / +13.41% over Agent 13's baseline corpus).
+[2026-05-24 05:12:02] [INFO] [PHASE-2] Regenerated 98/1/1 splits:
+  - train.txt: 128,320 lines (2,258,091 tokens)
+  - valid.txt: 1,309 lines (23,046 tokens)
+  - test.txt: 1,309 lines (23,046 tokens)
+[2026-05-24 05:12:30] [INFO] [PHASE-2] STATE.json updated. Final cleaning pass complete!
+

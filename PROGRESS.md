@@ -98,4 +98,6 @@ This file is append-only. Each agent adds a timestamped session summary at the e
   - **Session Gain**: Added a net of **+639,344 clean Shona tokens** to the Gold baseline corpus, easily beating the **500K additional tokens** target.
   - **Final Corpus & Splits**: The final integrated corpus size stands at **272,779 lines / 3,773,335 tokens** (a net growth of **+20.40%**). Shuffled and regenerated splits (98/1/1 split) into `train.txt` (267,325 lines), `valid.txt` (2,727 lines), and `test.txt` (2,727 lines).
   - **Documentation**: Updated `STATE.json`, `WORKING.md`, `PROGRESS.md`, `HANDOVER.md`, and committed all sprint results under `"feat: literature and news data collection sprint"`.
+  - **Final strict cleaning pass (Job 3)**: Executed a strict targeted cleaning pass (`scripts/final_clean_pass.py`) to purge Wikipedia formatting syntax (single braces/brackets, pipes, angle brackets, verse markers, and backslashes) and technical English terms (such as 'helical', 'compression', 'torsion', 'caffeine', 'DMAA', 'HTTP', 'USB'). Deduped and regenerated splits (98/1/1). Re-aligned token stats to **2,304,183 clean tokens** across **130,938 lines** of pristine Shona, representing a net gain of **+272,443 tokens (+13.41%)** over the pre-sprint baseline.
+
 

@@ -1,6 +1,6 @@
 # WORKING — Agent 14
 
-**RIGHT NOW:** STOPPED — Handover complete. Data collection sprint successfully concluded.
+**RIGHT NOW:** STOPPED — Handoff complete. Training data v3 completely finalized.
 
 ## Task queue for this session
 
@@ -13,6 +13,7 @@
 - [x] Task 7: Compile, clean, deduplicate and integrate all new sources, achieving +639,344 clean tokens.
 - [x] Task 8: Regenerate train/valid/test splits (98/1/1).
 - [x] Task 9: Update STATE.json, log files, PROGRESS.md, and HANDOVER.md.
+- [x] Task 10: Execute final cleaning pass to strip wiki markup and technical noise, and regenerate 98/1/1 splits.
 
 ## Completed this session
 
@@ -28,3 +29,4 @@
 | 22:28 | Task 7: Compile and deduplicate all data | data/processed/all_clean.txt | |
 | 22:28 | Task 8: Regenerate dataset splits | data/processed/train.txt, valid.txt, test.txt | |
 | 23:28 | Task 9: Handover and state documentation | STATE.json, WORKING.md, HANDOVER.md, PROGRESS.md | |
+| 05:12 | Task 10: Run final strict cleaning pass | data/processed/all_clean.txt, train.txt, valid.txt, test.txt | |
