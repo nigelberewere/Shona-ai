@@ -1,7 +1,7 @@
 {
   "project": "shona-ai",
   "version": "0.1.0",
-  "last_updated": "2026-05-24 22:58:00",
+  "last_updated": "2026-05-25 12:05:00",
   "agent_number": 18,
   "model_used": "Gemini 3.5 Flash (High)",
   "current_phase": 2,
@@ -18,8 +18,8 @@
     "10": "not_started"
   },
   "data_stats": {
-    "raw_tokens": 6751653,
-    "clean_tokens": 4456430,
+    "raw_tokens": 6825310,
+    "clean_tokens": 4496825,
     "sources_complete": [
       "wikipedia_sn",
       "bible_shona",
@@ -36,7 +36,8 @@
       "newsday",
       "shona_bible_v2",
       "masakhanews_shona",
-      "shona_conversations"
+      "shona_conversations",
+      "whatsapp_shona"
     ]
   },
   "training_stats": {
@@ -54,8 +55,8 @@
     "vocab_path": "tokenizer/shona_bpe_v2.vocab",
     "trained_at": "2026-05-24T18:05:00.000000"
   },
-  "last_commit": "feat: add Bible v2 and filtered conversations to corpus",
-  "last_commit_hash": "2ea3bc1",
+  "last_commit": "feat: add WhatsApp conversational Shona to corpus",
+  "last_commit_hash": "a4d3cf1",
   "blocking_issues": [],
   "next_action": "Proceed with Phase 5 Model training on v5 corpus using shona_bpe_v2.model.",
   "generation_artifacts": [

@@ -5,3 +5,4 @@
 [2026-05-24 18:33:00] [MILESTONE] [PHASE-2] Generated synthetic conversation dataset using verified Shona vocabulary. 1,892 dialogue lines. Saved to data/raw/conversations/shona_conversations.txt.
 [2026-05-24 18:43:00] [MILESTONE] [PHASE-2] Appended new sources (Bible v2, MasakhaNews, synthetic conversations) to clean corpus and regenerated 98/1/1 splits. Total clean lines: 254,771, Total clean tokens: 4,467,364.
 [2026-05-24 23:02:00] [MILESTONE] [PHASE-2] Filtered conversation dataset (1,233 clean lines remaining) and rebuilt clean corpus with 98/1/1 splits. Total clean lines: 254,112, Total clean tokens: 4,456,430.
+[2026-05-25 12:05:00] [MILESTONE] [PHASE-2] Filtered WhatsApp conversation dataset (4,099 clean lines remaining) and added them to main clean corpus with 98/1/1 splits. Total clean lines: 260,195, Total clean tokens: 4,496,825.

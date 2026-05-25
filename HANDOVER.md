@@ -1,8 +1,8 @@
 # HANDOVER — Agent 18 → Agent 19
 
-**Date:** 2026-05-24 18:44:00  
+**Date:** 2026-05-25 12:05:00  
 **Agent:** 18  
-**Reason for handover:** Tokenizer retraining and data collection sprint successfully completed.
+**Reason for handover:** Tokenizer retraining and data collection sprint successfully completed, including approved Bible translations, filtered synthetic dialogues, and approved WhatsApp slang datasets.
 
 ## What I completed this session
 - **JOB 1:** Successfully retrained the SentencePiece BPE tokenizer on the full corpus, saving it to `tokenizer/shona_bpe_v2.model` and `tokenizer/shona_bpe_v2.vocab`. Measured its fertility on 200 random corpus lines:
@@ -16,11 +16,17 @@
   - **Total clean lines:** **254,771** (up from 212,195 lines, +42,576 new unique lines)
   - **Total clean tokens (words):** **4,467,364** (up from 3.53M tokens, +26.3% corpus growth)
 - **JOB 6:** Fully updated `STATE.json` and session logs (`logs/2026-05-24_17-52-42_agent18.log`).
+- **JOB 7:** Programmatically extracted, cleaned, filtered, and integrated the WhatsApp slang dataset from the local `Working_with_shona-slang` repository:
+  - Filtered out 659 dialogues containing English or forbidden words, leaving **1,233** high-quality dialog turns in `shona_conversations.txt`.
+  - Extracted **4,290** clean messages from `shona_combined_dataset.csv` and `slang_dataset_with_contexts_and_intent.csv`, applying your final gibberish/noise filtering to remove `'kuricy'`, `'bhooooooo'`, `'pfeeeee'`, etc., leaving **4,099** pristine conversational Shona lines.
+  - Merged and deduplicated all clean datasets, and successfully regenerated the 98/1/1 splits.
+  - **Final Clean Lines count:** **260,195**
+  - **Final Clean Tokens (Words) count:** **4,496,825** tokens!
 
 ## Current state
 - **Phase:** 2 — DATA COLLECTION / TOKENIZER PREP complete! Ready for Phase 7 training run.
-- **Last commit:** f95fb9d — feat: generated conversations, merged new datasets, and regenerated splits (v5 prep)
-- **Last log entry:** `[2026-05-24 18:43:00] [MILESTONE] [PHASE-2] Appended new sources (Bible v2, MasakhaNews, synthetic conversations) to clean corpus and regenerated 98/1/1 splits. Total clean lines: 254,771, Total clean tokens: 4,467,364.`
+- **Last commit:** a4d3cf1 — feat: add WhatsApp conversational Shona to corpus
+- **Last log entry:** `[2026-05-25 12:05:00] [MILESTONE] [PHASE-2] Filtered WhatsApp conversation dataset (4,099 clean lines remaining) and added them to main clean corpus with 98/1/1 splits. Total clean lines: 260,195, Total clean tokens: 4,496,825.`
 
 ## What you must do FIRST
 1. Initialize your session:
@@ -31,7 +37,7 @@
 3. Configure the training config to point to the new BPE v2 tokenizer: `tokenizer/shona_bpe_v2.model`.
 
 ## V5 Training Instructions
-You are now ready to launch the v5 training sprint on the expanded **4.46M token** Shona corpus!
+You are now ready to launch the v5 training sprint on the expanded **4.49M token** Shona corpus!
 1. Check model configuration under `model/config.py`.
 2. Inspect the training configuration `training/config.yaml` or hyperparameter arguments. Ensure the vocabulary size matches **32,000** and points to `tokenizer/shona_bpe_v2.model`.
 3. Launch the pre-training script in training mode:
@@ -47,10 +53,12 @@ You are now ready to launch the v5 training sprint on the expanded **4.46M token
 - `scripts/train_tokenizer_v2.py` — Tokenizer training and fertility comparison script.
 - `scripts/fetch_bibles.py` — Script that scrapes, cleans and downloads additional Bibles.
 - `scripts/fetch_huggingface.py` — Script that downloads HuggingFace datasets.
-- `scripts/fetch_nllb.py` — Correctly configured NLLB retrieval script (large, so cancelled to prevent timeout).
 - `scripts/generate_conversations.py` — Synthetic and natural Shona dialog pair generator.
-- `scripts/append_new_sources.py` — Safely appends all new datasets, dedupes, and updates splits.
-- `data/processed/all_clean.txt` — The expanded corpus (254,771 lines, 4,467,364 words).
+- `scripts/filter_conversations_and_rebuild.py` — Intermediate dialogue filtering and splits regenerator.
+- `scripts/extract_slang_messages.py` — WhatsApp slang dataset extractor.
+- `scripts/filter_whatsapp_and_rebuild.py` — Final WhatsApp slang filter and corpus splits regenerator.
+- `data/raw/social/whatsapp_shona.txt` — The final filtered WhatsApp conversational dataset (4,099 lines).
+- `data/processed/all_clean.txt` — The expanded corpus (260,195 lines, 4,496,825 words).
 - `data/processed/stats.json` — Regenerated corpus splits and stats.
 - `data/processed/train.txt` / `valid.txt` / `test.txt` — Clean 98/1/1 splits.
 - `STATE.json` — Build status tracker.
