@@ -1,0 +1,21 @@
+checkpoint: training\checkpoints\shona_ai_v4.pt
+max_tokens: 50
+temperature: 0.5
+top_p: 0.8
+
+PROMPT: Mhoro, makadii?
+RESPONSE: Iwe unogona kuwana iwe unogona kuva yako. Kana iwe uri pakati penyu, kana iwe uri nyore! Kana iwe uri munhu kuti iwe unoda kuti iwe uri nani? Iwe unogona kuva newe! Iwe unogona kuva nechokwadi kuti iwe uri kuenda kune chero ipi zvayo. Iwe
+---
+PROMPT: Unonzi ani?
+RESPONSE: Verenga zvose zviri pamusoro petafura. Asi iwe unogona kuva ne email nesu. Iwe unogona kuwana nzira yako. Iwe unogona kuona kuti iwe unogona kuita kuti iwe unofanira kuita izvi, iwe unogona kuvaudza kuti uone kuti iwe unogona kuwana mukana wokushandiswa. Iwe unogona kuwana
+---
+PROMPT: Ndinoda kudzidza chiShona nokuti
+RESPONSE: nguva. The 1xBet uye kutanga dhipoziti bhonasi. The bhonasi Muruoko rwake anobata chirukiso dhipoziti bhonasi, zvose pamusoro bhonasi. Unogona kuwana mari. Unogona kushandisa bhonasi mari pamusoro pamusoro £ 500 Deposit bhonasi. The bhonasi Muruoko rwake anobata chirukiso pamusoro bhonasi. Unogona kuwana bhonasi
+---
+PROMPT: Nhasi ndiri kuenda kumusika kunotenga
+RESPONSE: zvinhu zvedu zvekunyora bvunzo.com, uye ndiri kushanda uye ndinoda kuti iwe unogona kuwana mari yako. Ndinoda kuti iwe unofanira kuva nechokwadi chokuti, iwe unofanira kuva nechokwadi kuti iwe unogona kuwana zvakanakisisa. Iwe unogona kuwana mari yako. Iwe unofanira kuva Webcam vasikana.
+---
+PROMPT: Tsanangura kuti mhuri inokosha sei
+RESPONSE: ? Chii chinonzi? Kudaro? Ndinofunga kuti iwe hauna kumboita sei? Kana iwe uri kutsvaka kana iwe unoda kuva chinhu. image source yako, iwe unogona kuwana mari yako. Iwe unogona kuwana mari yako inotevera? Iwe unogona kutenga yako inotevera, iwe unogona
+---
+elapsed_seconds: 4.65

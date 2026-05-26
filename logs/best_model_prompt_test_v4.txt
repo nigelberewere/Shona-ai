@@ -1,0 +1,21 @@
+checkpoint: training\checkpoints\shona_ai_v4.pt
+max_tokens: 80
+temperature: 0.8
+top_p: 0.9
+
+PROMPT: Mhoro, makadii?
+RESPONSE: Ndinofunga mashoko ekuti nyaya yako webhusaiti yako inotevera! Iwe Unoreva iwe unoverenga! Kutumira mashoko enyu achazofarira sei? Saka, enda undotaura newe. Iwe uri chete uchiri kubva ne FREE. Unorege kufunga kuti iwe uchiwana tikiti. Ndinoda kukutendai yako, and-de? Sign! Hongu nokukurumidza uye iwe, unofanira kuzvinzwira nyasha? Taura. I nesu isu, iwe wave kuita kuti iwe kana
+---
+PROMPT: Unonzi ani?
+RESPONSE: Iwe unogonawo kuita, tarisa mavhidhiyo akasiyana sezvo iwe wave kuda kuita kuti isu runhare rangu, isu hatigone kukupa: “Aya. Uye kana ungandiremekedzana. Unobatana ne email yedu.dll mukiki hayai! Ndaimbofunga nezvazvo. Kande ari kuronga vhiza. Verenga zvakawanda. zvisinei, ini kana uri kushanyira nezvazvo, kuti iwe kana kutsvoda, iyo vanhu avo: Munogonawo kudzidzisa.
+---
+PROMPT: Ndinoda kudzidza chiShona nokuti
+RESPONSE: kuchengeta mhuri yangu? Handina kudya kwakawanda. Ndosaka! Just unogona kufunga nezvazvo? Kana iwe uye iwe uchida kuva tarisa nokuti unogona kuwedzera! Iye murume wangu wangu. Saka ini handina kumbobvira ndambotora sei isu tiri kuedza kuitwa sei? Zviri nani. Ndinofunga kuti iwe unofanira kuenda, uye kutumira $ 1xbet! Asi iwe chinhu, hapana munhu mumwe chete nhasi. Kana uri iwe kuedza "S. Uye mari yenyu
+---
+PROMPT: Nhasi ndiri kuenda kumusika kunotenga
+RESPONSE: zvinhu kune imwe nzira kuti nditendere kukosha sei. Handitarise chaizvo chete,” akadaro. "akatenda, saDhavhidhi. Mwari vakamuka nguva, vachiti, "Kana munhu aingoona. Hazvina maturo". Ndianiko auya! (yakagadzirwa). Hakutsvaki kuda iwe kana muchida kuda, iwe." "Manwe” "Mwari) kana kuti iwe uri muduku. Sei? kana "Ko, "Kana iwe uri
+---
+PROMPT: Tsanangura kuti mhuri inokosha sei
+RESPONSE: ? Haufaniri kuropafadza. Kwayedza iri kushevedza vamwe! Mukutenda uye kana iwe uchida. Zvakanaka pane nguva, uye kana munhu ari kuona kuti siyana muchisarudza yako here? Funga mari? (yakagadzirwa) kuzvizvarwa. Iwe? Vamwe mazano-mail kero zvose, kuti hapana chitsva chaizvo. Iwe unogona kutaurirana pakati vashanyi vakaita sei. Unogona kuva chii unodhura here? Ko kana kuti iwe unofanira kuedza
+---
+elapsed_seconds: 11.52
