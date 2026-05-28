@@ -41,7 +41,7 @@ def evaluate(model, val_tensor, cfg, device, batch_size=8):
     return avg_loss, perplexity
 
 
-def train_real_smoke(steps: int = 300, log_interval: int = 100):
+def train_real_smoke(steps: int = 100000, log_interval: int = 100):
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
     train_path = 'data/processed/train.txt'
@@ -49,8 +49,8 @@ def train_real_smoke(steps: int = 300, log_interval: int = 100):
     seq_len = 256
     
     # We load seq_len + 1 tokens so that after shifting we have seq_len tokens.
-    max_train_samples = 10000
-    max_val_samples = 702
+    max_train_samples = None
+    max_val_samples = None
 
     print("Loading datasets...")
     if os.path.exists(train_path):
@@ -72,18 +72,18 @@ def train_real_smoke(steps: int = 300, log_interval: int = 100):
     # Use a lightweight and fast config suitable for CPU training
     cfg = ModelConfig()
     cfg.vocab_size = min(vocab_size, 32000)
-    cfg.hidden_size = 128
-    cfg.num_layers = 2
+    cfg.hidden_size = 256
+    cfg.num_layers = 6
     cfg.num_heads = 8
-    cfg.intermediate_size = 512
+    cfg.intermediate_size = 1024
     cfg.max_position_embeddings = 256
 
     model = GPTModel(cfg).to(device)
     model.train()
 
     # Hyperparameters requested by step 2 / Task 2
-    batch_size = 4
-    lr = 3e-4
+    batch_size = 32
+    lr = 1e-3
     optimizer = optim.AdamW(model.parameters(), lr=lr)
     
     # Ignore padding index 0 for honest loss and perplexity tracking
