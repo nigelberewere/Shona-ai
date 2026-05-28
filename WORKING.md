@@ -11,6 +11,7 @@
 - [x] JOB 5: Append new datasets to `data/processed/all_clean.txt`, regenerate 98/1/1 splits, and report final corpus counts.
 - [x] JOB 6: Update `STATE.json`, `HANDOVER.md` and commit with message "feat: v5 prep - retrain tokenizer and data collection".
 - [x] JOB 7: Extract, inspect, filter, and integrate WhatsApp conversational slang dataset from local slang repository.
+- [x] JOB 8: Upgrade custom GPT model architecture for v6 training on Kaggle (hidden_size=256, layers=6, intermediate_size=1024).
 
 ## Completed this session
 
@@ -23,4 +24,5 @@
 | 18:43 | JOB 5: Appended all successful sources to clean corpus, deduplicated, and regenerated 98/1/1 splits (Total: 4.46M words) | data/processed/all_clean.txt, stats.json, splits, scripts/append_new_sources.py | f95fb9d |
 | 18:44 | JOB 6: Updated STATE.json, HANDOVER.md, and created final session logs | STATE.json, HANDOVER.md, WORKING.md, logs | f95fb9d |
 | 23:02 | Intermediate Rebuild: Filtered conversation dataset and rebuilt splits (1,233 clean lines) | shona_conversations.txt, scripts/filter_conversations_and_rebuild.py | cc6a0b5 |
-| 12:05 | JOB 7: Filtered and integrated WhatsApp slang dataset, regenerated splits (Total: 4.49M words) | whatsapp_shona.txt, scripts/filter_whatsapp_and_rebuild.py | [to be committed] |
+| 12:05 | JOB 7: Filtered and integrated WhatsApp slang dataset, regenerated splits (Total: 4.49M words) | whatsapp_shona.txt, scripts/filter_whatsapp_and_rebuild.py | e564939 |
+| 18:55 | JOB 8: Upgraded custom GPT model architecture configuration for v6 Kaggle run | model/config.py, training/trainer.py | 9d2b952 |

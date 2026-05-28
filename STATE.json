@@ -1,7 +1,7 @@
 {
   "project": "shona-ai",
   "version": "0.1.0",
-  "last_updated": "2026-05-25 12:05:00",
+  "last_updated": "2026-05-28 18:55:00",
   "agent_number": 18,
   "model_used": "Gemini 3.5 Flash (High)",
   "current_phase": 2,
@@ -55,10 +55,10 @@
     "vocab_path": "tokenizer/shona_bpe_v2.vocab",
     "trained_at": "2026-05-24T18:05:00.000000"
   },
-  "last_commit": "feat: add WhatsApp conversational Shona to corpus",
-  "last_commit_hash": "a4d3cf1",
+  "last_commit": "feat: upgrade model to hidden=256 layers=6 for v6 training",
+  "last_commit_hash": "9d2b952",
   "blocking_issues": [],
-  "next_action": "Proceed with Phase 5 Model training on v5 corpus using shona_bpe_v2.model.",
+  "next_action": "Proceed with Phase 7 Model training on v6 upgraded architecture using Kaggle.",
   "generation_artifacts": [
     "logs/sample_generations.txt",
     "logs/sample_generations_sampling.txt",
